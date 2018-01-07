@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  Page2SignUpViewController.swift
 //  Nexus
 //
 //  Created by Nick potts on 1/7/18.

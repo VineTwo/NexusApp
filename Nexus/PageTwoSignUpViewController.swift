@@ -1,5 +1,5 @@
 //
-//  Page2SignUpViewController.swift
+//  SignUpViewController.swift
 //  Nexus
 //
 //  Created by Nick potts on 1/7/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page2SignUpViewController: UIViewController {
+class PageTwoSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
