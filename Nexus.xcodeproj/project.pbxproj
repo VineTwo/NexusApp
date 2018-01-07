@@ -14,6 +14,8 @@
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
+		A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */; };
+		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9DC436FF20019D4E00335A4A /* NexusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexusUITests.swift; sourceTree = "<group>"; };
 		9DC4370120019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoSignUpViewController.swift; sourceTree = "<group>"; };
+		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
+				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
+				A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
 				9DC436E620019D4E00335A4A /* Assets.xcassets */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
+				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
 				9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
