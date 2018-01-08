@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.backgroundColor = UIColor.clear
-        userNameTextField.tintColor = UIColor.white
+        userNameTextField.tintColor = UIColor.black
         userNameTextField.textColor = UIColor.black
         userNameTextField.attributedPlaceholder = NSAttributedString(string: userNameTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
     }
