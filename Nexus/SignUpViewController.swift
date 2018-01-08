@@ -1,6 +1,6 @@
 //
 //  SignUpViewController.swift
-//  Nexus
+//  Nexus2
 //
 //  Created by Nick potts on 1/7/18.
 //  Copyright © 2018 Matthew Foote. All rights reserved.
