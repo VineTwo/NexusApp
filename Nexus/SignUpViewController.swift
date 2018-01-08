@@ -27,6 +27,9 @@ class SignUpViewController: UIViewController {
                 print(error?.localizedDescription)
                 return
             }
+            
+            
+            
             // all users are a giant node with each individual user being their own node
             let ref = Database.database().reference()
             let usersReference = ref.child("users")
