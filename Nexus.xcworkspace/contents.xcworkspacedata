@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/matthewfoote/Desktop/XCode/NexusApp/Nexus/Home.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:Nexus.xcodeproj">
    </FileRef>
    <FileRef
