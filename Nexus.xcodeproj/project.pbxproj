@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8080616684D4D41E42BB496E /* Pods_NexusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */; };
+		8B84B022C979F024157E7689 /* Pods_NexusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA020474029D9B5BEE48D74 /* Pods_NexusTests.framework */; };
 		9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436DF20019D4E00335A4A /* AppDelegate.swift */; };
 		9DC436E520019D4E00335A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E320019D4E00335A4A /* Main.storyboard */; };
 		9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E620019D4E00335A4A /* Assets.xcassets */; };
 		9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */; };
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
+		9FA751C1BAF37F2B274F1B20 /* Pods_Nexus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */; };
 		A34C3B852002CF6900C256FE /* ProfileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C3B842002CF6900C256FE /* ProfileUploadViewController.swift */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
+		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
@@ -38,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2072B8EA596448F9DA218AFD /* Pods-NexusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NexusUITests/Pods-NexusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2128E87600CF59D1187BCFD5 /* Pods-Nexus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nexus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nexus/Pods-Nexus.debug.xcconfig"; sourceTree = "<group>"; };
+		4A3A0D1073A832A51B2868EA /* Pods-NexusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusUITests/Pods-NexusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		83E54BEA97C799CC3C1A5714 /* Pods-NexusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.release.xcconfig"; sourceTree = "<group>"; };
+		9AA020474029D9B5BEE48D74 /* Pods_NexusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436DC20019D4E00335A4A /* Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436DF20019D4E00335A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC436E420019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,9 +61,14 @@
 		9DC4370120019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A34C3B842002CF6900C256FE /* ProfileUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUploadViewController.swift; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
+		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoSignUpViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nexus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE27944A3CD7FAE1B5AD4FBE /* Pods-Nexus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nexus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nexus/Pods-Nexus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA751C1BAF37F2B274F1B20 /* Pods_Nexus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B84B022C979F024157E7689 /* Pods_NexusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8080616684D4D41E42BB496E /* Pods_NexusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2090757BE31B62CAE14238D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */,
+				9AA020474029D9B5BEE48D74 /* Pods_NexusTests.framework */,
+				CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		549AFDA77EC0B8D3F053F2F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2128E87600CF59D1187BCFD5 /* Pods-Nexus.debug.xcconfig */,
+				FE27944A3CD7FAE1B5AD4FBE /* Pods-Nexus.release.xcconfig */,
+				BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */,
+				83E54BEA97C799CC3C1A5714 /* Pods-NexusTests.release.xcconfig */,
+				4A3A0D1073A832A51B2868EA /* Pods-NexusUITests.debug.xcconfig */,
+				2072B8EA596448F9DA218AFD /* Pods-NexusUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +129,8 @@
 				9DC436F320019D4E00335A4A /* NexusTests */,
 				9DC436FE20019D4E00335A4A /* NexusUITests */,
 				9DC436DD20019D4E00335A4A /* Products */,
+				549AFDA77EC0B8D3F053F2F1 /* Pods */,
+				2090757BE31B62CAE14238D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +157,7 @@
 				9DC436E620019D4E00335A4A /* Assets.xcassets */,
 				9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */,
 				9DC436EB20019D4E00335A4A /* Info.plist */,
+				A34C3B89200310EE00C256FE /* GoogleService-Info.plist */,
 			);
 			path = Nexus;
 			sourceTree = "<group>";
@@ -144,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC4370420019D4E00335A4A /* Build configuration list for PBXNativeTarget "Nexus" */;
 			buildPhases = (
+				3244808948A3E5CDAB5FB3AA /* [CP] Check Pods Manifest.lock */,
 				9DC436D820019D4E00335A4A /* Sources */,
 				9DC436D920019D4E00335A4A /* Frameworks */,
 				9DC436DA20019D4E00335A4A /* Resources */,
+				E3E2FC29922AC67B4AFB37AE /* [CP] Embed Pods Frameworks */,
+				745FC6BCE2354ADC6615BF0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC4370720019D4E00335A4A /* Build configuration list for PBXNativeTarget "NexusTests" */;
 			buildPhases = (
+				0294C577086CD060E4D637B6 /* [CP] Check Pods Manifest.lock */,
 				9DC436EC20019D4E00335A4A /* Sources */,
 				9DC436ED20019D4E00335A4A /* Frameworks */,
 				9DC436EE20019D4E00335A4A /* Resources */,
+				0F694FB139707F9F4E7C50D5 /* [CP] Embed Pods Frameworks */,
+				6E26AF450BF2BF199235D3B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC4370A20019D4E00335A4A /* Build configuration list for PBXNativeTarget "NexusUITests" */;
 			buildPhases = (
+				8C0C0D74D7ECEDE108B6553B /* [CP] Check Pods Manifest.lock */,
 				9DC436F720019D4E00335A4A /* Sources */,
 				9DC436F820019D4E00335A4A /* Frameworks */,
 				9DC436F920019D4E00335A4A /* Resources */,
+				3EA4412A10438A912B6F5192 /* [CP] Embed Pods Frameworks */,
+				5A30EBFC6A18C833B829605B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +298,7 @@
 			files = (
 				9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */,
 				9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */,
+				A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */,
 				A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */,
 				9DC436E520019D4E00335A4A /* Main.storyboard in Resources */,
 			);
@@ -266,6 +319,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0294C577086CD060E4D637B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NexusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F694FB139707F9F4E7C50D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3244808948A3E5CDAB5FB3AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nexus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EA4412A10438A912B6F5192 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NexusUITests/Pods-NexusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A30EBFC6A18C833B829605B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NexusUITests/Pods-NexusUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E26AF450BF2BF199235D3B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		745FC6BCE2354ADC6615BF0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nexus/Pods-Nexus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C0C0D74D7ECEDE108B6553B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NexusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3E2FC29922AC67B4AFB37AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nexus/Pods-Nexus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nexus/Pods-Nexus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DC436D820019D4E00335A4A /* Sources */ = {
@@ -448,6 +653,7 @@
 		};
 		9DC4370520019D4E00335A4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2128E87600CF59D1187BCFD5 /* Pods-Nexus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +669,7 @@
 		};
 		9DC4370620019D4E00335A4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE27944A3CD7FAE1B5AD4FBE /* Pods-Nexus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +685,7 @@
 		};
 		9DC4370820019D4E00335A4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +703,7 @@
 		};
 		9DC4370920019D4E00335A4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83E54BEA97C799CC3C1A5714 /* Pods-NexusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +721,7 @@
 		};
 		9DC4370B20019D4E00335A4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A3A0D1073A832A51B2868EA /* Pods-NexusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +738,7 @@
 		};
 		9DC4370C20019D4E00335A4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2072B8EA596448F9DA218AFD /* Pods-NexusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
