@@ -147,6 +147,10 @@
                         <viewLayoutGuide key="safeArea" id="jgd-nf-CHJ"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="N6E-dY-0mY"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="NGv-ZG-xxU" id="BjV-sU-2If"/>
+                        <outlet property="passwordTextField" destination="WPn-NY-sjE" id="4QR-Wk-ZIW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -651,7 +655,6 @@
         <!--View Controller-->
         <scene sceneID="mN8-yb-lXS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZI3-cV-F0P" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTF-et-Wmh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -681,6 +684,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2637.5999999999999" y="1796.305418719212"/>
         </scene>
