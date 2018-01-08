@@ -19,7 +19,7 @@ UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-    profilePicture.layer.cornerRadius = 40
+    profilePicture.layer.cornerRadius = 25
     profilePicture.clipsToBounds = true
 
      //  let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileUploadViewController.handleSelectProfileImageView))
