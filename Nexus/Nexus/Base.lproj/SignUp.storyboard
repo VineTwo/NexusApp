@@ -138,7 +138,7 @@
                                     <color key="titleColor" red="0.0" green="0.0081174608130000006" blue="0.80316952720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sju-cF-ZOq" kind="show" id="IsK-kn-WmL"/>
+                                    <segue destination="sju-cF-ZOq" kind="presentation" id="mUu-pH-gcV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -609,7 +609,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <state key="normal" title="Done"/>
                                                     <connections>
-                                                        <segue destination="ZI3-cV-F0P" kind="show" id="fzY-DT-QpR"/>
+                                                        <segue destination="ZI3-cV-F0P" kind="presentation" id="9F2-ss-n6t"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -651,6 +651,7 @@
         <!--View Controller-->
         <scene sceneID="mN8-yb-lXS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZI3-cV-F0P" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTF-et-Wmh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -671,7 +672,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sju-cF-ZOq" kind="show" id="nNJ-is-cax"/>
+                                    <segue destination="sju-cF-ZOq" kind="presentation" id="Kug-kk-9gF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -680,7 +681,6 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2637.5999999999999" y="1796.305418719212"/>
         </scene>
@@ -701,6 +701,6 @@
         <image name="Twitter.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IsK-kn-WmL"/>
+        <segue reference="mUu-pH-gcV"/>
     </inferredMetricsTieBreakers>
 </document>
