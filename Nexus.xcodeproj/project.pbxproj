@@ -85,7 +85,6 @@
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
-				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
 				9DC436DE20019D4E00335A4A /* Nexus */,
 				9DC436F320019D4E00335A4A /* NexusTests */,
 				9DC436FE20019D4E00335A4A /* NexusUITests */,
@@ -112,6 +111,7 @@
 				A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
+				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
 				9DC436E620019D4E00335A4A /* Assets.xcassets */,
 				9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */,
 				9DC436EB20019D4E00335A4A /* Info.plist */,
