@@ -6,6 +6,7 @@ target 'Nexus' do
   use_frameworks!
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
   # Pods for Nexus
 
   target 'NexusTests' do
