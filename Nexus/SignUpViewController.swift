@@ -10,7 +10,9 @@ import UIKit
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
-
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +20,7 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
-        Auth.auth().createUser(withEmail: "pnick622@gmail.com", password: "123kyle", completion: {
+        Auth.auth().createUser(withEmail: emailTextField.text! , password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
                 print(error?.localizedDescription)

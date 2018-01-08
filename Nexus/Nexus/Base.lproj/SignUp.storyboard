@@ -156,6 +156,10 @@
                         <color key="backgroundColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jgd-nf-CHJ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="NGv-ZG-xxU" id="94B-c1-MCF"/>
+                        <outlet property="passwordTextField" destination="WPn-NY-sjE" id="lEk-6F-Zvs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
