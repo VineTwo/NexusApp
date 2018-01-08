@@ -18,15 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         // Override point for customization after application launch.
-        var navigationBarAppearace = UINavigationBar.appearance()
+        var navigationBarAppearance = UINavigationBar.appearance()
         
-        navigationBarAppearace.tintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
-        navigationBarAppearace.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
+        navigationBarAppearance.tintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
+        navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
         
-        navigationBarAppearace.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
-        navigationBarAppearace.isTranslucent = false
-        navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
-        navigationBarAppearace.shadowImage = UIImage()
+        navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
+        navigationBarAppearance.isTranslucent = true
+        navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.tintColor = UIColor.black;
         return true
     }
 
