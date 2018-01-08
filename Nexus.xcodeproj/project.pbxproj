@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8080616684D4D41E42BB496E /* Pods_NexusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */; };
 		8B84B022C979F024157E7689 /* Pods_NexusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA020474029D9B5BEE48D74 /* Pods_NexusTests.framework */; };
+		9D0BE7E62003243B00945119 /* Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7E22003243B00945119 /* Instagram.png */; };
+		9D0BE7E72003243B00945119 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7E32003243B00945119 /* Twitter.png */; };
+		9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7E42003243B00945119 /* LinkedIn.png */; };
+		9D0BE7EB2003246400945119 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7EA2003246400945119 /* Facebook.png */; };
+		9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7EC200324AA00945119 /* Snapchat.png */; };
 		9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436DF20019D4E00335A4A /* AppDelegate.swift */; };
 		9DC436E520019D4E00335A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E320019D4E00335A4A /* Main.storyboard */; };
 		9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E620019D4E00335A4A /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		4A3A0D1073A832A51B2868EA /* Pods-NexusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusUITests/Pods-NexusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		83E54BEA97C799CC3C1A5714 /* Pods-NexusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.release.xcconfig"; sourceTree = "<group>"; };
 		9AA020474029D9B5BEE48D74 /* Pods_NexusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0BE7E22003243B00945119 /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
+		9D0BE7E32003243B00945119 /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		9D0BE7E42003243B00945119 /* LinkedIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LinkedIn.png; sourceTree = "<group>"; };
+		9D0BE7EA2003246400945119 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		9D0BE7EC200324AA00945119 /* Snapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snapchat.png; sourceTree = "<group>"; };
 		9DC436DC20019D4E00335A4A /* Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436DF20019D4E00335A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC436E420019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +132,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9D0BE7E12003243B00945119 /* Social Media Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9D0BE7EC200324AA00945119 /* Snapchat.png */,
+				9D0BE7EA2003246400945119 /* Facebook.png */,
+				9D0BE7E22003243B00945119 /* Instagram.png */,
+				9D0BE7E32003243B00945119 /* Twitter.png */,
+				9D0BE7E42003243B00945119 /* LinkedIn.png */,
+			);
+			path = "Social Media Icons";
+			sourceTree = "<group>";
+		};
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +169,7 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
 				A34C3B842002CF6900C256FE /* ProfileUploadViewController.swift */,
 				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
@@ -296,10 +319,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0BE7EB2003246400945119 /* Facebook.png in Resources */,
 				9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */,
 				9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */,
 				A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */,
 				A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */,
+				9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */,
+				9D0BE7E72003243B00945119 /* Twitter.png in Resources */,
+				9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */,
+				9D0BE7E62003243B00945119 /* Instagram.png in Resources */,
 				9DC436E520019D4E00335A4A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
