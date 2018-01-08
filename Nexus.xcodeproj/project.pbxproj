@@ -14,6 +14,7 @@
 		9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7E42003243B00945119 /* LinkedIn.png */; };
 		9D0BE7EB2003246400945119 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7EA2003246400945119 /* Facebook.png */; };
 		9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7EC200324AA00945119 /* Snapchat.png */; };
+		9D5CC85A2004342C00EDF4DA /* NexusLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5CC8592004342C00EDF4DA /* NexusLogo.png */; };
 		9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436DF20019D4E00335A4A /* AppDelegate.swift */; };
 		9DC436E520019D4E00335A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E320019D4E00335A4A /* Main.storyboard */; };
 		9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E620019D4E00335A4A /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		9D0BE7E42003243B00945119 /* LinkedIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LinkedIn.png; sourceTree = "<group>"; };
 		9D0BE7EA2003246400945119 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
 		9D0BE7EC200324AA00945119 /* Snapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snapchat.png; sourceTree = "<group>"; };
+		9D5CC8592004342C00EDF4DA /* NexusLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NexusLogo.png; sourceTree = "<group>"; };
 		9DC436DC20019D4E00335A4A /* Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436DF20019D4E00335A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC436E420019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 			path = "Social Media Icons";
 			sourceTree = "<group>";
 		};
+		9D5CC8582004342C00EDF4DA /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CC8592004342C00EDF4DA /* NexusLogo.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				9D5CC8582004342C00EDF4DA /* Icons */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
 				A34C3B842002CF6900C256FE /* ProfileUploadViewController.swift */,
@@ -323,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0BE7EB2003246400945119 /* Facebook.png in Resources */,
+				9D5CC85A2004342C00EDF4DA /* NexusLogo.png in Resources */,
 				9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */,
 				9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */,
 				A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */,
