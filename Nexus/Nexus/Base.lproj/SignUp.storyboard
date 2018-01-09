@@ -180,7 +180,7 @@
                                     <segue destination="5Tp-4E-xQK" kind="show" id="sQA-S4-38A"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Pv-qUQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Pv-qUQ">
                                 <rect key="frame" x="108" y="233" width="158" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

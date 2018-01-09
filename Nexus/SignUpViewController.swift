@@ -28,13 +28,13 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            
+            let uid = user?.uid
             
             // all users are a giant node with each individual user being their own node
             let ref = Database.database().reference()
             let usersReference = ref.child("users")
             
-            let uid = user?.uid
+            
             let newUsersReference = usersReference.child(uid!)
             newUsersReference.setValue(["email": self.emailTextField.text!])
             
