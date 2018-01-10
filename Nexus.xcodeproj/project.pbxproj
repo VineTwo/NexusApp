@@ -28,6 +28,7 @@
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
+		A368935D2005921D000E7C69 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368935C2005921D000E7C69 /* config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoSignUpViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nexus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 			children = (
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
+				A368935C2005921D000E7C69 /* config.swift */,
 				A34C3B842002CF6900C256FE /* ProfileUploadViewController.swift */,
 				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
 				A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */,
@@ -516,6 +519,7 @@
 				A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
+				A368935D2005921D000E7C69 /* config.swift in Sources */,
 				9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */,
 				A34C3B852002CF6900C256FE /* ProfileUploadViewController.swift in Sources */,
 			);

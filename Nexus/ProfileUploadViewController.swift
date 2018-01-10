@@ -7,21 +7,45 @@
 //
 
 import UIKit
-import FirebaseDatabase
 import FirebaseAuth
+import FirebaseDatabase
 import FirebaseStorage
 
 class ProfileUploadViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     
+    @IBOutlet weak var nextButton: UIButton!
+    @IBAction func nextButton_TouchUpInside(_ sender: Any) {
+        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            let profileIdString = NSUUID().uuidString
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(profileIdString)
+            storageRef.putData(imageData, metadata: nil, completion: {
+                (metadata, error) in
+                if error != nil {
+                    return
+                }
+                let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                self.sendDataToDatabase(profileImageUrl: profileImageUrl!)
+            })
+        }
+      
+    }
+    
+    func sendDataToDatabase(profileImageUrl: String) {
+        let userID = Auth.auth().currentUser?.uid
+       
+        let ref = Database.database().reference().child("users").child(userID!)
+        let profileImagesReference = ref.child("profileImages")
+        let profileID = profileImagesReference.childByAutoId().key
+        let newProfileImage = profileImagesReference.child(profileID)
+        newProfileImage.setValue(["profileImageURL": profileImageUrl])
+    }
+  
+    
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // using this to send photo to Firebase
-       // let ref = Database.database().reference()
-       // let usersReference = ref.child("users")
-      //  let uid = user?.uid
         
         //Changes look of profile picture lower # = more square
     profilePicture.layer.cornerRadius = 25
@@ -38,8 +62,7 @@ class ProfileUploadViewController: UIViewController {
         pickerController.delegate = self //self is delegate of the image picker
         present(pickerController, animated: true, completion: nil)
     }
-    
- //   let storageRef = Storage.storage().reference(forURL: "gs://nexus-app-6f0eb.appspot.com").child("Profile_Image").child(SignUpViewController.uid!)
+  
 }
 extension ProfileUploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -52,3 +75,4 @@ extension ProfileUploadViewController: UIImagePickerControllerDelegate, UINaviga
    }
     
     }
+
