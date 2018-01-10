@@ -177,10 +177,11 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButton_TouchUpInside:" destination="JCc-4i-CPx" eventType="touchUpInside" id="MlX-dR-1jH"/>
                                     <segue destination="5Tp-4E-xQK" kind="show" id="sQA-S4-38A"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Pv-qUQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Pv-qUQ">
                                 <rect key="frame" x="108" y="233" width="158" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -189,6 +190,7 @@
                         <viewLayoutGuide key="safeArea" id="9TS-SU-G4e"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="UX4-3o-wjL" id="LGq-9M-XTO"/>
                         <outlet property="profilePicture" destination="0jD-Pv-qUQ" id="Mtw-aK-KqI"/>
                     </connections>
                 </viewController>

@@ -28,16 +28,23 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            
+            let uid = user?.uid
             
             // all users are a giant node with each individual user being their own node
             let ref = Database.database().reference()
             let usersReference = ref.child("users")
+            /*
+             Might need these for storing profile url to specific user
+            let profileRef = Database.database().reference()
+            let profileReference = profileRef.child("profileImage")
             
-            let uid = user?.uid
+             let profileImageReference = usersReference.child(uid!)
+             profileImageReference.setValue(["profileImage": nil])
+             */
+            
             let newUsersReference = usersReference.child(uid!)
             newUsersReference.setValue(["email": self.emailTextField.text!])
-            
+        
             print(newUsersReference.description()) // prints out link to database
         })
     }
