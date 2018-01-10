@@ -33,12 +33,12 @@ class ProfileUploadViewController: UIViewController {
     
     func sendDataToDatabase(profileImageUrl: String) {
         let userID = Auth.auth().currentUser?.uid
-       
         let ref = Database.database().reference().child("users").child(userID!)
         let profileImagesReference = ref.child("profileImages")
-        let profileID = profileImagesReference.childByAutoId().key
-        let newProfileImage = profileImagesReference.child(profileID)
-        newProfileImage.setValue(["profileImageURL": profileImageUrl])
+        profileImagesReference.setValue(["profileImageURL": profileImageUrl])
+       // let profileID = profileImagesReference.childByAutoId().key
+      //  let newProfileImage = profileImagesReference.child(profileID)
+      //  newProfileImage.setValue(["profileImageURL": profileImageUrl])
     }
   
     
