@@ -9,13 +9,15 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var profilePicture: UIImageView!
     
-    
+    var selectedImage: UIImage?
     
     
     override func viewDidLoad() {
@@ -24,6 +26,14 @@ class SignUpViewController: UIViewController {
         signUpButton.isEnabled = false
 
         // Do any additional setup after loading the view.
+        profilePicture.layer.cornerRadius = 40
+        profilePicture.clipsToBounds = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
+        profilePicture.addGestureRecognizer(tapGesture)
+        profilePicture.isUserInteractionEnabled = true
+        
+        signUpButton.isEnabled = false
         
         handleTextField()
       
@@ -45,12 +55,18 @@ class SignUpViewController: UIViewController {
         }
         
     }
+    
+    @objc func handleSelectProfileImageView() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+    }
+    
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
             displayAlertMessage(messageToDisplay: "Invalid Email Address.")
         }
-        
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
@@ -58,32 +74,29 @@ class SignUpViewController: UIViewController {
                 print(error?.localizedDescription as Any)
                 return
             }
-            
             let uid = user?.uid
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
-            // I have an idea for storing user profile pictures that will involve this code
-            /*
-             Might need these for storing profile url to specific user
-            let profileRef = Database.database().reference()
-            let profileReference = profileRef.child("profileImage")
+            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+                storageRef.putData(imageData, metadata: nil, completion: {
+                    (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                    self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
+                })
+                
+            }
             
-            let profileImageReference = usersReference.child(uid!)
-             profileImageReference.setValue(["profileImage": nil])
-             */
-            
-            
-        
-            //print(newUsersReference.description()) // prints out link to database
-            self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
         })
         
-        
     }
-    func setUserInformation(email: String, password: String, uid: String) {
+    func setUserInformation(email: String, password: String, uid: String, profileImgUrl: String) {
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
-        newUsersReference.setValue(["email": email, "passwords": password])
+        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl])
         
     }
     
@@ -125,6 +138,18 @@ class SignUpViewController: UIViewController {
         
         self.present(alertController, animated: true, completion:nil)
     }
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("Did finish picking picture")
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImage = image
+            profilePicture.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
