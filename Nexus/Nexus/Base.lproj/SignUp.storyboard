@@ -147,6 +147,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="NGv-ZG-xxU" id="BjV-sU-2If"/>
                         <outlet property="passwordTextField" destination="WPn-NY-sjE" id="4QR-Wk-ZIW"/>
+                        <outlet property="signUpButton" destination="EJf-by-b0A" id="ztX-R3-fxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>

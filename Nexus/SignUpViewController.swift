@@ -13,18 +13,39 @@ import FirebaseDatabase
 class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        handleTextField()
+    }
+    
+    func handleTextField() {
+        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+            print("Empty")
+            return
+        }
+        signUpButton.setTitleColor(UIColor.blue, for: UIControlState.normal)
+        print("filled")
     }
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 return
             }
             
@@ -48,4 +69,6 @@ class SignUpViewController: UIViewController {
             print(newUsersReference.description()) // prints out link to database
         })
     }
+    
 }
+
