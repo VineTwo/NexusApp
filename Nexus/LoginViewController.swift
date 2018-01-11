@@ -12,16 +12,17 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.5, alpha: 0.2)
     
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    // @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTextField.backgroundColor = textFieldColor
-        userNameTextField.tintColor = UIColor.lightText
-        userNameTextField.textColor = UIColor.black
-        userNameTextField.attributedPlaceholder = NSAttributedString(string: userNameTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.8)])
+        emailTextField.backgroundColor = textFieldColor
+        emailTextField.tintColor = UIColor.lightText
+        emailTextField.textColor = UIColor.black
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.8)])
         
         passwordTextField.backgroundColor = textFieldColor
         passwordTextField.tintColor = UIColor.gray
@@ -32,11 +33,11 @@ class LoginViewController: UIViewController {
         handleTextField()
     }
     func handleTextField() {
-        userNameTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
         passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     @objc func textFieldDidChange() {
-        guard let username = userNameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+        guard let username = emailTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             loginButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
             return
         }
@@ -45,7 +46,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
-        Auth.auth().signIn(withEmail: userNameTextField.text!, password: passwordTextField.text!, completion: { (user, Error) in
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, Error) in
             if Error != nil {
                 print(Error!.localizedDescription)
                 let errorCode = AuthErrorNameKey
