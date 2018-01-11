@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        signUpButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         
@@ -34,11 +36,10 @@ class SignUpViewController: UIViewController {
     @objc func textFieldDidChange() {
         guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-            print("Empty")
             return
         }
-        signUpButton.setTitleColor(UIColor.blue, for: UIControlState.normal)
-        print("filled")
+        signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        signUpButton.isEnabled = true
     }
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
@@ -51,23 +52,30 @@ class SignUpViewController: UIViewController {
             
             let uid = user?.uid
             
-            // all users are a giant node with each individual user being their own node
-            let ref = Database.database().reference()
-            let usersReference = ref.child("users")
+            // I have an idea for storing user profile pictures that will involve this code
             /*
              Might need these for storing profile url to specific user
             let profileRef = Database.database().reference()
             let profileReference = profileRef.child("profileImage")
             
-             let profileImageReference = usersReference.child(uid!)
+            let profileImageReference = usersReference.child(uid!)
              profileImageReference.setValue(["profileImage": nil])
              */
             
-            let newUsersReference = usersReference.child(uid!)
-            newUsersReference.setValue(["email": self.emailTextField.text!])
+            
         
-            print(newUsersReference.description()) // prints out link to database
+            //print(newUsersReference.description()) // prints out link to database
+            self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
         })
+        
+        
+    }
+    func setUserInformation(email: String, password: String, uid: String) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users")
+        let newUsersReference = usersReference.child(uid)
+        newUsersReference.setValue(["email": email, "passwords": password])
+        
     }
     
 }
