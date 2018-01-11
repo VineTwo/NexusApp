@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
         handleTextField()
     }
     func handleTextField() {
-        userNameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        userNameTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     @objc func textFieldDidChange() {
         guard let username = userNameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
