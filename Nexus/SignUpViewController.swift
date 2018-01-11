@@ -26,6 +26,7 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         handleTextField()
+      
     }
     
     func handleTextField() {
@@ -38,11 +39,19 @@ class SignUpViewController: UIViewController {
             signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
             return
         }
-        signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        signUpButton.isEnabled = true
+        if isValidEmailAddress(emailAddressString: emailTextField.text!) {
+            signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            signUpButton.isEnabled = true
+        }
+        
     }
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
+        if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
+            displayAlertMessage(messageToDisplay: "Invalid Email Address.")
+        }
+        
+        
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
@@ -78,5 +87,44 @@ class SignUpViewController: UIViewController {
         
     }
     
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var validEmail = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                validEmail = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            validEmail = false
+        }
+        
+        return  validEmail
+    }
+    
+    func displayAlertMessage(messageToDisplay: String)
+    {
+        let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            
+            // Code in this block will trigger when OK button tapped.
+            print("Ok button tapped");
+            
+        }
+        
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true, completion:nil)
+    }
 }
+
 
