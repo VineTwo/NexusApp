@@ -48,8 +48,18 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: userNameTextField.text!, password: passwordTextField.text!, completion: { (user, Error) in
             if Error != nil {
                 print(Error!.localizedDescription)
+                let errorCode = AuthErrorNameKey
+                    switch errorCode {
+                    case "FIRAuthErrorCodeInvalidEmail":
+                        print("Invalid email, please try again")
+                        self.loginButton.isEnabled = false
+                        break
+                    default:
+                        print("Unknown errors")
+                }
                 return
             }
+            print("No Error")
 
         })
     }
