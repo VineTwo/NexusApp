@@ -9,8 +9,10 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
+import GoogleSignIn
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -25,9 +27,17 @@ class SignUpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+        
+        // TODO(developer) Configure the sign-in button look/feel
+        // ...
+        
         handleTextField()
       
     }
+    
+    
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
