@@ -51,6 +51,7 @@ class SignUpViewController: UIViewController {
             displayAlertMessage(messageToDisplay: "Invalid Email Address.")
         }
         
+        
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
@@ -125,3 +126,5 @@ class SignUpViewController: UIViewController {
         self.present(alertController, animated: true, completion:nil)
     }
 }
+
+
