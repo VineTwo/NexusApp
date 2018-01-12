@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     var selectedImage: UIImage?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Google sign in

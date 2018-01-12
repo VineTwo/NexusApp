@@ -72,7 +72,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signInButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AUe-2i-8DZ"/>
-                                            <segue destination="l5D-da-D1D" kind="show" id="Hbw-Qj-A7M"/>
+                                            <segue destination="l5D-da-D1D" kind="presentation" id="Hbw-Qj-A7M"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -196,7 +196,7 @@
         <!--Profile-->
         <scene sceneID="gaI-EO-lKn">
             <objects>
-                <viewController id="zFF-db-Oxh" sceneMemberID="viewController">
+                <viewController id="zFF-db-Oxh" customClass="ProfileViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rhR-KY-V59">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +208,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAG-aK-Ps9">
+                                <rect key="frame" x="16" y="44" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Lgt-zx-kWI"/>
@@ -216,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG6-6c-dkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="112"/>
+            <point key="canvasLocation" x="2320.8000000000002" y="111.57635467980296"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hyO-hB-EAU">
