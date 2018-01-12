@@ -20,6 +20,9 @@
 		9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */; };
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
+		A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A30259682008975500479AF0 /* NexusLogoNobackground.png */; };
+		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
+		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
@@ -70,6 +73,9 @@
 		9DC436FB20019D4E00335A4A /* NexusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436FF20019D4E00335A4A /* NexusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexusUITests.swift; sourceTree = "<group>"; };
 		9DC4370120019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A30259682008975500479AF0 /* NexusLogoNobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NexusLogoNobackground.png; sourceTree = "<group>"; };
+		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A3447C872004291B008BAB5F /* profilePicture.png */,
+				A30259682008975500479AF0 /* NexusLogoNobackground.png */,
 				9D0BE7EC200324AA00945119 /* Snapchat.png */,
 				9D0BE7EA2003246400945119 /* Facebook.png */,
 				9D0BE7E22003243B00945119 /* Instagram.png */,
@@ -175,6 +182,8 @@
 			children = (
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
+				A331A07D20091519005776C2 /* ConnectViewController.swift */,
+				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
 				A368935C2005921D000E7C69 /* config.swift */,
 				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
 				A3DE18B72008761A00F0C819 /* nexus-Bridging-Header.h */,
@@ -333,6 +342,7 @@
 				9D0BE7E72003243B00945119 /* Twitter.png in Resources */,
 				9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */,
 				9D0BE7E62003243B00945119 /* Instagram.png in Resources */,
+				A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */,
 				9DC436E520019D4E00335A4A /* Main.storyboard in Resources */,
 				A3447C882004291B008BAB5F /* profilePicture.png in Resources */,
 			);
@@ -520,6 +530,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
+				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
 				A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
