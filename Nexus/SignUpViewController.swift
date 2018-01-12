@@ -98,6 +98,9 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
                 print(error?.localizedDescription as Any)
                 return
             }
+            else {
+                self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            }
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             

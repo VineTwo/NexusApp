@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="138-4L-8zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="983"/>
+            <point key="canvasLocation" x="201" y="983"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pW8-m6-W1X">
@@ -96,7 +96,6 @@
                                 </state>
                                 <connections>
                                     <action selector="SignUpBtn_TouchUpInside:" destination="6EM-Ke-819" eventType="touchUpInside" id="EsZ-De-zEz"/>
-                                    <segue destination="3Ic-TF-SLL" kind="show" id="icz-Ho-h7T"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WPn-NY-sjE">
@@ -145,11 +144,12 @@
                         <outlet property="passwordTextField" destination="WPn-NY-sjE" id="4QR-Wk-ZIW"/>
                         <outlet property="profilePicture" destination="oQ2-0M-zTN" id="5GY-PQ-JT5"/>
                         <outlet property="signUpButton" destination="EJf-by-b0A" id="ztX-R3-fxa"/>
+                        <segue destination="3Ic-TF-SLL" kind="presentation" identifier="signUpSegue" id="xHb-Kz-i4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="983"/>
+            <point key="canvasLocation" x="-756" y="983"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fi9-6d-9iW">
