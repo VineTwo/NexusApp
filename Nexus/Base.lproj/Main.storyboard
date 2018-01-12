@@ -42,7 +42,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-yF-qUB">
                                 <rect key="frame" x="20" y="324" width="335.33333333333331" height="164"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-HO-vKw">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-HO-vKw">
                                         <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Shz-g4-LZu"/>
@@ -51,7 +51,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-9S-Dzr">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-9S-Dzr">
                                         <rect key="frame" x="0.0" y="60" width="335.33333333333331" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5IL-7S-eFM"/>
@@ -72,7 +72,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signInButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AUe-2i-8DZ"/>
-                                            <segue destination="b4W-4i-PCq" kind="presentation" id="Qww-RQ-y7Q"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,11 +120,12 @@
                         <outlet property="emailTextField" destination="BTG-HO-vKw" id="aZ2-jQ-Yiq"/>
                         <outlet property="loginButton" destination="tja-bd-liJ" id="iNI-qS-jab"/>
                         <outlet property="passwordTextField" destination="RRZ-9S-Dzr" id="oNY-yZ-XLr"/>
+                        <segue destination="b4W-4i-PCq" kind="presentation" identifier="signInToTabBarVC" id="i1w-fm-y3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="111"/>
+            <point key="canvasLocation" x="-262" y="111"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="lk9-FD-QaR">
