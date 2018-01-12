@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="138-4L-8zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.60000000000002" y="982.75862068965523"/>
+            <point key="canvasLocation" x="1180" y="983"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pW8-m6-W1X">
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="982.75862068965523"/>
+            <point key="canvasLocation" x="-559" y="983"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fi9-6d-9iW">
@@ -589,7 +589,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOz-TU-Mdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.5999999999999" y="984.97536945812817"/>
+            <point key="canvasLocation" x="2558" y="983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ikl-hu-IuN">
@@ -609,7 +609,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMT-Fr-TvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687" y="1649"/>
+            <point key="canvasLocation" x="-1631" y="983"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mN8-yb-lXS">
@@ -645,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.5999999999999" y="1796.305418719212"/>
+            <point key="canvasLocation" x="2558" y="1817"/>
         </scene>
         <!--UIViewController-BYZ-38-t0r-->
         <scene sceneID="6Ds-re-Beu">
