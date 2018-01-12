@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-    let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.5, alpha: 0.2)
+    let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.4, alpha: 0.2)
     
     @IBOutlet weak var emailTextField: UITextField!
     // @IBOutlet weak var userNameTextField: UITextField!
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         emailTextField.backgroundColor = textFieldColor
         emailTextField.tintColor = UIColor.lightText
         emailTextField.textColor = UIColor.black
-        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.8)])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
         
         passwordTextField.backgroundColor = textFieldColor
         passwordTextField.tintColor = UIColor.gray
@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         loginButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         handleTextField()
+        loginButton.backgroundColor = UIColor.clear
     }
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
@@ -48,9 +49,11 @@ class LoginViewController: UIViewController {
     @objc func textFieldDidChange() {
         guard let username = emailTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             loginButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+            loginButton.backgroundColor = UIColor.clear
             return
         }
         loginButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        loginButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
         loginButton.isEnabled = true
     }
     
