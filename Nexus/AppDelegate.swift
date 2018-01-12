@@ -8,15 +8,30 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+   
+    
+    
+    private func application(application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Initialize sign-in
+        
+        
+        return true
+    }
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        //For google Sign in
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         // Override point for customization after application launch.
         var navigationBarAppearance = UINavigationBar.appearance()
         
@@ -29,6 +44,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.shadowImage = UIImage()
         navigationBarAppearance.tintColor = UIColor.black;
         return true
+    }
+    //Google signin
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+    //Google signin
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let err = error {
+            print("Failed to login:", err)
+            return
+        }
+        print("Login successfull", user)
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if let err = error {
+                print("Failed to create Firebase user with Google account", err)
+                return
+            }
+            // User is signed in
+            guard let uid = user?.uid else {return}
+            print("Successfuly logged into Firebase with Google Account", uid)
+        }
+    }
+    //Google signin
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

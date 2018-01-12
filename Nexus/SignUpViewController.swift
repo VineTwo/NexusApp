@@ -10,8 +10,9 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import GoogleSignIn
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -22,6 +23,11 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Google sign in
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+        
+        
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         signUpButton.isEnabled = false
 
@@ -36,7 +42,24 @@ class SignUpViewController: UIViewController {
         signUpButton.isEnabled = false
         
         handleTextField()
+        
+        //google
+        let googleButton = GIDSignInButton()
+        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width, height: 36)
+        view.addSubview(googleButton)
+        
       
+    }
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+                withError error: NSError!) {
+        if (error == nil) {
+            let email = user.profile.email
+            let userID = user.userID
+            let blank = " "
+            setUserInformation(email: email!, password: blank, uid: userID!, profileImgUrl: blank)
+        } else {
+            print("\(error.localizedDescription)")
+        }
     }
     
     func handleTextField() {
