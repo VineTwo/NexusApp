@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var profilePicture: UIImageView!
     
     var selectedImage: UIImage?
+    var defaultImage: UIImage?
     
     
     
@@ -53,11 +54,10 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     }
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
                 withError error: NSError!) {
+        print("Google")
         if (error == nil) {
-            let email = user.profile.email
-            let userID = user.userID
-            let blank = " "
-            setUserInformation(email: email!, password: blank, uid: userID!, profileImgUrl: blank)
+            print("No error from signupVC")
+           return
         } else {
             print("\(error.localizedDescription)")
         }
@@ -98,9 +98,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
                 print(error?.localizedDescription as Any)
                 return
             }
-            else {
-                self.performSegue(withIdentifier: "signUpSegue", sender: nil)
-            }
+        
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
@@ -108,22 +106,31 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
                 storageRef.putData(imageData, metadata: nil, completion: {
                     (metadata, error) in
                     if error != nil {
-                        return
+                        print("Error when no profile selected")
+                      // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
                     self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
                 
             }
-            
+            else {
+                self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!, profileImgUrl: " ")
+               // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
+
+            }
+
         })
-        
+
     }
+ 
     func setUserInformation(email: String, password: String, uid: String, profileImgUrl: String) {
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
         newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl])
+        print("Added to database")
+        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
         
     }
     
