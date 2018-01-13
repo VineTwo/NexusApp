@@ -17,13 +17,14 @@
 		9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436DF20019D4E00335A4A /* AppDelegate.swift */; };
 		9DC436E520019D4E00335A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E320019D4E00335A4A /* Main.storyboard */; };
 		9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E620019D4E00335A4A /* Assets.xcassets */; };
-		9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */; };
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
 		A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A30259682008975500479AF0 /* NexusLogoNobackground.png */; };
 		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
 		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
+		A3456513200A5237005B8330 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3456512200A5237005B8330 /* LaunchScreenViewController.swift */; };
+		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
@@ -66,7 +67,6 @@
 		9DC436DF20019D4E00335A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC436E420019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DC436E620019D4E00335A4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DC436E920019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DC436EB20019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC436F020019D4E00335A4A /* NexusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436F420019D4E00335A4A /* NexusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexusTests.swift; sourceTree = "<group>"; };
@@ -78,6 +78,8 @@
 		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
+		A3456512200A5237005B8330 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -191,11 +193,12 @@
 				A3DE18B72008761A00F0C819 /* nexus-Bridging-Header.h */,
 				A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
+				A3456512200A5237005B8330 /* LaunchScreenViewController.swift */,
 				A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
 				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
+				A3456514200A5301005B8330 /* Launch Screen.storyboard */,
 				9DC436E620019D4E00335A4A /* Assets.xcassets */,
-				9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */,
 				9DC436EB20019D4E00335A4A /* Info.plist */,
 				A34C3B89200310EE00C256FE /* GoogleService-Info.plist */,
 			);
@@ -337,10 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0BE7EB2003246400945119 /* Facebook.png in Resources */,
-				9DC436EA20019D4E00335A4A /* LaunchScreen.storyboard in Resources */,
 				9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */,
 				A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */,
 				A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */,
+				A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */,
 				9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */,
 				9D0BE7E72003243B00945119 /* Twitter.png in Resources */,
 				9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */,
@@ -536,6 +539,7 @@
 			files = (
 				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
 				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
+				A3456513200A5237005B8330 /* LaunchScreenViewController.swift in Sources */,
 				A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
@@ -582,14 +586,6 @@
 				9DC436E420019D4E00335A4A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9DC436E820019D4E00335A4A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DC436E920019D4E00335A4A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		A34C3B862002EA1500C256FE /* SignUp.storyboard */ = {
