@@ -634,7 +634,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sju-cF-ZOq" kind="presentation" id="Kug-kk-9gF"/>
+                                    <segue destination="SVU-Xz-BUb" kind="presentation" id="lRo-Mc-3FB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -646,6 +646,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2558" y="1817"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="yxn-Nz-alb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="SVU-Xz-BUb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDH-nR-fIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="2225"/>
         </scene>
         <!--UIViewController-BYZ-38-t0r-->
         <scene sceneID="6Ds-re-Beu">
@@ -664,7 +672,4 @@
         <image name="Twitter.png" width="512" height="512"/>
         <image name="profilePicture.png" width="640" height="640"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mUu-pH-gcV"/>
-    </inferredMetricsTieBreakers>
 </document>

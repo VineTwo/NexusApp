@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initialize sign-in
         
-        
         return true
     }
 
@@ -84,6 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let newUsersReference = usersReference.child(uid)
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
             print("Successfuly in firebase auth and database", uid)
+
         }
     }
     //Google signin

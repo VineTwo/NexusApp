@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7u-p3-apX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,7 +36,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8bY-IJ-Vtx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="toA-8N-7YC"/>
+                    <navigationItem key="navigationItem" title="Profile" id="toA-8N-7YC">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="KHl-ex-17N">
+                            <connections>
+                                <action selector="signOut_TouchUpInside:" destination="hTM-uw-5oA" id="STs-rn-tuy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

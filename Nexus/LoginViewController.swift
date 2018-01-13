@@ -8,8 +8,10 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
+    
     let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.4, alpha: 0.2)
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,6 +30,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         emailTextField.tintColor = UIColor.lightText
         emailTextField.textColor = UIColor.black
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
@@ -52,6 +56,7 @@ class LoginViewController: UIViewController {
         
         handleTextField()
     }
+    
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)

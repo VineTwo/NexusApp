@@ -134,6 +134,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         
     }
     
+    
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
         var validEmail = true
@@ -185,5 +186,3 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
 }
-
-

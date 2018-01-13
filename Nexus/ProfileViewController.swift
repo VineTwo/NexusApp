@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -15,12 +16,20 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func signOut_TouchUpInside(_ sender: Any) {
+        print(Auth.auth().currentUser!)
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        print(Auth.auth().currentUser)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
+        self.present(signInVC, animated: true, completion: nil)
     }
     
-
- 
+    
 
 }
