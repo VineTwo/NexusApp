@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var signUpErrorLabel: UILabel!
     
     var selectedImage: UIImage?
     var defaultImage: UIImage?
@@ -25,6 +26,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpErrorLabel.isHidden = true
         //Google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -60,6 +62,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
            return
         } else {
             print("\(error.localizedDescription)")
+            print("Error")
         }
     }
     
@@ -95,6 +98,13 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
+                self.signUpErrorLabel.isHidden = false
+                if error?.localizedDescription == "The email address is already in use by another account." {
+                    self.signUpErrorLabel.text = "Sign up error. Email already used."
+                }
+                if error?.localizedDescription == "The password must be 6 characters long or more." {
+                    self.signUpErrorLabel.text = "Password must be 6 characters."
+                }
                 print(error?.localizedDescription as Any)
                 return
             }
