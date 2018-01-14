@@ -12,7 +12,9 @@ import FirebaseDatabase
 import FirebaseStorage
 import GoogleSignIn
 
-class SignUpViewController: UIViewController, GIDSignInUIDelegate {
+class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+  
+    
   /*
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let err = error {
@@ -42,7 +44,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         //Google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
-        //GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().delegate = self
         
         
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
@@ -64,10 +66,11 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         let googleButton = GIDSignInButton()
         googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width - 32, height: 36)
         view.addSubview(googleButton)
+       
         
       
     }
-    /*
+    
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
         if let err = error {
             print(err)
@@ -76,7 +79,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
             self.performSegue(withIdentifier: "PageTwoSignUp", sender: nil)
         }
     }
- */
+ /*
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
                 withError error: NSError!) {
         print("Google")
@@ -88,6 +91,39 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
             print("Error")
         }
 
+    }
+    */
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Failed to login:", err)
+            return
+        }
+        print("Login successfull", user)
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if let err = error {
+                print("Failed to create Firebase user with Google account", err)
+                return
+            }
+            // User is signed in
+            guard let uid = user?.uid else {return}
+            var phone = " "
+            let email = user?.email
+            if user?.phoneNumber != nil {
+                phone = (user?.phoneNumber)!
+            }
+            let name = user?.displayName
+            let ref = Database.database().reference()
+            let usersReference = ref.child("GoogleUsers")
+            let newUsersReference = usersReference.child(uid)
+            newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
+            print("Successfuly in firebase auth and database", uid)
+            print("before segue")
+            self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+        }
     }
  
     

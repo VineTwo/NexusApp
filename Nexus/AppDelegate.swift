@@ -84,8 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
             print("Successfuly in firebase auth and database", uid)
             print("before segue")
-          //  let mainStoryboard: UIStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
-            self.window?.rootViewController?.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+            let viewController: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(viewController, animated: true)
+           // self.window?.rootViewController?.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            //SignUpViewController.SignUpBtn_TouchUpInside()
             
         }
     }

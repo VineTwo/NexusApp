@@ -67,7 +67,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="pW8-m6-W1X">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="6EM-Ke-819" customClass="SignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" extendedLayoutIncludesOpaqueBars="YES" id="6EM-Ke-819" customClass="SignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vS-MM-juE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
