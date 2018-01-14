@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         
         //google
         let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width, height: 36)
+        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width - 32, height: 36)
         view.addSubview(googleButton)
         
       

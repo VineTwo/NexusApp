@@ -23,7 +23,6 @@
 		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
 		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
-		A3456513200A5237005B8330 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3456512200A5237005B8330 /* LaunchScreenViewController.swift */; };
 		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
@@ -78,7 +77,6 @@
 		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
-		A3456512200A5237005B8330 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				A3DE18B72008761A00F0C819 /* nexus-Bridging-Header.h */,
 				A357DCDE200266CC00A2D517 /* PageTwoSignUpViewController.swift */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
-				A3456512200A5237005B8330 /* LaunchScreenViewController.swift */,
 				A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
 				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
@@ -539,7 +536,6 @@
 			files = (
 				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
 				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
-				A3456513200A5237005B8330 /* LaunchScreenViewController.swift in Sources */,
 				A357DCDF200266CC00A2D517 /* PageTwoSignUpViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
