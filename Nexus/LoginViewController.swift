@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginErrorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
-    // @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func signOutButton_TouchUpInside(_ sender: Any) {

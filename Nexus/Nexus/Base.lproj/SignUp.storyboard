@@ -13,7 +13,7 @@
         <!--Page Two Sign Up View Controller-->
         <scene sceneID="yBX-Xb-KVc">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="3Ic-TF-SLL" customClass="PageTwoSignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageTwoSignUp" extendedLayoutIncludesOpaqueBars="YES" id="3Ic-TF-SLL" customClass="PageTwoSignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqo-cg-Mjp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,15 +13,27 @@ import FirebaseStorage
 import GoogleSignIn
 
 class SignUpViewController: UIViewController, GIDSignInUIDelegate {
+  /*
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print(err)
+        }
+        else {
+            print("Helllooo")
+          //  self.performSegue(withIdentifier: "GoogleSegue", sender: nil)
+        }
+    }
+ */
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var signUpErrorLabel: UILabel!
+   // @IBOutlet weak var signInButton: GIDSignInButton!
     
     var selectedImage: UIImage?
     var defaultImage: UIImage?
-    
     
     
     override func viewDidLoad() {
@@ -30,6 +42,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         //Google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
+        //GIDSignIn.sharedInstance().delegate = self
         
         
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
@@ -54,6 +67,16 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         
       
     }
+    /*
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        if let err = error {
+            print(err)
+        }
+        else {
+            self.performSegue(withIdentifier: "PageTwoSignUp", sender: nil)
+        }
+    }
+ */
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
                 withError error: NSError!) {
         print("Google")
@@ -64,7 +87,9 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
             print("\(error.localizedDescription)")
             print("Error")
         }
+
     }
+ 
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
@@ -143,7 +168,23 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         self.performSegue(withIdentifier: "signUpSegue", sender: nil)
         
     }
-    
+  /*
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let err = error {
+            print("Failed to login:", err)
+            return
+        }
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        let email = user.profile.email
+        if email != nil {
+            self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
+        }
+       
+    }
+ */
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         

@@ -83,7 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let newUsersReference = usersReference.child(uid)
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
             print("Successfuly in firebase auth and database", uid)
-
+            print("before segue")
+          //  let mainStoryboard: UIStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
+            self.window?.rootViewController?.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            
         }
     }
     //Google signin
