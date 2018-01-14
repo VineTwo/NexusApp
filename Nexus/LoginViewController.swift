@@ -89,6 +89,16 @@ class LoginViewController: UIViewController {
             if Error != nil {
                 self.loginErrorLabel.isHidden = false
                 print(Error!.localizedDescription)
+                if Error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
+                    self.loginErrorLabel.text = "The account does not exist."
+                }
+                if Error?.localizedDescription == "The password is invalid or the user does not have a password." {
+                    self.loginErrorLabel.text = "The password is incorrect."
+                }
+                if Error?.localizedDescription == "The email address is badly formatted." {
+                    self.loginErrorLabel.text = "The email address is incorrect"
+                }
+                
             }
             else {
                 self.loginErrorLabel.isHidden = true
