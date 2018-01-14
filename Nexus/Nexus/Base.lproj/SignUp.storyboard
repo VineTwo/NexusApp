@@ -13,7 +13,7 @@
         <!--Page Two Sign Up View Controller-->
         <scene sceneID="yBX-Xb-KVc">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="3Ic-TF-SLL" customClass="PageTwoSignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageTwoSignUp" extendedLayoutIncludesOpaqueBars="YES" id="3Ic-TF-SLL" customClass="PageTwoSignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqo-cg-Mjp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,17 +62,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="138-4L-8zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="983"/>
+            <point key="canvasLocation" x="201" y="983"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pW8-m6-W1X">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="6EM-Ke-819" customClass="SignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" extendedLayoutIncludesOpaqueBars="YES" id="6EM-Ke-819" customClass="SignUpViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vS-MM-juE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create username and password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-a2-P0s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-a2-P0s">
                                 <rect key="frame" x="10" y="88" width="354" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -80,14 +80,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NGv-ZG-xxU">
-                                <rect key="frame" x="16" y="314" width="343" height="30"/>
+                                <rect key="frame" x="16" y="410" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJf-by-b0A">
-                                <rect key="frame" x="16" y="489" width="343" height="36"/>
+                                <rect key="frame" x="16" y="542" width="343" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Sign Up">
@@ -96,18 +96,17 @@
                                 </state>
                                 <connections>
                                     <action selector="SignUpBtn_TouchUpInside:" destination="6EM-Ke-819" eventType="touchUpInside" id="EsZ-De-zEz"/>
-                                    <segue destination="3Ic-TF-SLL" kind="show" id="icz-Ho-h7T"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WPn-NY-sjE">
-                                <rect key="frame" x="16" y="391" width="343" height="30"/>
+                                <rect key="frame" x="16" y="479" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-vS-aEA">
-                                <rect key="frame" x="175" y="560" width="24" height="21"/>
+                                <rect key="frame" x="175" y="597" width="24" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -134,6 +133,20 @@
                                 <rect key="frame" x="108" y="146" width="158" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter an email and password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtH-Xm-Ugj">
+                                <rect key="frame" x="16" y="306" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up error." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVD-Su-8QO">
+                                <rect key="frame" x="16" y="352" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,11 +158,13 @@
                         <outlet property="passwordTextField" destination="WPn-NY-sjE" id="4QR-Wk-ZIW"/>
                         <outlet property="profilePicture" destination="oQ2-0M-zTN" id="5GY-PQ-JT5"/>
                         <outlet property="signUpButton" destination="EJf-by-b0A" id="ztX-R3-fxa"/>
+                        <outlet property="signUpErrorLabel" destination="PVD-Su-8QO" id="GLk-tc-KDV"/>
+                        <segue destination="3Ic-TF-SLL" kind="presentation" identifier="signUpSegue" id="xHb-Kz-i4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="983"/>
+            <point key="canvasLocation" x="-756" y="982.75862068965523"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fi9-6d-9iW">
@@ -634,7 +649,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sju-cF-ZOq" kind="presentation" id="Kug-kk-9gF"/>
+                                    <segue destination="SVU-Xz-BUb" kind="presentation" id="lRo-Mc-3FB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -646,6 +661,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hN-Eb-yDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2558" y="1817"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="yxn-Nz-alb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="SVU-Xz-BUb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDH-nR-fIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="2225"/>
         </scene>
         <!--UIViewController-BYZ-38-t0r-->
         <scene sceneID="6Ds-re-Beu">
@@ -664,7 +687,4 @@
         <image name="Twitter.png" width="512" height="512"/>
         <image name="profilePicture.png" width="640" height="640"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mUu-pH-gcV"/>
-    </inferredMetricsTieBreakers>
 </document>

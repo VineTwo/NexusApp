@@ -21,47 +21,43 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cEE-Wz-cr2">
                                 <rect key="frame" x="115" y="124" width="145" height="54"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jBL-EA-R8l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-VF-vpS">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-yF-qUB">
-                                <rect key="frame" x="20" y="334" width="335.33333333333331" height="144"/>
+                                <rect key="frame" x="20" y="304.33333333333331" width="335.33333333333331" height="204.33333333333331"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-HO-vKw">
-                                        <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login error. Incorrect email or password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-1m-yoP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-HO-vKw">
+                                        <rect key="frame" x="0.0" y="40.333333333333371" width="335.33333333333331" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Shz-g4-LZu"/>
+                                            <constraint firstAttribute="height" constant="40" id="Shz-g4-LZu"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-9S-Dzr">
-                                        <rect key="frame" x="0.0" y="50" width="335.33333333333331" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-9S-Dzr">
+                                        <rect key="frame" x="0.0" y="100.33333333333337" width="335.33333333333331" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="5IL-7S-eFM"/>
+                                            <constraint firstAttribute="height" constant="40" id="5IL-7S-eFM"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tja-bd-liJ">
-                                        <rect key="frame" x="0.0" y="100" width="335.33333333333331" height="44"/>
+                                        <rect key="frame" x="0.0" y="160.33333333333337" width="335.33333333333331" height="44"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="4jd-jj-awJ"/>
@@ -72,7 +68,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signInButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AUe-2i-8DZ"/>
-                                            <segue destination="d7u-p3-apX" kind="presentation" id="Qww-RQ-y7Q"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,10 +85,6 @@
                                     <segue destination="dMv-Aq-Hos" kind="show" id="I9M-m6-u2P"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NexusLogoNobackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="xz7-19-jTM">
-                                <rect key="frame" x="149" y="186" width="77" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-Aq-K1j">
                                 <rect key="frame" x="149" y="590" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,8 +93,12 @@
                                     <action selector="signOutButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EzQ-vA-Bfg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NexusLogoNobackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="xz7-19-jTM">
+                                <rect key="frame" x="149" y="176" width="77" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333333333331" green="0.80000000000000004" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33285233378410339" green="0.79865586757659912" blue="0.93291705846786499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WRX-GP-bxb" secondAttribute="bottom" constant="25" id="S6n-vv-1gM"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wei-cq-aEj"/>
@@ -120,12 +115,14 @@
                     <connections>
                         <outlet property="emailTextField" destination="BTG-HO-vKw" id="aZ2-jQ-Yiq"/>
                         <outlet property="loginButton" destination="tja-bd-liJ" id="iNI-qS-jab"/>
+                        <outlet property="loginErrorLabel" destination="7dO-1m-yoP" id="D6m-tZ-g7z"/>
                         <outlet property="passwordTextField" destination="RRZ-9S-Dzr" id="oNY-yZ-XLr"/>
+                        <segue destination="b4W-4i-PCq" kind="presentation" identifier="signInToTabBarVC" id="i1w-fm-y3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="111"/>
+            <point key="canvasLocation" x="-262" y="111"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="lk9-FD-QaR">
@@ -135,100 +132,16 @@
             </objects>
             <point key="canvasLocation" x="-294" y="980"/>
         </scene>
-        <!--Connect-->
-        <scene sceneID="Ycj-vI-WHN">
+        <!--TabBarID-->
+        <scene sceneID="vKx-3Z-lR1">
             <objects>
-                <viewController id="GGr-jJ-shn" customClass="ConnectViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3mB-xB-NQH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="osI-6W-hfq"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Connect" id="U37-gZ-xtK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="627"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="fOy-vw-SPb">
-            <objects>
-                <viewController id="hTM-uw-5oA" customClass="ProfileViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eS7-Cf-JMX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8bY-IJ-Vtx"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Profile" id="toA-8N-7YC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="-540"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wxJ-uA-vde">
-            <objects>
-                <tabBarController id="d7u-p3-apX" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1fP-DC-1ZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="tc1-PC-cPX" kind="relationship" relationship="viewControllers" id="sms-ZL-M3I"/>
-                        <segue destination="WcA-Gy-PoJ" kind="relationship" relationship="viewControllers" id="q8v-dj-N7i"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="upF-AE-lMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarID" storyboardName="TabBar" referencedIdentifier="TabBarID" id="b4W-4i-PCq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2uD-GD-ZKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773" y="111"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cd6-hA-361">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc1-PC-cPX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="Y4P-9x-eCn">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qCE-YO-MOy">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="cSj-7B-2hQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t4U-kg-jg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2097" y="-540"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HNr-hq-VNx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcA-Gy-PoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="ZCl-Tw-NYF"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WrG-MJ-cX8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GGr-jJ-shn" kind="relationship" relationship="rootViewController" id="7Qd-AE-l2K"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2097" y="627"/>
         </scene>
     </scenes>
     <resources>
         <image name="NexusLogoNobackground.png" width="180" height="180"/>
-        <image name="Profile" width="20" height="21"/>
-        <image name="Profile_Selected" width="20" height="21"/>
     </resources>
 </document>

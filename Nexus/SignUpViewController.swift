@@ -12,28 +12,46 @@ import FirebaseDatabase
 import FirebaseStorage
 import GoogleSignIn
 
-class SignUpViewController: UIViewController, GIDSignInUIDelegate {
+class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+  
+    
+  /*
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print(err)
+        }
+        else {
+            print("Helllooo")
+          //  self.performSegue(withIdentifier: "GoogleSegue", sender: nil)
+        }
+    }
+ */
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var signUpErrorLabel: UILabel!
+   // @IBOutlet weak var signInButton: GIDSignInButton!
     
     var selectedImage: UIImage?
-    
+    var defaultImage: UIImage?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpErrorLabel.isHidden = true
         //Google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
+        GIDSignIn.sharedInstance().delegate = self
         
         
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         signUpButton.isEnabled = false
 
         // Do any additional setup after loading the view.
-        profilePicture.layer.cornerRadius = 40
+        profilePicture.layer.cornerRadius = 30
         profilePicture.clipsToBounds = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
@@ -46,22 +64,68 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         
         //google
         let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width, height: 36)
+        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width - 32, height: 36)
         view.addSubview(googleButton)
+       
         
       
     }
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
-                withError error: NSError!) {
-        if (error == nil) {
-            let email = user.profile.email
-            let userID = user.userID
-            let blank = " "
-            setUserInformation(email: email!, password: blank, uid: userID!, profileImgUrl: blank)
-        } else {
-            print("\(error.localizedDescription)")
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        if let err = error {
+            print(err)
+        }
+        else {
+            self.performSegue(withIdentifier: "PageTwoSignUp", sender: nil)
         }
     }
+ /*
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+                withError error: NSError!) {
+        print("Google")
+        if (error == nil) {
+            print("No error from signupVC")
+           return
+        } else {
+            print("\(error.localizedDescription)")
+            print("Error")
+        }
+
+    }
+    */
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Failed to login:", err)
+            return
+        }
+        print("Login successfull", user)
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if let err = error {
+                print("Failed to create Firebase user with Google account", err)
+                return
+            }
+            // User is signed in
+            guard let uid = user?.uid else {return}
+            var phone = " "
+            let email = user?.email
+            if user?.phoneNumber != nil {
+                phone = (user?.phoneNumber)!
+            }
+            let name = user?.displayName
+            let ref = Database.database().reference()
+            let usersReference = ref.child("GoogleUsers")
+            let newUsersReference = usersReference.child(uid)
+            newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
+            print("Successfuly in firebase auth and database", uid)
+            print("before segue")
+            self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+        }
+    }
+ 
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
@@ -95,9 +159,17 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
+                self.signUpErrorLabel.isHidden = false
+                if error?.localizedDescription == "The email address is already in use by another account." {
+                    self.signUpErrorLabel.text = "Sign up error. Email already used."
+                }
+                if error?.localizedDescription == "The password must be 6 characters long or more." {
+                    self.signUpErrorLabel.text = "Password must be 6 characters."
+                }
                 print(error?.localizedDescription as Any)
                 return
             }
+        
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
@@ -105,24 +177,50 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
                 storageRef.putData(imageData, metadata: nil, completion: {
                     (metadata, error) in
                     if error != nil {
-                        return
+                        print("Error when no profile selected")
+                      // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
                     self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
                 
             }
-            
+            else {
+                self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!, profileImgUrl: " ")
+               // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
+
+            }
+
         })
-        
+
     }
+ 
     func setUserInformation(email: String, password: String, uid: String, profileImgUrl: String) {
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
         newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl])
+        print("Added to database")
+        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
         
     }
+  /*
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let err = error {
+            print("Failed to login:", err)
+            return
+        }
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        let email = user.profile.email
+        if email != nil {
+            self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
+        }
+       
+    }
+ */
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
@@ -175,5 +273,3 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
 }
-
-

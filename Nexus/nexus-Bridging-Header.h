@@ -9,5 +9,6 @@
 #ifndef Header_h
 #define Header_h
 #import <Google.SignIn.h>
+#import <GoogleSignIn/GoogleSignIn.h>
 
 #endif /* Header_h */

@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+import FirebaseDatabase
 import GoogleSignIn
 
 @UIApplicationMain
@@ -18,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     private func application(application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initialize sign-in
-        
         
         return true
     }
@@ -71,7 +72,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             // User is signed in
             guard let uid = user?.uid else {return}
-            print("Successfuly logged into Firebase with Google Account", uid)
+            var phone = " "
+            let email = user?.email
+            if user?.phoneNumber != nil {
+                phone = (user?.phoneNumber)!
+            }
+            let name = user?.displayName
+            let ref = Database.database().reference()
+            let usersReference = ref.child("GoogleUsers")
+            let newUsersReference = usersReference.child(uid)
+            newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
+            print("Successfuly in firebase auth and database", uid)
+            print("before segue")
+            let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+            let viewController: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(viewController, animated: true)
+           // self.window?.rootViewController?.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            //SignUpViewController.SignUpBtn_TouchUpInside()
+            
         }
     }
     //Google signin
