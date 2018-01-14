@@ -8,11 +8,16 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class PageTwoSignUpViewController: UIViewController {
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
+    @IBAction func nextButton_TouchUpInside(_ sender: Any) {
+        addName()
+        self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +27,14 @@ class PageTwoSignUpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    func addName() {
+        let userID = Auth.auth().currentUser?.uid
+        let fullName = self.fullNameTextField.text
+        let ref = Database.database().reference()
+        let namePath = ref.child("users").child(userID!).child("FullName")
+        namePath.setValue([fullName])
+        
+    }
 
 }

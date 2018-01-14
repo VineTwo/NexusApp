@@ -65,8 +65,8 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         
         signUpButton.isEnabled = false
         signUpButton.layer.cornerRadius = 10.0
-        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-        signUpButton.backgroundColor = UIColor.clear
+       // signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+       // signUpButton.backgroundColor = UIColor.clear
         
         // Do any additional setup after loading the view.
         profilePicture.layer.cornerRadius = 30
