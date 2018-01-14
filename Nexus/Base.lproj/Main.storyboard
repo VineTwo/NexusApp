@@ -21,29 +21,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cEE-Wz-cr2">
                                 <rect key="frame" x="115" y="124" width="145" height="54"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jBL-EA-R8l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-VF-vpS">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-yF-qUB">
-                                <rect key="frame" x="20" y="324" width="335.33333333333331" height="164"/>
+                                <rect key="frame" x="20" y="304.33333333333331" width="335.33333333333331" height="204.33333333333331"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login error. Incorrect email or password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-1m-yoP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-HO-vKw">
-                                        <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="40"/>
+                                        <rect key="frame" x="0.0" y="40.333333333333371" width="335.33333333333331" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Shz-g4-LZu"/>
                                         </constraints>
@@ -52,7 +48,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-9S-Dzr">
-                                        <rect key="frame" x="0.0" y="60" width="335.33333333333331" height="40"/>
+                                        <rect key="frame" x="0.0" y="100.33333333333337" width="335.33333333333331" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5IL-7S-eFM"/>
                                         </constraints>
@@ -61,7 +57,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tja-bd-liJ">
-                                        <rect key="frame" x="0.0" y="120" width="335.33333333333331" height="44"/>
+                                        <rect key="frame" x="0.0" y="160.33333333333337" width="335.33333333333331" height="44"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="4jd-jj-awJ"/>
@@ -89,10 +85,6 @@
                                     <segue destination="dMv-Aq-Hos" kind="show" id="I9M-m6-u2P"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NexusLogoNobackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="xz7-19-jTM">
-                                <rect key="frame" x="149" y="186" width="77" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-Aq-K1j">
                                 <rect key="frame" x="149" y="590" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,6 +93,10 @@
                                     <action selector="signOutButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EzQ-vA-Bfg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NexusLogoNobackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="xz7-19-jTM">
+                                <rect key="frame" x="149" y="176" width="77" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233378410339" green="0.79865586757659912" blue="0.93291705846786499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -119,6 +115,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="BTG-HO-vKw" id="aZ2-jQ-Yiq"/>
                         <outlet property="loginButton" destination="tja-bd-liJ" id="iNI-qS-jab"/>
+                        <outlet property="loginErrorLabel" destination="7dO-1m-yoP" id="D6m-tZ-g7z"/>
                         <outlet property="passwordTextField" destination="RRZ-9S-Dzr" id="oNY-yZ-XLr"/>
                         <segue destination="b4W-4i-PCq" kind="presentation" identifier="signInToTabBarVC" id="i1w-fm-y3v"/>
                     </connections>

@@ -34,7 +34,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate {
         signUpButton.isEnabled = false
 
         // Do any additional setup after loading the view.
-        profilePicture.layer.cornerRadius = 40
+        profilePicture.layer.cornerRadius = 30
         profilePicture.clipsToBounds = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     
     let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.4, alpha: 0.2)
     
+    @IBOutlet weak var loginErrorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     // @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -30,7 +31,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginErrorLabel.isHidden = true
+        loginErrorLabel.textColor = UIColor.red
         
         emailTextField.tintColor = UIColor.lightText
         emailTextField.textColor = UIColor.black
@@ -85,9 +87,11 @@ class LoginViewController: UIViewController {
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, Error) in
             if Error != nil {
+                self.loginErrorLabel.isHidden = false
                 print(Error!.localizedDescription)
             }
             else {
+                self.loginErrorLabel.isHidden = true
                 self.performSegue(withIdentifier: "signInToTabBarVC", sender: nil)
             }
         })
