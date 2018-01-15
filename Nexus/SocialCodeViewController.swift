@@ -24,6 +24,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func generateQRButton_TouchUpInside(_ sender: Any) {
         self.snapchatTextField.delegate = self
         print("Pressed")
+        UserDefaults.standard.set(instagramTextField.text, forKey: "myInsta")
         instagramQRCode()
         instagramTextField.isHidden = true
         twitterTextField.isHidden = true
@@ -42,8 +43,15 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instaLabel.isHidden = true
         twitterLabel.isHidden = true
         snapLabel.isHidden = true
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let instaDefault = UserDefaults.standard.object(forKey: "myInsta") as? String {
+            instagramTextField.text = instaDefault
+        }
     }
     
     func instagramQRCode() {
