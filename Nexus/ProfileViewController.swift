@@ -14,30 +14,14 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getName()
-      
         
-        self.welcomeLabel.text = ("Welcome, ")
-        // Do any additional setup after loading the view.
-    }
+     
+        
     
-    func getName() {
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("users").child(uid!).observe(.value)  { (snapshot: DataSnapshot) in
-            print(snapshot)
-            if let userInfo = snapshot.value as? [String: Any] {
-                let fullName = userInfo["FullName"] as! String
-                print("See this")
-                self.welcomeLabel.text = (fullName)
-            }
-        }
-    }
-    func postName(name: String) {
-        welcomeLabel.text = name
+        // Do any additional setup after loading the view.
     }
 
     @IBAction func signOut_TouchUpInside(_ sender: Any) {
@@ -57,3 +41,5 @@ class ProfileViewController: UIViewController {
  
 
 }
+
+

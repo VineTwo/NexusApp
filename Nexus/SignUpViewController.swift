@@ -15,18 +15,6 @@ import GoogleSignIn
 class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
   
     
-  /*
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let err = error {
-            print(err)
-        }
-        else {
-            print("Helllooo")
-          //  self.performSegue(withIdentifier: "GoogleSegue", sender: nil)
-        }
-    }
- */
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -94,7 +82,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             print(err)
         }
         else {
-            self.performSegue(withIdentifier: "PageTwoSignUp", sender: nil)
+            self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
  /*
@@ -135,12 +123,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             }
             let name = user?.displayName
             let ref = Database.database().reference()
-            let usersReference = ref.child("GoogleUsers")
+            let usersReference = ref.child("users")
             let newUsersReference = usersReference.child(uid)
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
             print("Successfuly in firebase auth and database", uid)
             print("before segue")
-            self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
  
@@ -217,9 +205,9 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
-        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl])
+        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl, "name": " "])
         print("Added to database")
-        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+        self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
     }
   /*
