@@ -24,7 +24,10 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func generateQRButton_TouchUpInside(_ sender: Any) {
         self.snapchatTextField.delegate = self
         print("Pressed")
+        
         UserDefaults.standard.set(instagramTextField.text, forKey: "myInsta")
+        UserDefaults.standard.set(twitterTextField.text, forKey: "myTwitter")
+        UserDefaults.standard.set(snapchatTextField.text, forKey: "mySnap")
         instagramQRCode()
         instagramTextField.isHidden = true
         twitterTextField.isHidden = true
@@ -51,6 +54,12 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if let instaDefault = UserDefaults.standard.object(forKey: "myInsta") as? String {
             instagramTextField.text = instaDefault
+        }
+        if let twitterDefault = UserDefaults.standard.object(forKey: "myTwitter") as? String {
+            twitterTextField.text = twitterDefault
+        }
+        if let snapDefault = UserDefaults.standard.object(forKey: "mySnap") as? String {
+            snapchatTextField.text = snapDefault
         }
     }
     
