@@ -210,23 +210,6 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
     }
-  /*
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let err = error {
-            print("Failed to login:", err)
-            return
-        }
-        guard let idToken = user.authentication.idToken else {return}
-        guard let accessToken = user.authentication.accessToken else {return}
-        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        let email = user.profile.email
-        if email != nil {
-            self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
-        }
-       
-    }
- */
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         

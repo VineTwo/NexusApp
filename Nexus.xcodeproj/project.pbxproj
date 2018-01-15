@@ -28,6 +28,7 @@
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
 		A350ABB0200C130900D846AD /* SocialCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABAF200C130900D846AD /* SocialCodeViewController.swift */; };
 		A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */; };
+		A350ABB8200D1D1600D846AD /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB7200D1D1600D846AD /* users.swift */; };
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
 		A368935D2005921D000E7C69 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368935C2005921D000E7C69 /* config.swift */; };
@@ -83,6 +84,7 @@
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A350ABAF200C130900D846AD /* SocialCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCodeViewController.swift; sourceTree = "<group>"; };
 		A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCodeViewController.swift; sourceTree = "<group>"; };
+		A350ABB7200D1D1600D846AD /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				A350ABB6200D1CF600D846AD /* Model */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
 				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
@@ -221,6 +224,15 @@
 				9DC4370120019D4E00335A4A /* Info.plist */,
 			);
 			path = NexusUITests;
+			sourceTree = "<group>";
+		};
+		A350ABB6200D1CF600D846AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A350ABB7200D1D1600D846AD /* users.swift */,
+			);
+			name = Model;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
+				A350ABB8200D1D1600D846AD /* users.swift in Sources */,
 				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
