@@ -62,8 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
-                                <rect key="frame" x="124" y="248.5" width="127" height="170"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
+                                <rect key="frame" x="124" y="341" width="127" height="170"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instagram Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-Hz-yaH">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
@@ -92,13 +92,54 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-6R-IX6">
-                                <rect key="frame" x="135" y="476" width="104" height="30"/>
+                                <rect key="frame" x="135" y="530" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Generate Code"/>
                                 <connections>
                                     <action selector="generateQRButton_TouchUpInside:" destination="n2H-Em-2Zv" eventType="touchUpInside" id="pbK-cW-Ckp"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-eb-p4M">
+                                <rect key="frame" x="16" y="78" width="137" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhi-XD-Tq0">
+                                <rect key="frame" x="170" y="63" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="GGr-jJ-shn" kind="show" id="aWY-Jz-RzL"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drY-O4-1TN">
+                                <rect key="frame" x="170" y="210" width="160" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-jX-kPb">
+                                <rect key="frame" x="16" y="341" width="190" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-52-D9z">
+                                <rect key="frame" x="229" y="119" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-F9-PAt">
+                                <rect key="frame" x="63" y="261" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Sk-56L">
+                                <rect key="frame" x="259" y="390" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -108,9 +149,15 @@
                         <viewLayoutGuide key="safeArea" id="H72-qS-eqN"/>
                     </view>
                     <connections>
+                        <outlet property="instaLabel" destination="F28-52-D9z" id="dtM-8U-DcM"/>
                         <outlet property="instagramTextField" destination="mFx-Hz-yaH" id="a50-KQ-hHq"/>
+                        <outlet property="qrCodeImage" destination="dRE-eb-p4M" id="gN9-6P-Vqb"/>
+                        <outlet property="snapLabel" destination="DLl-Sk-56L" id="Sts-9V-qs4"/>
                         <outlet property="snapchatTextField" destination="HNI-mM-gX8" id="0vB-xJ-RnV"/>
+                        <outlet property="snapqrCodeImage" destination="Mxj-jX-kPb" id="SxC-Uj-KDF"/>
+                        <outlet property="twitterLabel" destination="zUb-F9-PAt" id="aSs-3k-KVM"/>
                         <outlet property="twitterTextField" destination="5JQ-8z-cgd" id="NKC-wT-kMB"/>
+                        <outlet property="twitterqrCodeImage" destination="drY-O4-1TN" id="Cxq-I9-yWD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,4 +273,7 @@
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aWY-Jz-RzL"/>
+    </inferredMetricsTieBreakers>
 </document>
