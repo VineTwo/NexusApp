@@ -100,6 +100,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="BKy-05-Jdk" id="UG8-aF-kM4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
