@@ -153,6 +153,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     @objc func handleSelectProfileImageView() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
+        pickerController.allowsEditing = true
         present(pickerController, animated: true, completion: nil)
     }
     

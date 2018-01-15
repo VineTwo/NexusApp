@@ -9,7 +9,7 @@
 import Foundation
 
 class users {
-    var profileImgURL: String
+    var profileImgURL: String?
     
     init(profileURL: String) {
         profileImgURL = profileURL
