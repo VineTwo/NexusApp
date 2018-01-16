@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.4, alpha: 0.2)
     
@@ -55,9 +55,35 @@ class LoginViewController: UIViewController {
         loginButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         loginButton.backgroundColor = UIColor.clear
         
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        emailTextField.tag = 0
+        passwordTextField.tag = 1
+        
         handleTextField()
         
     }
+    
+    //Hide keyboard when user touches outside of keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //If not last textField it will go to next textField when enter is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

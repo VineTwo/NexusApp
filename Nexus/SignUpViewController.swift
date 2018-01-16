@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import GoogleSignIn
 
-class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate {
   
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -64,7 +64,10 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         profilePicture.addGestureRecognizer(tapGesture)
         profilePicture.isUserInteractionEnabled = true
         
-        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        emailTextField.tag = 0
+        passwordTextField.tag = 1
         
         handleTextField()
         
@@ -75,6 +78,26 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
        
         
       
+    }
+    
+    //Hide keyboard when user touches outside of keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //If not last textField it will go to next textField when enter is pressed
+    //If last textField, keyboard will dismiss when enter key is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
