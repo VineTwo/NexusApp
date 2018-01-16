@@ -38,8 +38,22 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instaLabel.isHidden = false
         twitterLabel.isHidden = false
         snapLabel.isHidden = false
+        
+        UserDefaults.standard.set(twitterqrCodeImage, forKey: "twitterCode")
+        UserDefaults.standard.set(snapqrCodeImage, forKey: "snapCode")
+        UserDefaults.standard.set(qrCodeImage, forKey: "instaCode")
+        
+        if let instaCodeDefault = UserDefaults.standard.object(forKey: "instaCode") as? UIImageView {
+            qrCodeImage = instaCodeDefault
+        if let twitterCodeDefault = UserDefaults.standard.object(forKey: "twitterCode") as? UIImageView {
+            twitterqrCodeImage = twitterCodeDefault
+        }
+        if let snapCodeDefault = UserDefaults.standard.object(forKey: "snapCode") as? UIImageView {
+            snapqrCodeImage = snapCodeDefault
+        }
       
     }
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()
