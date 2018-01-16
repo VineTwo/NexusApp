@@ -15,18 +15,6 @@ import GoogleSignIn
 class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
   
     
-  /*
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let err = error {
-            print(err)
-        }
-        else {
-            print("Helllooo")
-          //  self.performSegue(withIdentifier: "GoogleSegue", sender: nil)
-        }
-    }
- */
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -46,10 +34,28 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         GIDSignIn.sharedInstance().signIn()
         GIDSignIn.sharedInstance().delegate = self
         
+        emailTextField.tintColor = UIColor.lightText
+        emailTextField.textColor = UIColor.black
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let bottomLayer = CALayer()
+        bottomLayer.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayer.backgroundColor = UIColor.white.cgColor
+        emailTextField.layer.addSublayer(bottomLayer)
         
-        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        passwordTextField.tintColor = UIColor.lightText
+        passwordTextField.textColor = UIColor.black
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let bottomLayerPassword = CALayer()
+        bottomLayerPassword.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        passwordTextField.layer.addSublayer(bottomLayerPassword)
+        
+        
         signUpButton.isEnabled = false
-
+        signUpButton.layer.cornerRadius = 10.0
+       // signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+       // signUpButton.backgroundColor = UIColor.clear
+        
         // Do any additional setup after loading the view.
         profilePicture.layer.cornerRadius = 30
         profilePicture.clipsToBounds = true
@@ -58,7 +64,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         profilePicture.addGestureRecognizer(tapGesture)
         profilePicture.isUserInteractionEnabled = true
         
-        signUpButton.isEnabled = false
+        
         
         handleTextField()
         
@@ -76,7 +82,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             print(err)
         }
         else {
-            self.performSegue(withIdentifier: "PageTwoSignUp", sender: nil)
+            self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
  /*
@@ -117,12 +123,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             }
             let name = user?.displayName
             let ref = Database.database().reference()
-            let usersReference = ref.child("GoogleUsers")
+            let usersReference = ref.child("users")
             let newUsersReference = usersReference.child(uid)
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
             print("Successfuly in firebase auth and database", uid)
             print("before segue")
-            self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
  
@@ -147,6 +153,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     @objc func handleSelectProfileImageView() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
+        pickerController.allowsEditing = true
         present(pickerController, animated: true, completion: nil)
     }
     
@@ -199,28 +206,11 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
-        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl])
+        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl, "name": " "])
         print("Added to database")
-        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+        self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
     }
-  /*
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let err = error {
-            print("Failed to login:", err)
-            return
-        }
-        guard let idToken = user.authentication.idToken else {return}
-        guard let accessToken = user.authentication.accessToken else {return}
-        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        let email = user.profile.email
-        if email != nil {
-            self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
-        }
-       
-    }
- */
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         

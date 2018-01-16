@@ -17,14 +17,167 @@
                     <view key="view" contentMode="scaleToFill" id="3mB-xB-NQH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eyX-Hl-Hd0">
+                                <rect key="frame" x="74" y="308.5" width="227" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Db2-bY-tN6"/>
+                                        </constraints>
+                                        <state key="normal" title="Social Code"/>
+                                        <connections>
+                                            <segue destination="n2H-Em-2Zv" kind="presentation" id="WI5-KS-kOd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-3j-Wby">
+                                        <rect key="frame" x="132" y="0.0" width="95" height="50"/>
+                                        <state key="normal" title="Contact Code"/>
+                                        <connections>
+                                            <segue destination="Pbu-Zr-4NM" kind="presentation" id="qU1-qR-eVO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerX" secondItem="3mB-xB-NQH" secondAttribute="centerX" id="0Z5-Z7-z7P"/>
+                            <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerY" secondItem="3mB-xB-NQH" secondAttribute="centerY" id="cWH-hx-9rW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="osI-6W-hfq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Connect" id="U37-gZ-xtK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1203"/>
+            <point key="canvasLocation" x="1500" y="1202.2488755622189"/>
+        </scene>
+        <!--Social Code View Controller-->
+        <scene sceneID="eAs-el-XtT">
+            <objects>
+                <viewController id="n2H-Em-2Zv" customClass="SocialCodeViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="swN-g7-yJB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
+                                <rect key="frame" x="124" y="312" width="127" height="170"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instagram Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-Hz-yaH">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Handle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5JQ-8z-cgd">
+                                        <rect key="frame" x="0.0" y="70" width="127" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snapchat name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HNI-mM-gX8">
+                                        <rect key="frame" x="0.0" y="140" width="127" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mfr-U9-c2M"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="4Vv-Q7-lct"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-6R-IX6">
+                                <rect key="frame" x="135" y="530" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Generate Code"/>
+                                <connections>
+                                    <action selector="generateQRButton_TouchUpInside:" destination="n2H-Em-2Zv" eventType="touchUpInside" id="pbK-cW-Ckp"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-eb-p4M">
+                                <rect key="frame" x="220" y="63" width="127" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-jX-kPb">
+                                <rect key="frame" x="220" y="398" width="127" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhi-XD-Tq0">
+                                <rect key="frame" x="170" y="63" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="GGr-jJ-shn" kind="show" id="aWY-Jz-RzL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-F9-PAt">
+                                <rect key="frame" x="39" y="259" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Sk-56L">
+                                <rect key="frame" x="32" y="373" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-52-D9z">
+                                <rect key="frame" x="30" y="112" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drY-O4-1TN">
+                                <rect key="frame" x="220" y="235" width="121" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerX" secondItem="swN-g7-yJB" secondAttribute="centerX" id="Cka-S8-1a3"/>
+                            <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerY" secondItem="swN-g7-yJB" secondAttribute="centerY" id="FN0-94-OhV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H72-qS-eqN"/>
+                    </view>
+                    <connections>
+                        <outlet property="instaLabel" destination="F28-52-D9z" id="dtM-8U-DcM"/>
+                        <outlet property="instagramTextField" destination="mFx-Hz-yaH" id="a50-KQ-hHq"/>
+                        <outlet property="qrCodeImage" destination="dRE-eb-p4M" id="gN9-6P-Vqb"/>
+                        <outlet property="snapLabel" destination="DLl-Sk-56L" id="Sts-9V-qs4"/>
+                        <outlet property="snapchatTextField" destination="HNI-mM-gX8" id="0vB-xJ-RnV"/>
+                        <outlet property="snapqrCodeImage" destination="Mxj-jX-kPb" id="SxC-Uj-KDF"/>
+                        <outlet property="twitterLabel" destination="zUb-F9-PAt" id="aSs-3k-KVM"/>
+                        <outlet property="twitterTextField" destination="5JQ-8z-cgd" id="NKC-wT-kMB"/>
+                        <outlet property="twitterqrCodeImage" destination="drY-O4-1TN" id="Cxq-I9-yWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952.79999999999995" y="1977.6611694152925"/>
+        </scene>
+        <!--Contact Code View Controller-->
+        <scene sceneID="dyS-2M-RGc">
+            <objects>
+                <viewController id="Pbu-Zr-4NM" customClass="ContactCodeViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PIS-13-Qzn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SMd-Om-Efa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvH-JE-ilK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092" y="1978"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fOy-vw-SPb">
@@ -33,6 +186,12 @@
                     <view key="view" contentMode="scaleToFill" id="eS7-Cf-JMX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-JL-THw">
+                                <rect key="frame" x="98" y="81" width="179" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8bY-IJ-Vtx"/>
                     </view>
@@ -43,10 +202,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profilePicture" destination="MEA-JL-THw" id="mDq-NN-yJm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="1204"/>
+            <point key="canvasLocation" x="373.5" y="1202.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -111,4 +273,7 @@
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aWY-Jz-RzL"/>
+    </inferredMetricsTieBreakers>
 </document>
