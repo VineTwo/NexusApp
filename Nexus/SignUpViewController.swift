@@ -211,12 +211,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
                       // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
+                    self.setUserInformation(email: self.emailTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
                 
             }
             else {
-                self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!, profileImgUrl: " ")
+                self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
                // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
 
             }
@@ -225,11 +225,11 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
 
     }
  
-    func setUserInformation(email: String, password: String, uid: String, profileImgUrl: String) {
+    func setUserInformation(email: String, uid: String, profileImgUrl: String) {
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
-        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl, "name": " "])
+        newUsersReference.setValue(["email": email, "ProfileIMG": profileImgUrl, "Name": " "])
         print("Added to database")
         self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
