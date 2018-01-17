@@ -278,7 +278,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Did finish picking picture")
-        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImage = editedImage
+            profilePicture.image = editedImage
+        }
+    
+        else if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             selectedImage = image
             profilePicture.image = image
         }

@@ -23,36 +23,23 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func generateQRButton_TouchUpInside(_ sender: Any) {
         self.snapchatTextField.delegate = self
-        print("Pressed")
         
         UserDefaults.standard.set(instagramTextField.text, forKey: "myInsta")
         UserDefaults.standard.set(twitterTextField.text, forKey: "myTwitter")
         UserDefaults.standard.set(snapchatTextField.text, forKey: "mySnap")
         instagramQRCode()
+        twitterQRCode()
+        snapQRCode()
         instagramTextField.isHidden = true
         twitterTextField.isHidden = true
         snapchatTextField.isHidden = true
-        twitterQRCode()
-        snapQRCode()
+       
         
         instaLabel.isHidden = false
         twitterLabel.isHidden = false
         snapLabel.isHidden = false
-        
-        UserDefaults.standard.set(twitterqrCodeImage, forKey: "twitterCode")
-        UserDefaults.standard.set(snapqrCodeImage, forKey: "snapCode")
-        UserDefaults.standard.set(qrCodeImage, forKey: "instaCode")
-        
-        if let instaCodeDefault = UserDefaults.standard.object(forKey: "instaCode") as? UIImageView {
-            qrCodeImage = instaCodeDefault
-        if let twitterCodeDefault = UserDefaults.standard.object(forKey: "twitterCode") as? UIImageView {
-            twitterqrCodeImage = twitterCodeDefault
-        }
-        if let snapCodeDefault = UserDefaults.standard.object(forKey: "snapCode") as? UIImageView {
-            snapqrCodeImage = snapCodeDefault
-        }
-      
-    }
+
+    
 }
     
     override func viewDidLoad() {
@@ -61,11 +48,11 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         twitterLabel.isHidden = true
         snapLabel.isHidden = true
         
-
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if let instaDefault = UserDefaults.standard.object(forKey: "myInsta") as? String {
             instagramTextField.text = instaDefault
         }
@@ -75,6 +62,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         if let snapDefault = UserDefaults.standard.object(forKey: "mySnap") as? String {
             snapchatTextField.text = snapDefault
         }
+        
     }
     
     func instagramQRCode() {
@@ -83,47 +71,46 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
         var image: UIImage?
         if let url = imageURL {
-            print("Test")
             //All network operations has to run on different thread(not on main thread).
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData = NSData(contentsOf: url)
                 //All UI operations has to run on main thread.
                 DispatchQueue.main.async {
                     if imageData != nil {
-                        print("second test")
                         image = UIImage(data: imageData! as Data)!
                         self.qrCodeImage.image = image
                         self.qrCodeImage.sizeToFit()
-                        print("YES")
                     }
                     else {
-                        print("No")
                     }
+                    //This saves the image data and displays it but only when the button is pressed. Need a way to permenantly save it
+                    UserDefaults.standard.set(imageData, forKey: "instaImageData")
+                    let data = UserDefaults.standard.object(forKey: "instaImageData") as! NSData
+                    self.qrCodeImage.image = UIImage(data: data as Data)
+                    print("picture loaded")
+                    
                 }
             }
         }
     }
+    
     
     func twitterQRCode() {
             let twitterURL = ("https://twitter.com/\(twitterTextField.text!)")
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
         var image: UIImage?
         if let url = imageURL {
-            print("Test")
             //All network operations has to run on different thread(not on main thread).
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData = NSData(contentsOf: url)
                 //All UI operations has to run on main thread.
                 DispatchQueue.main.async {
                     if imageData != nil {
-                        print("second test")
                         image = UIImage(data: imageData! as Data)!
                         self.twitterqrCodeImage.image = image
                         self.twitterqrCodeImage.sizeToFit()
-                        print("YES")
                     }
                     else {
-                        print("No")
                     }
                 }
             }
@@ -136,21 +123,17 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
         var image: UIImage?
         if let url = imageURL {
-            print("Test")
             //All network operations has to run on different thread(not on main thread).
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData = NSData(contentsOf: url)
                 //All UI operations has to run on main thread.
                 DispatchQueue.main.async {
                     if imageData != nil {
-                        print("second test")
                         image = UIImage(data: imageData! as Data)!
                         self.snapqrCodeImage.image = image
                         self.snapqrCodeImage.sizeToFit()
-                        print("YES")
                     }
                     else {
-                        print("No")
                     }
                 }
             }
