@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1202.2488755622189"/>
+            <point key="canvasLocation" x="374" y="1202"/>
         </scene>
         <!--Social Code View Controller-->
         <scene sceneID="eAs-el-XtT">
@@ -141,6 +141,7 @@
                         <viewLayoutGuide key="safeArea" id="H72-qS-eqN"/>
                     </view>
                     <connections>
+                        <outlet property="generateButton" destination="LY4-6R-IX6" id="udw-0z-kXb"/>
                         <outlet property="instaLabel" destination="F28-52-D9z" id="dtM-8U-DcM"/>
                         <outlet property="instagramTextField" destination="mFx-Hz-yaH" id="a50-KQ-hHq"/>
                         <outlet property="qrCodeImage" destination="dRE-eb-p4M" id="gN9-6P-Vqb"/>
@@ -154,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="1977.6611694152925"/>
+            <point key="canvasLocation" x="-10" y="2116"/>
         </scene>
         <!--Contact Code View Controller-->
         <scene sceneID="dyS-2M-RGc">
@@ -169,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvH-JE-ilK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="1978"/>
+            <point key="canvasLocation" x="807" y="2116"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fOy-vw-SPb">
@@ -200,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373.5" y="1202.5"/>
+            <point key="canvasLocation" x="1500" y="1201"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -224,7 +225,7 @@
         <scene sceneID="cd6-hA-361">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc1-PC-cPX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="Y4P-9x-eCn">
+                    <tabBarItem key="tabBarItem" title="" id="Y4P-9x-eCn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -234,7 +235,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="cSj-7B-2hQ"/>
+                        <segue destination="GGr-jJ-shn" kind="relationship" relationship="rootViewController" id="sq9-NG-mqL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4U-kg-jg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +246,7 @@
         <scene sceneID="HNr-hq-VNx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcA-Gy-PoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="ZCl-Tw-NYF"/>
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WrG-MJ-cX8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -253,7 +254,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GGr-jJ-shn" kind="relationship" relationship="rootViewController" id="7Qd-AE-l2K"/>
+                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="Qn2-5h-i9u"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

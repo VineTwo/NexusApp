@@ -19,6 +19,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var instaLabel: UILabel!
     @IBOutlet weak var twitterLabel: UILabel!
     @IBOutlet weak var snapLabel: UILabel!
+    @IBOutlet weak var generateButton: UIButton!
     
     
     @IBAction func generateQRButton_TouchUpInside(_ sender: Any) {
@@ -38,7 +39,8 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instaLabel.isHidden = false
         twitterLabel.isHidden = false
         snapLabel.isHidden = false
-
+        
+        generateButton.isHidden = true
     
 }
     
