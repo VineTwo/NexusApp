@@ -21,9 +21,15 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         profileURL()
+        retrieveInstaQrUrl()
         
     
         // Do any additional setup after loading the view.
+    }
+    func retrieveInstaQrUrl() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("users").child(uid!).child("InstaQrUrl")
+        print (ref)
     }
     
     func profileURL() {

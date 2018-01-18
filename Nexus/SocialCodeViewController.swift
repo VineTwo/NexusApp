@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
 class SocialCodeViewController: UIViewController, UITextFieldDelegate {
 
@@ -69,8 +72,14 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     
     func instagramQRCode() {
         let insta = ("https://www.instagram.com/\(instagramTextField.text!)")
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        let userRef = ref.child("users").child(uid!).child("InstagramQrUrl")
+        
         
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
+        let instaQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
+        userRef.setValue(["instQrURl": instaQrUrl])
         var image: UIImage?
         if let url = imageURL {
             //All network operations has to run on different thread(not on main thread).
