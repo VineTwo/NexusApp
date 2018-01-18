@@ -20,20 +20,21 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileURL()
         
     
         // Do any additional setup after loading the view.
     }
-    /*
-    func profieURL() {
+    
+    func profileURL() {
         let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(uid!).observe(.value, with: {(snapshot)
-            print(snapshot)
-            
-        })
+        let ref = Database.database().reference().child("users").child(uid!)
+        print("before")
+        print(ref)
+        print("after")
         
     }
-*/
+
     @IBAction func signOut_TouchUpInside(_ sender: Any) {
         print(Auth.auth().currentUser!)
         do {
