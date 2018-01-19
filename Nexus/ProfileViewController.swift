@@ -16,20 +16,30 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var profilePicture: UIImageView!
-    
+    var databaseHandle: DatabaseHandle?
+    var instaURL = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profileURL()
         retrieveInstaQrUrl()
         
-    
+        
         // Do any additional setup after loading the view.
     }
+    // need to get this to work
     func retrieveInstaQrUrl() {
         let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(uid!).child("InstaQrUrl")
-        print (ref)
+        let ref = Database.database().reference()
+        databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
+           let instaCode = snapshot.value as? String
+            if let actualCode  = instaCode {
+                self.instaURL.append(actualCode)
+                print(self.instaURL)
+                
+            }
+        }
+        
     }
     
     func profileURL() {
