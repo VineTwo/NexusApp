@@ -24,11 +24,13 @@ class ProfileTableViewController: UITableViewController {
         retrieveInstaQrUrl()
         retrieveTwitterQrUrl()
         retrieveSnapQrUrl()
-      //  imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21", ]
+        var igURl: String
+        imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21"]
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(imageURLs.count)
         return imageURLs.count
     }
     
