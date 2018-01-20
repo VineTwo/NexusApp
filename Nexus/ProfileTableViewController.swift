@@ -16,8 +16,29 @@ class ProfileTableViewController: UITableViewController {
     let uid = Auth.auth().currentUser?.uid
     let ref = Database.database().reference()
     
+    
+    
+    func retrieveInstaQrUrl() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
+            let instaCode = snapshot.value as? String
+            if let actualCode  = instaCode {
+                self.imageURLs.append(actualCode)
+                //This prints both URL's
+                print(self.imageURLs)
+                
+                
+                //Turn instaURL into a picture reuse from the social code page
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
-        imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21"]
+        retrieveInstaQrUrl()
+        imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21", ]
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

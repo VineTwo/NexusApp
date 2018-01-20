@@ -212,9 +212,6 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-5q-Ruy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="274.5" id="Jmy-C1-kBT"/>
-                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
