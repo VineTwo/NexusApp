@@ -107,8 +107,16 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     
     
     func twitterQRCode() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        let userRef = ref.child("users").child(uid!).child("TwitterQrUrl")
+        
             let twitterURL = ("https://twitter.com/\(twitterTextField.text!)")
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
+        
+        let twitQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
+        userRef.setValue(["twitQrURl": twitQrUrl])
+        
         var image: UIImage?
         if let url = imageURL {
             //All network operations has to run on different thread(not on main thread).
@@ -130,8 +138,17 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func snapQRCode() {
+        
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        let userRef = ref.child("users").child(uid!).child("SnapQrUrl")
+        
         let snapURL = ("https://www.snapchat.com/add/\(snapchatTextField.text!)")
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
+        
+        let snapQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
+        userRef.setValue(["snapQrURl": snapQrUrl])
+        
         var image: UIImage?
         if let url = imageURL {
             //All network operations has to run on different thread(not on main thread).
