@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileTableViewController: UITableViewController {
- 
+    var databaseHandle = DatabaseHandle()
     var imageURLs = [String]()
+    let uid = Auth.auth().currentUser?.uid
+    let ref = Database.database().reference()
     
     override func viewDidLoad() {
-        imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21", "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone7plus/iphone7plus-colors.jpg", "https://firebasestorage.googleapis.com/v0/b/nexus-app-6f0eb.appspot.com/o/Profile%20Image%2F4FXl8AciMgY0mRXedtU8iAA8KaJ2?alt=media&token=4199dc8c-2777-424d-a602-b5b23e53e2b9"]
+        imageURLs = ["https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/nick_potts21"]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +28,7 @@ class ProfileTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "testCell")
         let imageView = cell?.viewWithTag(1) as! UIImageView
         
-        
+        imageView.sd_setImage(with: URL(string: imageURLs[indexPath.row]))
         
         return cell!
     }

@@ -203,15 +203,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="testCell" rowHeight="171" id="bx6-qb-EZm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="171"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="testCell" rowHeight="275" id="bx6-qb-EZm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="275"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bx6-qb-EZm" id="sxK-Ie-ZGM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-5q-Ruy">
-                                            <rect key="frame" x="67" y="21" width="240" height="128"/>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-5q-Ruy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="274.5" id="Jmy-C1-kBT"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -228,6 +231,7 @@
                             <outlet property="delegate" destination="KAR-gr-gdA" id="aMH-tL-OdF"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ccG-VO-lCH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe3-mZ-A2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,7 +288,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="n4b-r6-HwM"/>
+                        <segue destination="KAR-gr-gdA" kind="relationship" relationship="rootViewController" id="0s3-M7-xaU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
