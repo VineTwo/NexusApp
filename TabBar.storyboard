@@ -179,12 +179,6 @@
                     <view key="view" contentMode="scaleToFill" id="eS7-Cf-JMX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-JL-THw">
-                                <rect key="frame" x="98" y="81" width="179" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8bY-IJ-Vtx"/>
                     </view>
@@ -195,13 +189,49 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="profilePicture" destination="MEA-JL-THw" id="mDq-NN-yJm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1201"/>
+            <point key="canvasLocation" x="1500" y="1200.4497751124438"/>
+        </scene>
+        <!--Profile Table View Controller-->
+        <scene sceneID="DFk-sY-gDo">
+            <objects>
+                <tableViewController id="KAR-gr-gdA" customClass="ProfileTableViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XBx-Za-fVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="testCell" rowHeight="171" id="bx6-qb-EZm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="171"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bx6-qb-EZm" id="sxK-Ie-ZGM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-5q-Ruy">
+                                            <rect key="frame" x="67" y="21" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qrr-5q-Ruy" firstAttribute="centerX" secondItem="sxK-Ie-ZGM" secondAttribute="centerX" id="Hsk-fm-tNg"/>
+                                        <constraint firstItem="Qrr-5q-Ruy" firstAttribute="centerY" secondItem="sxK-Ie-ZGM" secondAttribute="centerY" id="gZY-v7-sqK"/>
+                                        <constraint firstItem="Qrr-5q-Ruy" firstAttribute="height" secondItem="sxK-Ie-ZGM" secondAttribute="height" id="uG2-hl-iua"/>
+                                        <constraint firstItem="Qrr-5q-Ruy" firstAttribute="width" secondItem="sxK-Ie-ZGM" secondAttribute="width" id="wAD-lS-Q7c"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KAR-gr-gdA" id="gXa-fb-6Pc"/>
+                            <outlet property="delegate" destination="KAR-gr-gdA" id="aMH-tL-OdF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xe3-mZ-A2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413.5999999999999" y="1147.3763118440781"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -254,7 +284,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="Qn2-5h-i9u"/>
+                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="n4b-r6-HwM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

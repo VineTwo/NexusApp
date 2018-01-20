@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    @IBOutlet weak var profilePicture: UIImageView!
+    
     var databaseHandle: DatabaseHandle?
     var instaURL = [String]()
     override func viewDidLoad() {
@@ -37,10 +37,14 @@ class ProfileViewController: UIViewController {
                 self.instaURL.append(actualCode)
                 print(self.instaURL)
                 
+                
+                //Turn instaURL into a picture reuse from the social code page
             }
         }
         
     }
+    
+    
     
     func profileURL() {
         let uid = Auth.auth().currentUser?.uid
