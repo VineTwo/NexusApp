@@ -92,13 +92,6 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
                         self.qrCodeImage.image = image
                         self.qrCodeImage.sizeToFit()
                     }
-                    else {
-                    }
-                    //This saves the image data and displays it but only when the button is pressed. Need a way to permenantly save it
-                    UserDefaults.standard.set(imageData, forKey: "instaImageData")
-                    let data = UserDefaults.standard.object(forKey: "instaImageData") as! NSData
-                    self.qrCodeImage.image = UIImage(data: data as Data)
-                    print("picture loaded")
                     
                 }
             }

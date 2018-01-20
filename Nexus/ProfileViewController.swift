@@ -15,6 +15,11 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     
+    @IBOutlet weak var instaCodeImageView: UIImageView!
+    
+    @IBOutlet weak var twitterCodeImageView: UIImageView!
+    
+    @IBOutlet weak var snapCodeImageView: UIImageView!
     
     var databaseHandle: DatabaseHandle?
     var instaURL = [String]()
@@ -23,6 +28,8 @@ class ProfileViewController: UIViewController {
         
         profileURL()
         retrieveInstaQrUrl()
+        retrieveTwitterQrUrl()
+        retrieveSnapQrUrl()
         
         
         // Do any additional setup after loading the view.
@@ -34,16 +41,92 @@ class ProfileViewController: UIViewController {
         databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
            let instaCode = snapshot.value as? String
             if let actualCode  = instaCode {
-                self.instaURL.append(actualCode)
+                let imageURL = URL(string: actualCode)
+                
+                var image: UIImage?
+                
+                if let url = imageURL {
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData = NSData(contentsOf: url)
+                        //All UI operations has to run on main thread.
+                        DispatchQueue.main.async {
+                            if imageData != nil {
+                                image = UIImage(data: imageData! as Data)!
+                                self.instaCodeImageView.image = image
+                                self.instaCodeImageView.sizeToFit()
+                            }
+                            
+                        }
+                    }
+                }
+    
                 print(self.instaURL)
                 
-                
-                //Turn instaURL into a picture reuse from the social code page
             }
         }
         
     }
     
+    func retrieveTwitterQrUrl() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        databaseHandle = ref.child("users").child(uid!).child("TwitterQrUrl").observe(.childAdded) { (snapshot) in
+            let twitterCode = snapshot.value as? String
+            if let actualCode  = twitterCode {
+                let imageURL = URL(string: actualCode)
+                
+                var image: UIImage?
+                
+                if let url = imageURL {
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData = NSData(contentsOf: url)
+                        //All UI operations has to run on main thread.
+                        DispatchQueue.main.async {
+                            if imageData != nil {
+                                image = UIImage(data: imageData! as Data)!
+                                self.twitterCodeImageView.image = image
+                                self.twitterCodeImageView.sizeToFit()
+                            }
+                            
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+        
+    }
+    
+    func retrieveSnapQrUrl() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        databaseHandle = ref.child("users").child(uid!).child("SnapQrUrl").observe(.childAdded) { (snapshot) in
+            let snapCode = snapshot.value as? String
+            if let actualCode  = snapCode {
+                let imageURL = URL(string: actualCode)
+                
+                var image: UIImage?
+                
+                if let url = imageURL {
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData = NSData(contentsOf: url)
+                        //All UI operations has to run on main thread.
+                        DispatchQueue.main.async {
+                            if imageData != nil {
+                                image = UIImage(data: imageData! as Data)!
+                                self.snapCodeImageView.image = image
+                                self.snapCodeImageView.sizeToFit()
+                            }
+                            
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+    }
     
     
     func profileURL() {
@@ -52,7 +135,6 @@ class ProfileViewController: UIViewController {
         print("before")
         print(ref)
         print("after")
-        
     }
 
     @IBAction func signOut_TouchUpInside(_ sender: Any) {
@@ -68,9 +150,6 @@ class ProfileViewController: UIViewController {
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
-    
- 
-
 }
 
 

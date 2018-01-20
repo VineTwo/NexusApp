@@ -32,7 +32,6 @@
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
 		A368935D2005921D000E7C69 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368935C2005921D000E7C69 /* config.swift */; };
-		A3B79ED92012800100A6466F /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B79ED82012800100A6466F /* ProfileTableViewController.swift */; };
 		A3E1FF3220095ACF00DD8B0C /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */; };
 		A3E4B5CC2006C2A200368D95 /* Pods_Nexus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
-		A3B79ED82012800100A6466F /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "nexus-Bridging-Header.h"; path = "/Users/nickpotts/Documents/NexusApp/Nexus/nexus-Bridging-Header.h"; sourceTree = "<absolute>"; };
 		A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TabBar.storyboard; path = ../TabBar.storyboard; sourceTree = "<group>"; };
 		BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				A350ABB6200D1CF600D846AD /* Model */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
-				A3B79ED82012800100A6466F /* ProfileTableViewController.swift */,
 				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
 				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
 				A331A07D20091519005776C2 /* ConnectViewController.swift */,
@@ -560,7 +557,6 @@
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
-				A3B79ED92012800100A6466F /* ProfileTableViewController.swift in Sources */,
 				A368935D2005921D000E7C69 /* config.swift in Sources */,
 				A350ABB0200C130900D846AD /* SocialCodeViewController.swift in Sources */,
 				9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */,
