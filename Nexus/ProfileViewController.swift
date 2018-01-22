@@ -21,6 +21,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var snapCodeImageView: UIImageView!
     
+    
+    
     var databaseHandle: DatabaseHandle?
     var instaURL = [String]()
     override func viewDidLoad() {
@@ -31,8 +33,18 @@ class ProfileViewController: UIViewController {
         retrieveTwitterQrUrl()
         retrieveSnapQrUrl()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
+        instaCodeImageView.addGestureRecognizer(tapGesture)
+        
+        twitterCodeImageView.addGestureRecognizer(tapGesture)
+        
+        snapCodeImageView.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func handleSelectImageView() {
+        print("Tapped")
     }
     // need to get this to work
     func retrieveInstaQrUrl() {
