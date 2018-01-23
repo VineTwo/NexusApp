@@ -10,7 +10,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'GoogleSignIn'
 pod 'SDWebImage'
-  
 
   target 'NexusTests' do
     inherit! :search_paths

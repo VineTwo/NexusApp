@@ -23,10 +23,14 @@ class ProfileViewController: UIViewController {
     
     @IBAction func didTapInstaCodeImage(_ sender: Any) {
         print("Insta Tapped")
+        self.performZoomInOnStartingImageView(startingImageView: instaCodeImageView)
+
     }
     
     @IBAction func didTapTwitterCodeImage(_ sender: Any) {
         print("Twitter tapped")
+        self.performZoomInOnStartingImageView(startingImageView: twitterCodeImageView)
+
     }
     
     
@@ -53,6 +57,21 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func performZoomInOnStartingImageView(startingImageView: UIImageView) {
+        let startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
+        print(startingFrame)
+        
+        let zoomingImageView = UIImageView(frame: startingFrame!)
+        zoomingImageView.backgroundColor = UIColor.red
+        
+        if let keyWindow = UIApplication.shared.keyWindow {
+            keyWindow.addSubview(zoomingImageView)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                //Start writing here, 14:40 on the video
+            }, completion: nil)
+        }
+    }
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
         print("Snap Tapped")
     }
