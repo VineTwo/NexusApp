@@ -63,17 +63,23 @@ class ProfileViewController: UIViewController {
         
         let zoomingImageView = UIImageView(frame: startingFrame!)
         zoomingImageView.backgroundColor = UIColor.red
+        zoomingImageView.image = startingImageView.image
         
         if let keyWindow = UIApplication.shared.keyWindow {
             keyWindow.addSubview(zoomingImageView)
             
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                //Start writing here, 14:40 on the video
+                
+                let height = startingFrame!.height / startingFrame!.width * keyWindow.frame.width
+                
+                zoomingImageView.frame = CGRect(x: 0, y: 0, width: keyWindow.frame.width, height: height)
+                
+                zoomingImageView.center = keyWindow.center
             }, completion: nil)
         }
     }
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
-        print("Snap Tapped")
+        self.performZoomInOnStartingImageView(startingImageView: snapCodeImageView)
     }
     // need to get this to work
     func retrieveInstaQrUrl() {
