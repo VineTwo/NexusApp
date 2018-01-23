@@ -56,26 +56,53 @@ class ProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    var startingFrame: CGRect?
+    var blackBackground: UIView?
+    
     
     func performZoomInOnStartingImageView(startingImageView: UIImageView) {
-        let startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
-        print(startingFrame)
+        
+        startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
+        print(startingFrame!)
         
         let zoomingImageView = UIImageView(frame: startingFrame!)
         zoomingImageView.backgroundColor = UIColor.red
         zoomingImageView.image = startingImageView.image
+        zoomingImageView.isUserInteractionEnabled = true
+        zoomingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleZoomOut)))
         
         if let keyWindow = UIApplication.shared.keyWindow {
+            blackBackground = UIView(frame: keyWindow.frame)
+            blackBackground?.backgroundColor = UIColor.black
+            blackBackground?.alpha = 0
+            keyWindow.addSubview(blackBackground!)
+            
             keyWindow.addSubview(zoomingImageView)
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
                 
-                let height = startingFrame!.height / startingFrame!.width * keyWindow.frame.width
+                self.blackBackground!.alpha = 1
+                
+                let height = self.startingFrame!.height / self.startingFrame!.width * keyWindow.frame.width
                 
                 zoomingImageView.frame = CGRect(x: 0, y: 0, width: keyWindow.frame.width, height: height)
                 
                 zoomingImageView.center = keyWindow.center
             }, completion: nil)
+        }
+    }
+    
+    @objc func handleZoomOut(tapGesture: UITapGestureRecognizer) {
+       if let zoomOutImageView = tapGesture.view {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+            zoomOutImageView.frame = self.startingFrame!
+            self.blackBackground?.alpha = 0
+            
+        }, completion: { (Bool) in
+            zoomOutImageView.removeFromSuperview()
+            
+        })
+        
         }
     }
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
