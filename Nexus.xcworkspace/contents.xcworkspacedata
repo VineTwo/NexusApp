@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/nickpotts/Documents/NexusApp/Nexus/nexus-Bridging-Header.h">
+   </FileRef>
+   <FileRef
       location = "group:Nexus.xcodeproj">
    </FileRef>
    <FileRef

@@ -9,7 +9,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'GoogleSignIn'
-  # Pods for Nexus
+pod 'SDWebImage'
 
   target 'NexusTests' do
     inherit! :search_paths

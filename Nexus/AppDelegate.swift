@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         // Override point for customization after application launch.
-        var navigationBarAppearance = UINavigationBar.appearance()
+        let navigationBarAppearance = UINavigationBar.appearance()
         
         navigationBarAppearance.tintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
         navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */

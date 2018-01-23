@@ -16,12 +16,12 @@
 		9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0BE7EC200324AA00945119 /* Snapchat.png */; };
 		9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436DF20019D4E00335A4A /* AppDelegate.swift */; };
 		9DC436E520019D4E00335A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E320019D4E00335A4A /* Main.storyboard */; };
-		9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC436E620019D4E00335A4A /* Assets.xcassets */; };
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
 		A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A30259682008975500479AF0 /* NexusLogoNobackground.png */; };
 		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
 		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
+		A340909920141F6C0023E3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A340909820141F6C0023E3AF /* Assets.xcassets */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
 		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
@@ -67,7 +67,6 @@
 		9DC436DC20019D4E00335A4A /* Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436DF20019D4E00335A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC436E420019D4E00335A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9DC436E620019D4E00335A4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DC436EB20019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC436F020019D4E00335A4A /* NexusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC436F420019D4E00335A4A /* NexusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexusTests.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		A30259682008975500479AF0 /* NexusLogoNobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NexusLogoNobackground.png; sourceTree = "<group>"; };
 		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		A340909820141F6C0023E3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
 		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
-		A3DE18B72008761A00F0C819 /* nexus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nexus-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "nexus-Bridging-Header.h"; path = "/Users/nickpotts/Documents/NexusApp/Nexus/nexus-Bridging-Header.h"; sourceTree = "<absolute>"; };
 		A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TabBar.storyboard; path = ../TabBar.storyboard; sourceTree = "<group>"; };
 		BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD62427B2F4A589642F90B81 /* Pods_NexusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,13 +195,13 @@
 				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
 				A368935C2005921D000E7C69 /* config.swift */,
 				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
-				A3DE18B72008761A00F0C819 /* nexus-Bridging-Header.h */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
+				A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */,
 				A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
 				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
 				A3456514200A5301005B8330 /* Launch Screen.storyboard */,
-				9DC436E620019D4E00335A4A /* Assets.xcassets */,
+				A340909820141F6C0023E3AF /* Assets.xcassets */,
 				9DC436EB20019D4E00335A4A /* Info.plist */,
 				A34C3B89200310EE00C256FE /* GoogleService-Info.plist */,
 			);
@@ -352,12 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0BE7EB2003246400945119 /* Facebook.png in Resources */,
-				9DC436E720019D4E00335A4A /* Assets.xcassets in Resources */,
 				A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */,
 				A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */,
 				A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */,
 				9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */,
 				9D0BE7E72003243B00945119 /* Twitter.png in Resources */,
+				A340909920141F6C0023E3AF /* Assets.xcassets in Resources */,
 				9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */,
 				A3E1FF3220095ACF00DD8B0C /* TabBar.storyboard in Resources */,
 				9D0BE7E62003243B00945119 /* Instagram.png in Resources */,
@@ -526,6 +526,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -534,6 +535,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -733,6 +735,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattFoote.Nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nexus/nexus-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -752,6 +755,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattFoote.Nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nexus/nexus-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

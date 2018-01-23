@@ -1,14 +1,17 @@
 //
 //  nexus-Bridging-Header.h
-//  Nexus
+//  
 //
-//  Created by Nick potts on 1/11/18.
-//  Copyright © 2018 Matthew Foote. All rights reserved.
+//  Created by Nick potts on 1/20/18.
 //
 
-#ifndef Header_h
-#define Header_h
-#import <Google.SignIn.h>
+#ifndef nexus_Bridging_Header_h
+#define nexus_Bridging_Header_h
+
+
 #import <GoogleSignIn/GoogleSignIn.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
-#endif /* Header_h */
+
+
+#endif /* nexus_Bridging_Header_h */

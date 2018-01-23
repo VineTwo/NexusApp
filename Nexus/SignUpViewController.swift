@@ -10,9 +10,9 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-import GoogleSignIn
+//import GoogleSignIn
 
-class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
   
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -30,9 +30,9 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         super.viewDidLoad()
         signUpErrorLabel.isHidden = true
         //Google sign in
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-        GIDSignIn.sharedInstance().delegate = self
+      //  GIDSignIn.sharedInstance().uiDelegate = self
+       // GIDSignIn.sharedInstance().signIn()
+       // GIDSignIn.sharedInstance().delegate = self
         
         emailTextField.tintColor = UIColor.lightText
         emailTextField.textColor = UIColor.black
@@ -72,9 +72,9 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         handleTextField()
         
         //google
-        let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width - 32, height: 36)
-        view.addSubview(googleButton)
+      //  let googleButton = GIDSignInButton()
+      //  googleButton.frame = CGRect(x: 16, y: 625, width: view.frame.width - 32, height: 36)
+      //  view.addSubview(googleButton)
        
         
       
@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         // Do not add a line break
         return false
     }
-    
+  /*
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
         if let err = error {
             print(err)
@@ -108,6 +108,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
+ */
  /*
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
                 withError error: NSError!) {
@@ -121,7 +122,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         }
 
     }
-    */
+ 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let err = error {
             print("Failed to login:", err)
@@ -154,7 +155,7 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         }
     }
- 
+ */
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
@@ -211,12 +212,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
                       // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
+                    self.setUserInformation(email: self.emailTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
                 
             }
             else {
-                self.setUserInformation(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!, profileImgUrl: " ")
+                self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
                // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
 
             }
@@ -225,11 +226,11 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
 
     }
  
-    func setUserInformation(email: String, password: String, uid: String, profileImgUrl: String) {
+    func setUserInformation(email: String, uid: String, profileImgUrl: String) {
         let ref = Database.database().reference()
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
-        newUsersReference.setValue(["email": email, "passwords": password, "ProfileIMG": profileImgUrl, "name": " "])
+        newUsersReference.setValue(["email": email, "ProfileIMG": profileImgUrl, "Name": " "])
         print("Added to database")
         self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
@@ -278,7 +279,12 @@ class SignUpViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Did finish picking picture")
-        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImage = editedImage
+            profilePicture.image = editedImage
+        }
+    
+        else if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             selectedImage = image
             profilePicture.image = image
         }

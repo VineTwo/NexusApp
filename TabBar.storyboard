@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7u-p3-apX">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="GGr-jJ-shn" customClass="ConnectViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3mB-xB-NQH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eyX-Hl-Hd0">
-                                <rect key="frame" x="74" y="308.5" width="227" height="50"/>
+                                <rect key="frame" x="93.666666666666686" y="343" width="227" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="50"/>
@@ -28,14 +28,14 @@
                                         </constraints>
                                         <state key="normal" title="Social Code"/>
                                         <connections>
-                                            <segue destination="n2H-Em-2Zv" kind="presentation" id="WI5-KS-kOd"/>
+                                            <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-3j-Wby">
                                         <rect key="frame" x="132" y="0.0" width="95" height="50"/>
                                         <state key="normal" title="Contact Code"/>
                                         <connections>
-                                            <segue destination="Pbu-Zr-4NM" kind="presentation" id="qU1-qR-eVO"/>
+                                            <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -52,18 +52,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1202.2488755622189"/>
+            <point key="canvasLocation" x="1430" y="1192"/>
         </scene>
         <!--Social Code View Controller-->
         <scene sceneID="eAs-el-XtT">
             <objects>
                 <viewController id="n2H-Em-2Zv" customClass="SocialCodeViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swN-g7-yJB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
-                                <rect key="frame" x="124" y="312" width="127" height="170"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-6R-IX6">
+                                <rect key="frame" x="135" y="530" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Generate Code"/>
+                                <connections>
+                                    <action selector="generateQRButton_TouchUpInside:" destination="n2H-Em-2Zv" eventType="touchUpInside" id="pbK-cW-Ckp"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-eb-p4M">
+                                <rect key="frame" x="220" y="63" width="127" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-jX-kPb">
+                                <rect key="frame" x="220" y="398" width="127" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-F9-PAt">
+                                <rect key="frame" x="39" y="259" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Sk-56L">
+                                <rect key="frame" x="32" y="373" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-52-D9z">
+                                <rect key="frame" x="30" y="112" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drY-O4-1TN">
+                                <rect key="frame" x="220" y="235" width="121" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
+                                <rect key="frame" x="143.66666666666666" y="283" width="126.99999999999997" height="170"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instagram Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-Hz-yaH">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
@@ -91,55 +132,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="4Vv-Q7-lct"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-6R-IX6">
-                                <rect key="frame" x="135" y="530" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Generate Code"/>
-                                <connections>
-                                    <action selector="generateQRButton_TouchUpInside:" destination="n2H-Em-2Zv" eventType="touchUpInside" id="pbK-cW-Ckp"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-eb-p4M">
-                                <rect key="frame" x="220" y="63" width="127" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-jX-kPb">
-                                <rect key="frame" x="220" y="398" width="127" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhi-XD-Tq0">
-                                <rect key="frame" x="170" y="63" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="GGr-jJ-shn" kind="show" id="aWY-Jz-RzL"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-F9-PAt">
-                                <rect key="frame" x="39" y="259" width="58" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Sk-56L">
-                                <rect key="frame" x="32" y="373" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-52-D9z">
-                                <rect key="frame" x="30" y="112" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drY-O4-1TN">
-                                <rect key="frame" x="220" y="235" width="121" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -149,6 +141,7 @@
                         <viewLayoutGuide key="safeArea" id="H72-qS-eqN"/>
                     </view>
                     <connections>
+                        <outlet property="generateButton" destination="LY4-6R-IX6" id="udw-0z-kXb"/>
                         <outlet property="instaLabel" destination="F28-52-D9z" id="dtM-8U-DcM"/>
                         <outlet property="instagramTextField" destination="mFx-Hz-yaH" id="a50-KQ-hHq"/>
                         <outlet property="qrCodeImage" destination="dRE-eb-p4M" id="gN9-6P-Vqb"/>
@@ -162,14 +155,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="1977.6611694152925"/>
+            <point key="canvasLocation" x="1065" y="2114"/>
         </scene>
         <!--Contact Code View Controller-->
         <scene sceneID="dyS-2M-RGc">
             <objects>
                 <viewController id="Pbu-Zr-4NM" customClass="ContactCodeViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PIS-13-Qzn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SMd-Om-Efa"/>
@@ -177,22 +170,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvH-JE-ilK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="1978"/>
+            <point key="canvasLocation" x="1807" y="2113"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fOy-vw-SPb">
             <objects>
                 <viewController id="hTM-uw-5oA" customClass="ProfileViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eS7-Cf-JMX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="eS7-Cf-JMX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-JL-THw">
-                                <rect key="frame" x="98" y="81" width="179" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="8M6-el-aoY">
+                                <rect key="frame" x="0.0" y="64" width="414" height="504"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-K9-qXp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="q0v-Fg-h9F"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wCL-8u-mgl" appends="YES" id="XuN-EJ-VoK"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otW-qF-f3X">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="128"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="cUE-uS-BoZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0yX-t5-FSw" appends="YES" id="gjY-9r-a5b"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-yc-Us5">
+                                        <rect key="frame" x="0.0" y="376" width="414" height="128"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="0AH-5I-VYz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="8Bz-R6-CkB" appends="YES" id="JsP-lt-MUS"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8bY-IJ-Vtx" firstAttribute="trailing" secondItem="8M6-el-aoY" secondAttribute="trailing" id="EMc-QX-puB"/>
+                            <constraint firstAttribute="bottom" secondItem="8M6-el-aoY" secondAttribute="bottom" id="W0T-AQ-Ulg"/>
+                            <constraint firstItem="8M6-el-aoY" firstAttribute="top" secondItem="8bY-IJ-Vtx" secondAttribute="top" id="cN4-tr-Xfp"/>
+                            <constraint firstItem="8M6-el-aoY" firstAttribute="leading" secondItem="8bY-IJ-Vtx" secondAttribute="leading" id="o4f-Fa-RtF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8bY-IJ-Vtx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="toA-8N-7YC">
@@ -203,12 +233,25 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profilePicture" destination="MEA-JL-THw" id="mDq-NN-yJm"/>
+                        <outlet property="instaCodeImageView" destination="Xvg-K9-qXp" id="B5I-Hj-c5e"/>
+                        <outlet property="snapCodeImageView" destination="q2V-yc-Us5" id="BwI-Id-NEN"/>
+                        <outlet property="twitterCodeImageView" destination="otW-qF-f3X" id="8Yk-zh-bmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3K-r6-LRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0yX-t5-FSw">
+                    <connections>
+                        <action selector="didTapTwitterCodeImage:" destination="hTM-uw-5oA" id="lyV-tC-jHe"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wCL-8u-mgl">
+                    <connections>
+                        <action selector="didTapInstaCodeImage:" destination="hTM-uw-5oA" id="Qn9-ax-9te"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="8Bz-R6-CkB"/>
             </objects>
-            <point key="canvasLocation" x="373.5" y="1202.5"/>
+            <point key="canvasLocation" x="336.80000000000001" y="1191.8719211822661"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -220,8 +263,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tc1-PC-cPX" kind="relationship" relationship="viewControllers" id="sms-ZL-M3I"/>
                         <segue destination="WcA-Gy-PoJ" kind="relationship" relationship="viewControllers" id="q8v-dj-N7i"/>
+                        <segue destination="tc1-PC-cPX" kind="relationship" relationship="viewControllers" id="8yP-O4-ggY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upF-AE-lMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,48 +275,46 @@
         <scene sceneID="cd6-hA-361">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc1-PC-cPX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="Y4P-9x-eCn">
+                    <tabBarItem key="tabBarItem" title="" image="ShareIcon" selectedImage="ShareIcon" id="Y4P-9x-eCn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qCE-YO-MOy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="cSj-7B-2hQ"/>
+                        <segue destination="GGr-jJ-shn" kind="relationship" relationship="rootViewController" id="sq9-NG-mqL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4U-kg-jg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="365"/>
+            <point key="canvasLocation" x="1431" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HNr-hq-VNx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcA-Gy-PoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="ZCl-Tw-NYF"/>
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WrG-MJ-cX8">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GGr-jJ-shn" kind="relationship" relationship="rootViewController" id="7Qd-AE-l2K"/>
+                        <segue destination="hTM-uw-5oA" kind="relationship" relationship="rootViewController" id="iqe-yp-Zwv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="365"/>
+            <point key="canvasLocation" x="337" y="328"/>
         </scene>
     </scenes>
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="ShareIcon" width="60" height="63"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aWY-Jz-RzL"/>
-    </inferredMetricsTieBreakers>
 </document>
