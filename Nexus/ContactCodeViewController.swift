@@ -41,14 +41,12 @@ class ContactCodeViewController: UIViewController {
         let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
         var image: UIImage?
         if let url = imageURL {
-            print("Inside first if let")
             //All network operations has to run on different thread(not on main thread).
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData = NSData(contentsOf: url)
                 //All UI operations has to run on main thread.
                 DispatchQueue.main.async {
                     if imageData != nil {
-                        print("Should see image")
                         image = UIImage(data: imageData! as Data)!
                         self.contactImageVIew.image = image
                         self.contactImageVIew.sizeToFit()
