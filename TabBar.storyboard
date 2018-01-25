@@ -197,6 +197,9 @@
                                 <rect key="frame" x="20" y="575" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="generateButton_TouchUpInside:" destination="Pbu-Zr-4NM" eventType="touchUpInside" id="FIz-Ri-RB3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9k-wp-eEX">
                                 <rect key="frame" x="20" y="485" width="374" height="30"/>
@@ -215,6 +218,10 @@
                     </view>
                     <connections>
                         <outlet property="contactImageVIew" destination="1AK-1H-lZQ" id="L1G-rG-yLg"/>
+                        <outlet property="emailTextField" destination="u9k-wp-eEX" id="pNS-SE-qaD"/>
+                        <outlet property="firstNameTextField" destination="zUU-47-ceq" id="71M-tW-AKQ"/>
+                        <outlet property="lastNameTextField" destination="I0F-OH-QCX" id="xDT-IH-Idu"/>
+                        <outlet property="phoneNumberTextField" destination="J3Q-HQ-GAo" id="io4-n9-FbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvH-JE-ilK" userLabel="First Responder" sceneMemberID="firstResponder"/>
