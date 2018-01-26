@@ -21,6 +21,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var snapCodeImageView: UIImageView!
     
+    
+    @IBOutlet weak var contactCodeImageView: UIImageView!
+    
     @IBAction func didTapInstaCodeImage(_ sender: Any) {
         print("Insta Tapped")
         self.performZoomInOnStartingImageView(startingImageView: instaCodeImageView)
@@ -33,6 +36,12 @@ class ProfileViewController: UIViewController {
 
     }
     
+    @IBAction func didTapContactImage(_ sender: Any) {
+        print("Contact Image tapped")
+        self.performZoomInOnStartingImageView(startingImageView: contactCodeImageView)
+    }
+    
+    
     
     var databaseHandle: DatabaseHandle?
     var instaURL = [String]()
@@ -43,6 +52,7 @@ class ProfileViewController: UIViewController {
         retrieveInstaQrUrl()
         retrieveTwitterQrUrl()
         retrieveSnapQrUrl()
+        retrieveContactQrUrl()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
@@ -51,6 +61,9 @@ class ProfileViewController: UIViewController {
         
         twitterCodeImageView.addGestureRecognizer(tapGesture)
         twitterCodeImageView.isUserInteractionEnabled = true;
+        
+        contactCodeImageView.addGestureRecognizer(tapGesture)
+        contactCodeImageView.isUserInteractionEnabled = true
 
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
@@ -201,6 +214,37 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    func retrieveContactQrUrl() {
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        databaseHandle = ref.child("users").child(uid!).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
+            let contactCode = snapshot.value as? String
+            if let actualCode  = contactCode {
+                let imageURL = URL(string: actualCode)
+                
+                var image: UIImage?
+                
+                if let url = imageURL {
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData = NSData(contentsOf: url)
+                        //All UI operations has to run on main thread.
+                        DispatchQueue.main.async {
+                            if imageData != nil {
+                                image = UIImage(data: imageData! as Data)!
+                                self.contactCodeImageView.image = image
+                                self.contactCodeImageView.sizeToFit()
+                            }
+                            
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+    }
+    
     
     
     func profileURL() {

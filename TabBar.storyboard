@@ -243,10 +243,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="8M6-el-aoY">
-                                                <rect key="frame" x="155" y="8" width="212" height="504"/>
+                                                <rect key="frame" x="155" y="8" width="229" height="732"/>
                                                 <subviews>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-K9-qXp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="212" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="128"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="q0v-Fg-h9F"/>
@@ -256,7 +256,7 @@
                                                         </connections>
                                                     </imageView>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otW-qF-f3X">
-                                                        <rect key="frame" x="0.0" y="188" width="212" height="128"/>
+                                                        <rect key="frame" x="0.0" y="188" width="229" height="128"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="cUE-uS-BoZ"/>
@@ -266,7 +266,7 @@
                                                         </connections>
                                                     </imageView>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-yc-Us5">
-                                                        <rect key="frame" x="0.0" y="376" width="212" height="128"/>
+                                                        <rect key="frame" x="0.0" y="376" width="229" height="128"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="0AH-5I-VYz"/>
@@ -275,10 +275,14 @@
                                                             <outletCollection property="gestureRecognizers" destination="8Bz-R6-CkB" appends="YES" id="JsP-lt-MUS"/>
                                                         </connections>
                                                     </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Da-YM-JWo">
+                                                        <rect key="frame" x="0.0" y="564" width="229" height="168"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="vfH-nN-j5O" appends="YES" id="h7P-hC-aXc"/>
+                                                        </connections>
+                                                    </imageView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="212" id="M4N-GT-Key"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="lK1-aL-hpL">
                                                 <rect key="frame" x="21" y="70" width="76.666666666666671" height="381"/>
@@ -308,6 +312,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="Ctp-tj-rI2"/>
+                                            <constraint firstAttribute="trailing" secondItem="8M6-el-aoY" secondAttribute="trailing" constant="8" id="g7a-Nh-1Kf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -338,6 +343,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="contactCodeImageView" destination="1Da-YM-JWo" id="5l2-kP-ZQb"/>
                         <outlet property="instaCodeImageView" destination="Xvg-K9-qXp" id="B5I-Hj-c5e"/>
                         <outlet property="snapCodeImageView" destination="q2V-yc-Us5" id="BwI-Id-NEN"/>
                         <outlet property="twitterCodeImageView" destination="otW-qF-f3X" id="8Yk-zh-bmZ"/>
@@ -355,6 +361,11 @@
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="8Bz-R6-CkB"/>
+                <tapGestureRecognizer id="vfH-nN-j5O">
+                    <connections>
+                        <action selector="didTapContactImage:" destination="hTM-uw-5oA" id="Vqg-j9-Jec"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="335.19999999999999" y="1190.3940886699509"/>
         </scene>
