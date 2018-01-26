@@ -70,39 +70,6 @@
                                     <action selector="generateQRButton_TouchUpInside:" destination="n2H-Em-2Zv" eventType="touchUpInside" id="pbK-cW-Ckp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-eb-p4M">
-                                <rect key="frame" x="220" y="63" width="127" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-jX-kPb">
-                                <rect key="frame" x="220" y="398" width="127" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-F9-PAt">
-                                <rect key="frame" x="39" y="259" width="58" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Sk-56L">
-                                <rect key="frame" x="32" y="373" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-52-D9z">
-                                <rect key="frame" x="30" y="112" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drY-O4-1TN">
-                                <rect key="frame" x="220" y="235" width="121" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
                                 <rect key="frame" x="124" y="321" width="127" height="170"/>
                                 <subviews>
@@ -142,15 +109,9 @@
                     </view>
                     <connections>
                         <outlet property="generateButton" destination="LY4-6R-IX6" id="udw-0z-kXb"/>
-                        <outlet property="instaLabel" destination="F28-52-D9z" id="dtM-8U-DcM"/>
                         <outlet property="instagramTextField" destination="mFx-Hz-yaH" id="a50-KQ-hHq"/>
-                        <outlet property="qrCodeImage" destination="dRE-eb-p4M" id="gN9-6P-Vqb"/>
-                        <outlet property="snapLabel" destination="DLl-Sk-56L" id="Sts-9V-qs4"/>
                         <outlet property="snapchatTextField" destination="HNI-mM-gX8" id="0vB-xJ-RnV"/>
-                        <outlet property="snapqrCodeImage" destination="Mxj-jX-kPb" id="SxC-Uj-KDF"/>
-                        <outlet property="twitterLabel" destination="zUb-F9-PAt" id="aSs-3k-KVM"/>
                         <outlet property="twitterTextField" destination="5JQ-8z-cgd" id="NKC-wT-kMB"/>
-                        <outlet property="twitterqrCodeImage" destination="drY-O4-1TN" id="Cxq-I9-yWD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
