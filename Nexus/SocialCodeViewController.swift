@@ -44,8 +44,18 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         profilePrompt.isHidden = true
-        // Do any additional setup after loading the view.
+        
+        self.instagramTextField.delegate = self
+        self.twitterTextField.delegate = self
+        self.snapchatTextField.delegate = self
+        
+        instagramTextField.tag = 0
+        twitterTextField.tag = 1
+        snapchatTextField.tag = 2
     }
+    
+    //Hide keyboard when user touches outside of keyboard
+
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -59,6 +69,21 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
             snapchatTextField.text = snapDefault
         }
         
+    }
+   
+    //If not last textField it will go to next textField when enter is pressed
+    //If last textField, keyboard will dismiss when enter key is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
     func instagramQRCode() {
@@ -109,12 +134,5 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-   
 
 }
