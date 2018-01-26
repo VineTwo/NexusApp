@@ -184,12 +184,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYw-io-F1a">
+                                <rect key="frame" x="20" y="186" width="339" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SMd-Om-Efa"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="u9k-wp-eEX" id="pNS-SE-qaD"/>
+                        <outlet property="errorLabel" destination="sYw-io-F1a" id="kgY-Td-Lb1"/>
                         <outlet property="firstNameTextField" destination="zUU-47-ceq" id="71M-tW-AKQ"/>
                         <outlet property="lastNameTextField" destination="I0F-OH-QCX" id="xDT-IH-Idu"/>
                         <outlet property="phoneNumberTextField" destination="J3Q-HQ-GAo" id="io4-n9-FbX"/>

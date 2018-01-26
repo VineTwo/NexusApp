@@ -222,15 +222,17 @@ class ProfileViewController: UIViewController {
             let contactCode = snapshot.value as? String
             if let actualCode  = contactCode {
                 let imageURL = URL(string: actualCode)
-                
+                print("First if let inside retrieve contact")
                 var image: UIImage?
-                
+    
                 if let url = imageURL {
+                    print("Second if let of contact retrieval")
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
                         //All UI operations has to run on main thread.
                         DispatchQueue.main.async {
                             if imageData != nil {
+                                print("Should see contact code")
                                 image = UIImage(data: imageData! as Data)!
                                 self.contactCodeImageView.image = image
                                 self.contactCodeImageView.sizeToFit()
