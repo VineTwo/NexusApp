@@ -16,9 +16,8 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var instagramTextField: UITextField!
     @IBOutlet weak var twitterTextField: UITextField!
     @IBOutlet weak var snapchatTextField: UITextField!
-  //  @IBOutlet weak var qrCodeImage: UIImageView!
-   // @IBOutlet weak var twitterqrCodeImage: UIImageView!
-   // @IBOutlet weak var snapqrCodeImage: UIImageView!
+    @IBOutlet weak var profilePrompt: UILabel!
+    
    
     @IBOutlet weak var generateButton: UIButton!
     
@@ -37,13 +36,14 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         snapchatTextField.isHidden = true
        
         generateButton.isHidden = true
+        
     
 }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        profilePrompt.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -103,7 +103,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         userRef.setValue(["snapQrURl": snapQrUrl])
         
    
-        
+        profilePrompt.isHidden = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
