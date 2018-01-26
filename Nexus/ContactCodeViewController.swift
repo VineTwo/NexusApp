@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ContactCodeViewController: UIViewController {
-    @IBOutlet weak var contactImageVIew: UIImageView!
+ //   @IBOutlet weak var contactImageVIew: UIImageView!
     
     @IBOutlet weak var firstNameTextField: UITextField!
     
@@ -21,13 +21,14 @@ class ContactCodeViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var profilePagePrompt: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        profilePagePrompt.isHidden = true
    
         // Do any additional setup after loading the view.
     }
@@ -40,30 +41,16 @@ class ContactCodeViewController: UIViewController {
        // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
         let contactInfo = "MECARD:N:\(name);TEL:\(phone);EMAIL:\(email)"
         
-        let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
+        
         let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
         setContactQrCode(contactImageString: contactInfoAsString)
         
-        var image: UIImage?
-        if let url = imageURL {
-            //All network operations has to run on different thread(not on main thread).
-            DispatchQueue.global(qos: .userInitiated).async {
-                let imageData = NSData(contentsOf: url)
-                //All UI operations has to run on main thread.
-                DispatchQueue.main.async {
-                    if imageData != nil {
-                        image = UIImage(data: imageData! as Data)!
-                        self.contactImageVIew.image = image
-                        self.contactImageVIew.sizeToFit()
-                    }
-                    
-                }
-            }
-        }
+   
         firstNameTextField.isHidden = true
         lastNameTextField.isHidden = true
         emailTextField.isHidden = true
         phoneNumberTextField.isHidden = true
+        profilePagePrompt.isHidden = false
         
     }
     
