@@ -18,41 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eyX-Hl-Hd0">
-                                <rect key="frame" x="74" y="381" width="227" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-pJ-pwl">
+                                <rect key="frame" x="87" y="345" width="200" height="122"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Db2-bY-tN6"/>
-                                        </constraints>
-                                        <state key="normal" title="Social Code"/>
-                                        <connections>
-                                            <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-3j-Wby">
-                                        <rect key="frame" x="132" y="0.0" width="95" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Contact Code"/>
                                         <connections>
                                             <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
+                                        <rect key="frame" x="0.0" y="86" width="200" height="36"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Social Code"/>
+                                        <connections>
+                                            <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="kY4-WM-6V6"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerX" secondItem="3mB-xB-NQH" secondAttribute="centerX" id="0Z5-Z7-z7P"/>
-                            <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerY" secondItem="3mB-xB-NQH" secondAttribute="centerY" id="cWH-hx-9rW"/>
+                            <constraint firstItem="nDU-pJ-pwl" firstAttribute="centerX" secondItem="3mB-xB-NQH" secondAttribute="centerX" id="LT6-by-PU8"/>
+                            <constraint firstItem="nDU-pJ-pwl" firstAttribute="centerY" secondItem="3mB-xB-NQH" secondAttribute="centerY" id="MqG-zg-BiY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="osI-6W-hfq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Connect" id="U37-gZ-xtK"/>
+                    <connections>
+                        <outlet property="contactCodeButton" destination="8uw-3j-Wby" id="84e-8G-HHj"/>
+                        <outlet property="socialCodeButton" destination="fWX-bI-tsg" id="VIR-m8-IyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="1192"/>
+            <point key="canvasLocation" x="1429.5999999999999" y="1191.8719211822661"/>
         </scene>
         <!--Social Code View Controller-->
         <scene sceneID="eAs-el-XtT">
@@ -107,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerX" secondItem="swN-g7-yJB" secondAttribute="centerX" id="Cka-S8-1a3"/>
                             <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerY" secondItem="swN-g7-yJB" secondAttribute="centerY" id="FN0-94-OhV"/>
@@ -192,7 +200,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="SMd-Om-Efa"/>
                     </view>
                     <connections>
