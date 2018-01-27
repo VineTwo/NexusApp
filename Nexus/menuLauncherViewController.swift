@@ -8,6 +8,17 @@
 
 import UIKit
 
+//this will allow us to edit each cell with an image and title
+class SignOut: NSObject {
+    let name: String
+    let imageName: String
+    
+     init(name: String, imageName: String) {
+        self.name = name
+        self.imageName = imageName
+    }
+}
+// Creates, animates, and sizes the bottom pop up menu
 class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let blackView = UIView()
@@ -20,6 +31,10 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     }()
     
     let cellID = "cellID"
+    
+    let settings: [SignOut] = {
+        return [SignOut(name: "Sign Out", imageName: "signOut"), SignOut(name: "Write A Review", imageName: "review")]
+    }()
     
     func showMenu() {
         
@@ -48,6 +63,7 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
         
     }
     
+    // This allows user to dismiss the menu
     @objc func handleDismissMenu() {
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
@@ -60,11 +76,15 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return settings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SettingCell
+        
+        let setting = settings[indexPath.item]
+        cell.setting = setting
+        
         return cell
     }
     
@@ -72,6 +92,9 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
         return CGSize(width: collectionView.frame.width, height: 50)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     override init() {
         super.init()
         

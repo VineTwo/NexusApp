@@ -10,17 +10,46 @@ import UIKit
 
 class SettingCell: BaseCell {
     
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.lightGray: UIColor.white
+        }
+    }
+    
+    var setting: SignOut? {
+        didSet {
+            nameLabel.text = setting?.name
+            if let imageName = setting?.imageName {
+                iconImageView.image = UIImage(named: imageName)
+            }
+        }
+    }
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Out"
         return label
     }()
+    
+    let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "vertMenu")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     override func setUpViews() {
         super.setUpViews()
         addSubview(nameLabel)
+        addSubview(iconImageView)
         //horizontal and vertical constraints
-        addConstraintsWithFormat(format: "H:|[v0]|", views: nameLabel)
+        addConstraintsWithFormat(format: "H:|-10-[v0(30)]-8-[v1]|", views: iconImageView, nameLabel)
+        
         addConstraintsWithFormat(format: "V:|[v0]|", views: nameLabel)
+        
+        addConstraintsWithFormat(format: "V:[v0(30)]", views: iconImageView)
+        
+        addConstraints([NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)])
 
     
     }
