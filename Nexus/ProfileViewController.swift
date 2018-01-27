@@ -260,35 +260,42 @@ class ProfileViewController: UIViewController {
         handleMenu()
         
     }
-    let menuLaunch = menuLauncher()
+    lazy var menuLaunch: menuLauncher = {
+        let launcher = menuLauncher()
+        launcher.profileController = self
+        return launcher
+    }()
     
     func handleMenu() {
-        menuLaunch.profileController = self
         menuLaunch.showMenu()
-    
     }
     
-    func showControllerForLogin() {
-        let dummyViewController = UIViewController()
-        navigationController?.pushViewController(dummyViewController, animated: true)
+    func showControllerForLogin(Setting: SignOut) {
+      //  let dummyViewController = UIViewController()
+        print(Setting.name)
+        if (Setting.name == "Sign Out") {
+            print("Sign out tapped")
+            signOutUser()
+        }
+        
+        if(Setting.name == "Write A Review"){
+            print("Will take user to app page on App Store")
+        }
+        //navigationController?.pushViewController(dummyViewController, animated: true)
     }
     
- 
-    /*
-    @IBAction func signOut_TouchUpInside(_ sender: Any) {
-        print(Auth.auth().currentUser!)
+    func signOutUser() {
+       
         do {
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)
         }
-       // print(Auth.auth().currentUser)
+        // print(Auth.auth().currentUser)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
- */
+ 
 }
-
-
