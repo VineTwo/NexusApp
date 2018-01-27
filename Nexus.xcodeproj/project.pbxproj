@@ -19,6 +19,7 @@
 		9DC436F520019D4E00335A4A /* NexusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436F420019D4E00335A4A /* NexusTests.swift */; };
 		9DC4370020019D4E00335A4A /* NexusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC436FF20019D4E00335A4A /* NexusUITests.swift */; };
 		A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A30259682008975500479AF0 /* NexusLogoNobackground.png */; };
+		A308DA7F201C179000F126A6 /* menuLauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308DA7E201C179000F126A6 /* menuLauncherViewController.swift */; };
 		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
 		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
 		A340909920141F6C0023E3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A340909820141F6C0023E3AF /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		9DC436FF20019D4E00335A4A /* NexusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexusUITests.swift; sourceTree = "<group>"; };
 		9DC4370120019D4E00335A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30259682008975500479AF0 /* NexusLogoNobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NexusLogoNobackground.png; sourceTree = "<group>"; };
+		A308DA7E201C179000F126A6 /* menuLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuLauncherViewController.swift; sourceTree = "<group>"; };
 		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		A340909820141F6C0023E3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				A350ABB6200D1CF600D846AD /* Model */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
+				A308DA7E201C179000F126A6 /* menuLauncherViewController.swift */,
 				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
 				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
 				A331A07D20091519005776C2 /* ConnectViewController.swift */,
@@ -553,6 +556,7 @@
 			files = (
 				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
 				A350ABB8200D1D1600D846AD /* users.swift in Sources */,
+				A308DA7F201C179000F126A6 /* menuLauncherViewController.swift in Sources */,
 				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
