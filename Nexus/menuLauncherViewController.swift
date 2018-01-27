@@ -8,7 +8,7 @@
 
 import UIKit
 
-class menuLauncher: NSObject {
+class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let blackView = UIView()
     
@@ -18,6 +18,8 @@ class menuLauncher: NSObject {
         cv.backgroundColor = UIColor.white
         return cv
     }()
+    
+    let cellID = "cellID"
     
     func showMenu() {
         
@@ -30,7 +32,7 @@ class menuLauncher: NSObject {
             window.addSubview(blackView)
             window.addSubview(collectionView)
             
-            let height: CGFloat = 200
+            let height: CGFloat = 100
             let y = window.frame.height - height
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
@@ -57,9 +59,26 @@ class menuLauncher: NSObject {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        return cell
+    }
+    
     override init() {
         super.init()
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
     }
 }
+
+
+
+
+
