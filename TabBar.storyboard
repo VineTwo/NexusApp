@@ -41,7 +41,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerX" secondItem="3mB-xB-NQH" secondAttribute="centerX" id="0Z5-Z7-z7P"/>
                             <constraint firstItem="eyX-Hl-Hd0" firstAttribute="centerY" secondItem="3mB-xB-NQH" secondAttribute="centerY" id="cWH-hx-9rW"/>
@@ -295,7 +295,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="8M6-el-aoY" firstAttribute="top" secondItem="vrk-tZ-M7X" secondAttribute="top" constant="8" id="FrF-za-9vA"/>
                                             <constraint firstAttribute="trailing" secondItem="8M6-el-aoY" secondAttribute="trailing" constant="8" id="g7a-Nh-1Kf"/>
@@ -311,7 +311,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vrk-tZ-M7X" firstAttribute="width" secondItem="eS7-Cf-JMX" secondAttribute="width" id="1FG-YK-9fI"/>
                             <constraint firstItem="kMA-yM-GmJ" firstAttribute="trailing" secondItem="8bY-IJ-Vtx" secondAttribute="trailing" id="GWr-64-1AD"/>

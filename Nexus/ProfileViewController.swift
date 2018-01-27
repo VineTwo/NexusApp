@@ -64,6 +64,7 @@ class ProfileViewController: UIViewController {
         
         contactCodeImageView.addGestureRecognizer(tapGesture)
         contactCodeImageView.isUserInteractionEnabled = true
+        
 
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
