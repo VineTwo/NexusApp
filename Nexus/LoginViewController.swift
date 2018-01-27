@@ -28,6 +28,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    @IBAction func forgotPasswordButton_TouchUpInside(_ sender: Any) {
+        performSegue(withIdentifier: "forgotPassword", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginErrorLabel.isHidden = true
