@@ -17,6 +17,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var twitterTextField: UITextField!
     @IBOutlet weak var snapchatTextField: UITextField!
     @IBOutlet weak var profilePrompt: UILabel!
+    @IBOutlet weak var socialMediaTitleLabel: UILabel!
     
    
     @IBOutlet weak var generateButton: UIButton!
@@ -34,7 +35,6 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instagramTextField.isHidden = true
         twitterTextField.isHidden = true
         snapchatTextField.isHidden = true
-       
         generateButton.isHidden = true
         
     
@@ -52,6 +52,16 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instagramTextField.tag = 0
         twitterTextField.tag = 1
         snapchatTextField.tag = 2
+        
+        //button look
+        generateButton.setTitleColor(UIColor.black, for: .normal)
+        generateButton.layer.cornerRadius = 7.0
+        generateButton.layer.shadowColor = UIColor.gray.cgColor
+        generateButton.layer.shadowRadius = 2.5
+        generateButton.layer.shadowOpacity = 0.4
+        generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        
     }
     
     //Hide keyboard when user touches outside of keyboard
