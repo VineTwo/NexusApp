@@ -263,9 +263,14 @@ class ProfileViewController: UIViewController {
     let menuLaunch = menuLauncher()
     
     func handleMenu() {
-        
+        menuLaunch.profileController = self
         menuLaunch.showMenu()
-     
+    
+    }
+    
+    func showControllerForLogin() {
+        let dummyViewController = UIViewController()
+        navigationController?.pushViewController(dummyViewController, animated: true)
     }
     
  
