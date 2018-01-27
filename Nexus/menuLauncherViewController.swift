@@ -68,13 +68,17 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
     override init() {
         super.init()
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(SettingCell.self, forCellWithReuseIdentifier: cellID)
     }
 }
 
