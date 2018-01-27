@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Nexus/LoginViewController.swift"
-            timestampString = "538181612.884051"
+            timestampString = "538711775.179495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "textFieldShouldReturn(_:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "touchesBegan(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

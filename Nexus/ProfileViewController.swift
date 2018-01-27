@@ -256,7 +256,37 @@ class ProfileViewController: UIViewController {
         print(ref)
         print("after")
     }
-
+    @IBAction func menu_TouchUpInside(_ sender: Any) {
+        handleMenu()
+        
+    }
+    
+    let blackView = UIView()
+    func handleMenu() {
+        
+        if let window = UIApplication.shared.keyWindow {
+            
+            blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            
+            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismissMenu)))
+            
+            window.addSubview(blackView)
+            blackView.frame = window.frame
+            blackView.alpha = 0
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.blackView.alpha = 1
+            })
+        }
+     
+    }
+    
+    @objc func handleDismissMenu() {
+        UIView.animate(withDuration: 0.3) {
+            self.blackView.alpha = 0
+        }
+    }
+    /*
     @IBAction func signOut_TouchUpInside(_ sender: Any) {
         print(Auth.auth().currentUser!)
         do {
@@ -270,6 +300,7 @@ class ProfileViewController: UIViewController {
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
+ */
 }
 
 

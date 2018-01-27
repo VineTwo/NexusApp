@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
-                                <rect key="frame" x="0.0" y="133.66666666666666" width="375" height="48.666666666666657"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="48.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48.333333333333329" id="d7K-8O-RlG"/>
                                 </constraints>
