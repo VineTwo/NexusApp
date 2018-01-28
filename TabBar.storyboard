@@ -105,7 +105,7 @@
                                     <constraint firstAttribute="width" constant="300" id="RXa-wq-bXh"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Social QR Codes were succesfully generated! Go to your profile page to see them." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Social Media QR Codes. Check them out at the Profile page" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
                                 <rect key="frame" x="37.666666666666657" y="369" width="300" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="ddz-eb-pqv"/>
@@ -184,65 +184,78 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made a QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
-                                <rect key="frame" x="37.666666666666657" y="368.66666666666669" width="300" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made a your Contact QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
+                                <rect key="frame" x="62" y="356.33333333333331" width="250" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="ikO-ZX-WC1"/>
-                                    <constraint firstAttribute="width" constant="300" id="zne-KT-AO6"/>
+                                    <constraint firstAttribute="height" constant="100" id="BTS-DQ-cDr"/>
+                                    <constraint firstAttribute="width" constant="250" id="MRk-R5-4rr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="0tY-JF-jLJ">
-                                <rect key="frame" x="37.666666666666657" y="251.33333333333337" width="300" height="310"/>
+                                <rect key="frame" x="37.666666666666657" y="246.33333333333337" width="300" height="320"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYw-io-F1a">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="PDa-5G-vxU"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUU-47-ceq">
-                                        <rect key="frame" x="0.0" y="69.999999999999972" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="79.999999999999972" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="zYV-2m-2RQ"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0F-OH-QCX">
-                                        <rect key="frame" x="0.0" y="139.99999999999997" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="149.99999999999997" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9gg-2O-NCQ"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9k-wp-eEX">
-                                        <rect key="frame" x="0.0" y="209.99999999999997" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="219.99999999999997" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Sm0-PW-YOb"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-HQ-GAo">
-                                        <rect key="frame" x="0.0" y="280" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="290" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dpX-KG-bSr"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="CeS-UY-di8"/>
+                                    <constraint firstAttribute="width" constant="300" id="QgK-63-c2H"/>
+                                    <constraint firstAttribute="height" constant="320" id="m0h-l9-zgZ"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTX-aa-JR2">
-                                <rect key="frame" x="87" y="597" width="200" height="36"/>
+                                <rect key="frame" x="87" y="613" width="200" height="36"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="K6m-vb-Le1"/>
                                     <constraint firstAttribute="width" constant="200" id="Kzx-kg-DAd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Generate QR Code"/>
+                                <state key="normal" title="Generate QR Code">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="generateButton_TouchUpInside:" destination="Pbu-Zr-4NM" eventType="touchUpInside" id="FIz-Ri-RB3"/>
                                 </connections>
@@ -250,17 +263,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SMd-Om-Efa" firstAttribute="bottom" secondItem="uTX-aa-JR2" secondAttribute="bottom" constant="96" id="0JQ-Yt-tEA"/>
-                            <constraint firstItem="uTX-aa-JR2" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="87" id="CiE-ZV-Tdg"/>
-                            <constraint firstItem="Dj1-73-wlN" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="Pqz-jJ-0yw"/>
-                            <constraint firstItem="spy-ur-2EL" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="16" id="Ri5-MT-BQf"/>
-                            <constraint firstItem="0tY-JF-jLJ" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="S4Z-mb-aHf"/>
-                            <constraint firstItem="Dj1-73-wlN" firstAttribute="centerX" secondItem="PIS-13-Qzn" secondAttribute="centerX" id="Usk-6J-8qE"/>
-                            <constraint firstItem="uTX-aa-JR2" firstAttribute="top" secondItem="0tY-JF-jLJ" secondAttribute="bottom" constant="35.670000000000002" id="YdN-CQ-ZHf"/>
-                            <constraint firstItem="0tY-JF-jLJ" firstAttribute="centerX" secondItem="PIS-13-Qzn" secondAttribute="centerX" id="fMw-Gy-xeX"/>
-                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="spy-ur-2EL" secondAttribute="trailing" constant="16" id="hZe-Mw-2Pm"/>
-                            <constraint firstItem="spy-ur-2EL" firstAttribute="top" secondItem="SMd-Om-Efa" secondAttribute="top" constant="36" id="uG9-4K-h62"/>
-                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="uTX-aa-JR2" secondAttribute="trailing" constant="88" id="yJw-kT-YoN"/>
+                            <constraint firstItem="0tY-JF-jLJ" firstAttribute="centerX" secondItem="PIS-13-Qzn" secondAttribute="centerX" id="1ne-kl-gTu"/>
+                            <constraint firstItem="spy-ur-2EL" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="16" id="HIk-LK-VdQ"/>
+                            <constraint firstItem="0tY-JF-jLJ" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="37.670000000000002" id="Kcd-mR-moB"/>
+                            <constraint firstItem="uTX-aa-JR2" firstAttribute="top" secondItem="0tY-JF-jLJ" secondAttribute="bottom" constant="46.670000000000002" id="M7O-Ju-sNq"/>
+                            <constraint firstItem="Dj1-73-wlN" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="62" id="Tdc-Vi-Mtw"/>
+                            <constraint firstItem="uTX-aa-JR2" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="87" id="dGi-z3-Mgf"/>
+                            <constraint firstItem="0tY-JF-jLJ" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="elh-83-hFb"/>
+                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="Dj1-73-wlN" secondAttribute="trailing" constant="63" id="fYn-tW-EWt"/>
+                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="spy-ur-2EL" secondAttribute="trailing" constant="16" id="n8Y-H8-U1E"/>
+                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="uTX-aa-JR2" secondAttribute="trailing" constant="88" id="sJC-Ql-zHd"/>
+                            <constraint firstItem="Dj1-73-wlN" firstAttribute="centerX" secondItem="PIS-13-Qzn" secondAttribute="centerX" id="sKz-Kj-9IK"/>
+                            <constraint firstItem="spy-ur-2EL" firstAttribute="top" secondItem="SMd-Om-Efa" secondAttribute="top" constant="36" id="sPM-1p-edF"/>
+                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="0tY-JF-jLJ" secondAttribute="trailing" constant="37.329999999999998" id="wsz-EI-uaq"/>
+                            <constraint firstItem="Dj1-73-wlN" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="zIQ-Vg-Ygk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SMd-Om-Efa"/>
                     </view>
