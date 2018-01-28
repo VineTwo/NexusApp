@@ -32,6 +32,7 @@
 		A350ABB0200C130900D846AD /* SocialCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABAF200C130900D846AD /* SocialCodeViewController.swift */; };
 		A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */; };
 		A350ABB8200D1D1600D846AD /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB7200D1D1600D846AD /* users.swift */; };
+		A35455B1201D55A00055C582 /* designConstants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A35455AF201D55A00055C582 /* designConstants.cpp */; };
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
 		A368935D2005921D000E7C69 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368935C2005921D000E7C69 /* config.swift */; };
@@ -91,6 +92,7 @@
 		A350ABAF200C130900D846AD /* SocialCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCodeViewController.swift; sourceTree = "<group>"; };
 		A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCodeViewController.swift; sourceTree = "<group>"; };
 		A350ABB7200D1D1600D846AD /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
+		A35455AF201D55A00055C582 /* designConstants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = designConstants.cpp; sourceTree = "<group>"; };
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				A308DA82201C219600F126A6 /* BaseCell.swift */,
 				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
 				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
+				A35455AF201D55A00055C582 /* designConstants.cpp */,
 				A331A07D20091519005776C2 /* ConnectViewController.swift */,
 				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
 				A368935C2005921D000E7C69 /* config.swift */,
@@ -566,6 +569,7 @@
 				A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */,
 				A308DA83201C219600F126A6 /* BaseCell.swift in Sources */,
 				A308DA81201C212300F126A6 /* SettingCell.swift in Sources */,
+				A35455B1201D55A00055C582 /* designConstants.cpp in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,

@@ -26,12 +26,21 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var generateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profilePagePrompt.isHidden = true
         errorLabel.isHidden = true
+        
+        //button design
+        generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        generateButton.layer.cornerRadius = 7.0
+        generateButton.layer.shadowColor = UIColor.gray.cgColor
+        generateButton.layer.shadowRadius = 2.5
+        generateButton.layer.shadowOpacity = 0.4
+        generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
    
         // Do any additional setup after loading the view.
         
