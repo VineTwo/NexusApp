@@ -105,16 +105,22 @@
                                     <constraint firstAttribute="width" constant="300" id="RXa-wq-bXh"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Social QR Codes were succesfully generated! Go to your profile page to see them." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
-                                <rect key="frame" x="16" y="180" width="343" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Social QR Codes were succesfully generated! Go to your profile page to see them." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
+                                <rect key="frame" x="37.666666666666657" y="369" width="300" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ddz-eb-pqv"/>
+                                    <constraint firstAttribute="height" constant="75" id="jMy-23-LlH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Social Media Accounts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-Pb-E3d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Social Media Accounts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-Pb-E3d">
                                 <rect key="frame" x="16" y="132" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Coz-0Q-VFz"/>
+                                    <constraint firstAttribute="width" constant="343" id="KqG-7W-wGX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,8 +141,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rcW-vH-ojS" firstAttribute="centerX" secondItem="swN-g7-yJB" secondAttribute="centerX" id="0hf-f7-5dB"/>
+                            <constraint firstItem="H72-qS-eqN" firstAttribute="trailing" secondItem="6G9-Pb-E3d" secondAttribute="trailing" constant="16" id="3hg-aN-cz4"/>
                             <constraint firstItem="LY4-6R-IX6" firstAttribute="leading" secondItem="H72-qS-eqN" secondAttribute="leading" constant="87" id="3tN-zJ-4aH"/>
+                            <constraint firstItem="rcW-vH-ojS" firstAttribute="centerY" secondItem="swN-g7-yJB" secondAttribute="centerY" id="C5h-cA-Yab"/>
+                            <constraint firstItem="6G9-Pb-E3d" firstAttribute="leading" secondItem="H72-qS-eqN" secondAttribute="leading" constant="16" id="CLN-nA-zgI"/>
                             <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerX" secondItem="swN-g7-yJB" secondAttribute="centerX" id="Cka-S8-1a3"/>
+                            <constraint firstItem="6G9-Pb-E3d" firstAttribute="top" secondItem="H72-qS-eqN" secondAttribute="top" constant="44" id="DHb-jW-Ux2"/>
                             <constraint firstItem="e20-ZE-Kk3" firstAttribute="centerY" secondItem="swN-g7-yJB" secondAttribute="centerY" id="FN0-94-OhV"/>
                             <constraint firstItem="H72-qS-eqN" firstAttribute="trailing" secondItem="LY4-6R-IX6" secondAttribute="trailing" constant="88" id="kJL-t1-5HC"/>
                             <constraint firstItem="LY4-6R-IX6" firstAttribute="top" secondItem="e20-ZE-Kk3" secondAttribute="bottom" constant="52" id="nSo-5O-3jS"/>
