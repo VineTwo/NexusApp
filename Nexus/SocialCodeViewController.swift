@@ -64,6 +64,36 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         handleTextField()
         
+        //Design of Instagram Textfield
+        let instagramLayerWidth = instagramTextField.frame.width
+        instagramTextField.tintColor = UIColor.lightText
+        instagramTextField.textColor = UIColor.black
+        instagramTextField.attributedPlaceholder = NSAttributedString(string: instagramTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let bottomLayerPassword = CALayer()
+        bottomLayerPassword.frame = CGRect(x: 0, y: 28, width: instagramLayerWidth, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        instagramTextField.layer.addSublayer(bottomLayerPassword)
+        
+        //Design of twitter textfield
+        let twitterLayerWidth = twitterTextField.frame.width
+        twitterTextField.tintColor = UIColor.lightText
+        twitterTextField.textColor = UIColor.black
+        twitterTextField.attributedPlaceholder = NSAttributedString(string: twitterTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let twitterBottomLayerPassword = CALayer()
+        twitterBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: twitterLayerWidth, height: 0.6)
+        twitterBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        twitterTextField.layer.addSublayer(twitterBottomLayerPassword)
+        
+        //Design of snapchat textfield
+        let snapchatLayerWidth = snapchatTextField.frame.width
+        snapchatTextField.tintColor = UIColor.lightText
+        snapchatTextField.textColor = UIColor.black
+        snapchatTextField.attributedPlaceholder = NSAttributedString(string: snapchatTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let snapchatBottomLayerPassword = CALayer()
+        snapchatBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: snapchatLayerWidth, height: 0.6)
+        snapchatBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        snapchatTextField.layer.addSublayer(snapchatBottomLayerPassword)
+        
         areFieldsEmpty()
     }
     

@@ -58,6 +58,46 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.tag = 2
         emailTextField.tag = 3
         
+        //Design of first name textfield
+        let firstNameLayerWidth = firstNameTextField.frame.width
+        firstNameTextField.tintColor = UIColor.lightText
+        firstNameTextField.textColor = UIColor.black
+        firstNameTextField.attributedPlaceholder = NSAttributedString(string: firstNameTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let firstNameBottomLayerPassword = CALayer()
+        firstNameBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: firstNameLayerWidth, height: 0.6)
+        firstNameBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        firstNameTextField.layer.addSublayer(firstNameBottomLayerPassword)
+        
+        //last name textfield design
+        let lastNameLayerWidth = lastNameTextField.frame.width
+        lastNameTextField.tintColor = UIColor.lightText
+        lastNameTextField.textColor = UIColor.black
+        lastNameTextField.attributedPlaceholder = NSAttributedString(string: lastNameTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let lastNameBottomLayerPassword = CALayer()
+        lastNameBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: lastNameLayerWidth, height: 0.6)
+        lastNameBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        lastNameTextField.layer.addSublayer(lastNameBottomLayerPassword)
+        
+        //phone number textfield design
+        let phoneLayerWidth = phoneNumberTextField.frame.width
+        phoneNumberTextField.tintColor = UIColor.lightText
+        phoneNumberTextField.textColor = UIColor.black
+        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: phoneNumberTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let phoneBottomLayerPassword = CALayer()
+        phoneBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: phoneLayerWidth, height: 0.6)
+        phoneBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        phoneNumberTextField.layer.addSublayer(phoneBottomLayerPassword)
+        
+        //Email text field design
+        let emailLayerWidth = emailTextField.frame.width
+        emailTextField.tintColor = UIColor.lightText
+        emailTextField.textColor = UIColor.black
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let emailBottomLayerPassword = CALayer()
+        emailBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: emailLayerWidth, height: 0.6)
+        emailBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        emailTextField.layer.addSublayer(emailBottomLayerPassword)
+        
         handleTextField()
         
     }
