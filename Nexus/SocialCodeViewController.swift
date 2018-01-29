@@ -54,7 +54,9 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         snapchatTextField.tag = 2
         
         //button look
-        generateButton.setTitleColor(UIColor.black, for: .normal)
+        generateButton.setTitleColor(UIColor.lightText, for: .normal)
+        generateButton.backgroundColor = UIColor.clear
+        generateButton.isEnabled = false
         generateButton.layer.cornerRadius = 7.0
         generateButton.layer.shadowColor = UIColor.gray.cgColor
         generateButton.layer.shadowRadius = 2.5
@@ -144,5 +146,19 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func handleTextField() {
+        instagramTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        twitterTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        snapchatTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        guard let instagram = instagramTextField.text, !instagram.isEmpty,  let twitter = twitterTextField.text, !twitter.isEmpty, let snapchat = snapchatTextField.text, !snapchat.isEmpty else {
+            return
+        }
+    }
+    
+    
 
 }
