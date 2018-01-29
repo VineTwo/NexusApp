@@ -52,7 +52,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         signUpButton.isEnabled = false
-        signUpButton.layer.cornerRadius = 10.0
+        signUpButton.layer.cornerRadius = 7.0
        // signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
        // signUpButton.backgroundColor = UIColor.clear
         

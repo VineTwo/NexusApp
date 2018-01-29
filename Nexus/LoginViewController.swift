@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         bottomLayerPassword.backgroundColor = UIColor.white.cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
-        loginButton.layer.cornerRadius = 10.0
+        loginButton.layer.cornerRadius = 7.0
         loginButton.isEnabled = false
         loginButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         loginButton.backgroundColor = UIColor.clear

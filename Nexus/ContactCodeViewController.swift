@@ -32,15 +32,19 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         profilePagePrompt.isHidden = true
-        errorLabel.isHidden = true
+       generateButton.isEnabled = false
         
         //button design
-        generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        generateButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         generateButton.layer.cornerRadius = 7.0
+        generateButton.backgroundColor = UIColor.clear
+        generateButton.isEnabled = false
         generateButton.layer.shadowColor = UIColor.gray.cgColor
         generateButton.layer.shadowRadius = 2.5
         generateButton.layer.shadowOpacity = 0.4
         generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        
    
         // Do any additional setup after loading the view.
         
@@ -54,11 +58,12 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.tag = 2
         emailTextField.tag = 3
         
+        handleTextField()
+        
     }
     
     @IBAction func generateButton_TouchUpInside(_ sender: Any) {
      
-        errorLabel.isHidden = true
         
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
             errorLabel.isHidden = false
@@ -74,7 +79,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 print("Phone error")
             }
             else {
- 
+                errorLabel.isHidden = true
                 print("No error")
                 let name = firstNameTextField.text! + lastNameTextField.text!
                 let phone = phoneNumberTextField.text!
@@ -155,6 +160,30 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     //Hide keyboard when user touches outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    //Ensuring all fields are filled out before button can be pressed
+    
+    //Handles if text fields are blank
+    func handleTextField() {
+        firstNameTextField.addTarget(self, action: #selector(ContactCodeViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        lastNameTextField.addTarget(self, action: #selector(ContactCodeViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(ContactCodeViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        phoneNumberTextField.addTarget(self, action: #selector(ContactCodeViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        
+    }
+    //Handles if text fields are blank
+    @objc func textFieldDidChange() {
+        guard let firstName = firstNameTextField.text, !firstName.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty, let email = emailTextField.text, !email.isEmpty, let phone = phoneNumberTextField.text, !phone.isEmpty else {
+            errorLabel.text = "Please fill out all fields."
+            return
+        }
+            generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            generateButton.backgroundColor = UIColor.gray
+            generateButton.isEnabled = true
+        
+      
+        
     }
 
 }
