@@ -157,16 +157,15 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         snapchatTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
+    //Generate button is enabled if one of the text fields contains text in case a user does not have an account on all 3 platforms
     @objc func textFieldDidChange() {
-        guard let instagram = instagramTextField.text, !instagram.isEmpty,  let twitter = twitterTextField.text, !twitter.isEmpty, let snapchat = snapchatTextField.text, !snapchat.isEmpty else {
-            return
+        if (instagramTextField.hasText || twitterTextField.hasText || snapchatTextField.hasText) {
+            generateButtonIsEnabled()
         }
-        generateButtonIsEnabled()
-        
     }
     
     func areFieldsEmpty() {
-        if(!(instagramTextField.text?.isEmpty)! || !(twitterTextField.text?.isEmpty)! || !(snapchatTextField.text?.isEmpty)!) {
+        if(!(instagramTextField.text?.isEmpty)! && (twitterTextField.text?.isEmpty)! && (snapchatTextField.text?.isEmpty)!) {
            generateButtonIsEnabled()
             print("Fields arent empty")
         }
