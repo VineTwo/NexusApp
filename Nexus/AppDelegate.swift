@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UITabBar.appearance().tintColor = UIColor.black
         FirebaseApp.configure()
         //For google Sign in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
