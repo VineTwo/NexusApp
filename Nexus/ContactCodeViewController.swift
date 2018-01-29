@@ -72,7 +72,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             print("Email error")
         }
         
-        else if isValidPhoneNumber(phoneNumberString: phoneNumberTextField.text!) {
+        else if !isValidPhoneNumber(phoneNumberString: phoneNumberTextField.text!) {
                 errorLabel.isHidden = false
                 errorLabel.textColor = .red
                 errorLabel.text = "Please enter a proper phone number."
@@ -91,7 +91,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
                 setContactQrCode(contactImageString: contactInfoAsString)
         
-   
+                generateButton.isHidden = true
                 firstNameTextField.isHidden = true
                 lastNameTextField.isHidden = true
                 emailTextField.isHidden = true
@@ -113,9 +113,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     }
    
     func isValidPhoneNumber(phoneNumberString: String) -> Bool {
-        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result =  phoneTest.evaluate(with: phoneNumberString)
+        print(result)
         return result
     }
     
