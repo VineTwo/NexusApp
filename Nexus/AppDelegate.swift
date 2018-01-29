@@ -35,16 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         // Override point for customization after application launch.
-        let navigationBarAppearance = UINavigationBar.appearance()
+      //  let navigationBarAppearance = UINavigationBar.appearance()
+       // UINavigationBar.appearance().tintColor = .gray
+      //  navigationBarAppearance.tintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
+       // navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
         
-        navigationBarAppearance.tintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
-        navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
-        
-        navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
-        navigationBarAppearance.isTranslucent = true
-        navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
-        navigationBarAppearance.shadowImage = UIImage()
-        navigationBarAppearance.tintColor = UIColor.black;
+       // navigationBarAppearance.barTintColor = UIColor(red: 85/255, green: 204/255, blue: 238/255, alpha: 1.0) /* #55ccee */
+        UINavigationBar.appearance().isTranslucent = true
+       // navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
+       // navigationBarAppearance.shadowImage = UIImage()
+       // navigationBarAppearance.tintColor = UIColor.black;
         return true
     }
     //Google signin
