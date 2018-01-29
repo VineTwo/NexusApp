@@ -55,8 +55,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
         firstNameTextField.tag = 0
         lastNameTextField.tag = 1
-        phoneNumberTextField.tag = 2
-        emailTextField.tag = 3
+        phoneNumberTextField.tag = 3
+        emailTextField.tag = 2
         
         //Design of first name textfield
         let firstNameLayerWidth = firstNameTextField.frame.width
