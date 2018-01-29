@@ -465,8 +465,9 @@
         <scene sceneID="cd6-hA-361">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc1-PC-cPX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ShareIcon" selectedImage="ShareIcon" id="Y4P-9x-eCn">
+                    <tabBarItem key="tabBarItem" title="" image="qr" selectedImage="qrFilled" id="Y4P-9x-eCn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qCE-YO-MOy">
@@ -486,7 +487,10 @@
         <scene sceneID="HNr-hq-VNx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcA-Gy-PoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF"/>
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WrG-MJ-cX8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -505,7 +509,8 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
-        <image name="ShareIcon" width="60" height="63"/>
+        <image name="qr" width="16" height="16"/>
+        <image name="qrFilled" width="16" height="16"/>
         <image name="vertMenu" width="16" height="16"/>
     </resources>
 </document>

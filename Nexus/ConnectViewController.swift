@@ -32,7 +32,6 @@ class ConnectViewController: UIViewController {
         contactCodeButton.layer.shadowOpacity = 0.4
         contactCodeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         
-        
         // Do any additional setup after loading the view.
     }
 
