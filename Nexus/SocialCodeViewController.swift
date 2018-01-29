@@ -62,8 +62,9 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         generateButton.layer.shadowRadius = 2.5
         generateButton.layer.shadowOpacity = 0.4
         generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        handleTextField()
         
-        
+        areFieldsEmpty()
     }
     
     //Hide keyboard when user touches outside of keyboard
@@ -73,12 +74,15 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         
         if let instaDefault = UserDefaults.standard.object(forKey: "myInsta") as? String {
             instagramTextField.text = instaDefault
+            generateButton.isEnabled = true
         }
         if let twitterDefault = UserDefaults.standard.object(forKey: "myTwitter") as? String {
             twitterTextField.text = twitterDefault
+            generateButton.isEnabled = true
         }
         if let snapDefault = UserDefaults.standard.object(forKey: "mySnap") as? String {
             snapchatTextField.text = snapDefault
+            generateButton.isEnabled = true
         }
         
     }
@@ -157,8 +161,23 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         guard let instagram = instagramTextField.text, !instagram.isEmpty,  let twitter = twitterTextField.text, !twitter.isEmpty, let snapchat = snapchatTextField.text, !snapchat.isEmpty else {
             return
         }
+        generateButtonIsEnabled()
+        
     }
     
+    func areFieldsEmpty() {
+        if(!(instagramTextField.text?.isEmpty)! || !(twitterTextField.text?.isEmpty)! || !(snapchatTextField.text?.isEmpty)!) {
+           generateButtonIsEnabled()
+            print("Fields arent empty")
+        }
+    }
     
+    func generateButtonIsEnabled() {
+        generateButton.isEnabled = true
+        generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        generateButton.backgroundColor = UIColor.gray
+        print("Button is enabled")
+    }
+
 
 }
