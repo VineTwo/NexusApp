@@ -409,7 +409,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="toA-8N-7YC">
                         <barButtonItem key="leftBarButtonItem" image="vertMenu" id="KHl-ex-17N">
-                            <color key="tintColor" red="0.17363971680000001" green="0.53858419980000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="menu_TouchUpInside:" destination="hTM-uw-5oA" id="l8p-V2-dEV"/>
                             </connections>
@@ -506,6 +506,6 @@
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
         <image name="ShareIcon" width="60" height="63"/>
-        <image name="vertMenu" width="50" height="50"/>
+        <image name="vertMenu" width="16" height="16"/>
     </resources>
 </document>
