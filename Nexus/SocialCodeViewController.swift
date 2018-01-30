@@ -17,6 +17,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var twitterTextField: UITextField!
     @IBOutlet weak var snapchatTextField: UITextField!
     @IBOutlet weak var profilePrompt: UILabel!
+    @IBOutlet weak var socialMediaTitleLabel: UILabel!
     
    
     @IBOutlet weak var generateButton: UIButton!
@@ -34,7 +35,6 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instagramTextField.isHidden = true
         twitterTextField.isHidden = true
         snapchatTextField.isHidden = true
-       
         generateButton.isHidden = true
         
     
@@ -52,6 +52,49 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         instagramTextField.tag = 0
         twitterTextField.tag = 1
         snapchatTextField.tag = 2
+        
+        //button look
+        generateButton.setTitleColor(UIColor.lightText, for: .normal)
+        generateButton.backgroundColor = UIColor.clear
+        generateButton.isEnabled = false
+        generateButton.layer.cornerRadius = 7.0
+        generateButton.layer.shadowColor = UIColor.gray.cgColor
+        generateButton.layer.shadowRadius = 2.5
+        generateButton.layer.shadowOpacity = 0.4
+        generateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        handleTextField()
+        
+        //Design of Instagram Textfield
+        let instagramLayerWidth = instagramTextField.frame.width
+        instagramTextField.tintColor = UIColor.lightText
+        instagramTextField.textColor = UIColor.black
+        instagramTextField.attributedPlaceholder = NSAttributedString(string: instagramTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let bottomLayerPassword = CALayer()
+        bottomLayerPassword.frame = CGRect(x: 0, y: 28, width: instagramLayerWidth, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        instagramTextField.layer.addSublayer(bottomLayerPassword)
+        
+        //Design of twitter textfield
+        let twitterLayerWidth = twitterTextField.frame.width
+        twitterTextField.tintColor = UIColor.lightText
+        twitterTextField.textColor = UIColor.black
+        twitterTextField.attributedPlaceholder = NSAttributedString(string: twitterTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let twitterBottomLayerPassword = CALayer()
+        twitterBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: twitterLayerWidth, height: 0.6)
+        twitterBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        twitterTextField.layer.addSublayer(twitterBottomLayerPassword)
+        
+        //Design of snapchat textfield
+        let snapchatLayerWidth = snapchatTextField.frame.width
+        snapchatTextField.tintColor = UIColor.lightText
+        snapchatTextField.textColor = UIColor.black
+        snapchatTextField.attributedPlaceholder = NSAttributedString(string: snapchatTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let snapchatBottomLayerPassword = CALayer()
+        snapchatBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: snapchatLayerWidth, height: 0.6)
+        snapchatBottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        snapchatTextField.layer.addSublayer(snapchatBottomLayerPassword)
+        
+        areFieldsEmpty()
     }
     
     //Hide keyboard when user touches outside of keyboard
@@ -61,12 +104,15 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         
         if let instaDefault = UserDefaults.standard.object(forKey: "myInsta") as? String {
             instagramTextField.text = instaDefault
+            generateButton.isEnabled = true
         }
         if let twitterDefault = UserDefaults.standard.object(forKey: "myTwitter") as? String {
             twitterTextField.text = twitterDefault
+            generateButton.isEnabled = true
         }
         if let snapDefault = UserDefaults.standard.object(forKey: "mySnap") as? String {
             snapchatTextField.text = snapDefault
+            generateButton.isEnabled = true
         }
         
     }
@@ -134,5 +180,33 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func handleTextField() {
+        instagramTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        twitterTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        snapchatTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    //Generate button is enabled if one of the text fields contains text in case a user does not have an account on all 3 platforms
+    @objc func textFieldDidChange() {
+        if (instagramTextField.hasText || twitterTextField.hasText || snapchatTextField.hasText) {
+            generateButtonIsEnabled()
+        }
+    }
+    
+    func areFieldsEmpty() {
+        if(!(instagramTextField.text?.isEmpty)! && (twitterTextField.text?.isEmpty)! && (snapchatTextField.text?.isEmpty)!) {
+           generateButtonIsEnabled()
+            print("Fields arent empty")
+        }
+    }
+    
+    func generateButtonIsEnabled() {
+        generateButton.isEnabled = true
+        generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        generateButton.backgroundColor = UIColor.gray
+        print("Button is enabled")
+    }
+
 
 }

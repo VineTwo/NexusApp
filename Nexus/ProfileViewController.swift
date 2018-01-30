@@ -64,6 +64,7 @@ class ProfileViewController: UIViewController {
         
         contactCodeImageView.addGestureRecognizer(tapGesture)
         contactCodeImageView.isUserInteractionEnabled = true
+        
 
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
@@ -222,15 +223,17 @@ class ProfileViewController: UIViewController {
             let contactCode = snapshot.value as? String
             if let actualCode  = contactCode {
                 let imageURL = URL(string: actualCode)
-                
+                print("First if let inside retrieve contact")
                 var image: UIImage?
-                
+    
                 if let url = imageURL {
+                    print("Second if let of contact retrieval")
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
                         //All UI operations has to run on main thread.
                         DispatchQueue.main.async {
                             if imageData != nil {
+                                print("Should see contact code")
                                 image = UIImage(data: imageData! as Data)!
                                 self.contactCodeImageView.image = image
                                 self.contactCodeImageView.sizeToFit()
@@ -254,20 +257,46 @@ class ProfileViewController: UIViewController {
         print(ref)
         print("after")
     }
-
-    @IBAction func signOut_TouchUpInside(_ sender: Any) {
-        print(Auth.auth().currentUser!)
+    @IBAction func menu_TouchUpInside(_ sender: Any) {
+        handleMenu()
+        
+    }
+    lazy var menuLaunch: menuLauncher = {
+        let launcher = menuLauncher()
+        launcher.profileController = self
+        return launcher
+    }()
+    
+    func handleMenu() {
+        menuLaunch.showMenu()
+    }
+    
+    func showControllerForLogin(Setting: SignOut) {
+      //  let dummyViewController = UIViewController()
+        print(Setting.name)
+        if (Setting.name == "Sign Out") {
+            print("Sign out tapped")
+            signOutUser()
+        }
+        
+        if(Setting.name == "Write A Review"){
+            print("Will take user to app page on App Store")
+        }
+        //navigationController?.pushViewController(dummyViewController, animated: true)
+    }
+    
+    func signOutUser() {
+       
         do {
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)
         }
-       // print(Auth.auth().currentUser)
+        // print(Auth.auth().currentUser)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
+ 
 }
-
-

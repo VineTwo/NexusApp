@@ -1,0 +1,34 @@
+//
+//  designConstants.cpp
+//  Nexus
+//
+//  Created by Nick potts on 1/27/18.
+//  Copyright © 2018 Matthew Foote. All rights reserved.
+//
+
+/*
+ For labels at the top of a VC describing the VC make it this
+ FONT: System bold 20 point
+ Height: 40
+ WIDTH: Width of the safe area
+ 
+ ERROR LABELS:
+ 
+ TEXT COLOR: RED
+ HEIGHT: 40
+ FONT: SYSTEM 17
+ 
+ BUTTONS:
+ 
+ COLOR: GRAY
+ TEXTCOLOR: BLACK
+ CORNERRADIUS: 7.0
+ SHADOW COLOR: GRAY
+ SHADOW RADIUS: 2.5
+ SHADOW OPACITY: .4
+ SHADOW OFFSET: (0,0)
+ 
+ 
+ 
+ 
+ */
