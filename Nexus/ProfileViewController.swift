@@ -284,6 +284,9 @@ class ProfileViewController: UIViewController {
         
         if(Setting.name == "About The App") {
             let dummyViewController = UIViewController()
+            dummyViewController.view.backgroundColor = UIColor.white
+            navigationController?.navigationBar.tintColor = UIColor.black
+            dummyViewController.navigationItem.title = Setting.name
             navigationController?.pushViewController(dummyViewController, animated: true)
         }
         
