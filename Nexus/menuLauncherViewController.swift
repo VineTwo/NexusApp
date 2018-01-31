@@ -33,7 +33,7 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     let cellID = "cellID"
     
     let settings: [SignOut] = {
-        return [SignOut(name: "Sign Out", imageName: "signOut"), SignOut(name: "Write A Review", imageName: "review")]
+        return [SignOut(name: "Sign Out", imageName: "signOut"), SignOut(name: "Write A Review", imageName: "review"), SignOut(name: "About The App", imageName: "about")]
     }()
     
     var profileController: ProfileViewController?
@@ -49,7 +49,7 @@ class menuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
             window.addSubview(blackView)
             window.addSubview(collectionView)
             
-            let height: CGFloat = 100
+            let height: CGFloat = 150
             let y = window.frame.height - height
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             

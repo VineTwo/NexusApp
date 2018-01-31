@@ -272,7 +272,6 @@ class ProfileViewController: UIViewController {
     }
     
     func showControllerForLogin(Setting: SignOut) {
-      //  let dummyViewController = UIViewController()
         print(Setting.name)
         if (Setting.name == "Sign Out") {
             print("Sign out tapped")
@@ -282,7 +281,12 @@ class ProfileViewController: UIViewController {
         if(Setting.name == "Write A Review"){
             print("Will take user to app page on App Store")
         }
-        //navigationController?.pushViewController(dummyViewController, animated: true)
+        
+        if(Setting.name == "About The App") {
+            let dummyViewController = UIViewController()
+            navigationController?.pushViewController(dummyViewController, animated: true)
+        }
+        
     }
     
     func signOutUser() {
