@@ -415,6 +415,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="about" id="Ond-X9-ma5">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="jhr-ci-RjA" kind="presentation" id="1V4-Hx-Fii"/>
                             </connections>
@@ -531,7 +532,7 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
-        <image name="about" width="50" height="50"/>
+        <image name="about" width="20" height="21"/>
         <image name="qr" width="20" height="21"/>
         <image name="qrFilled" width="20" height="21"/>
         <image name="vertMenu" width="20" height="21"/>
