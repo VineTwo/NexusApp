@@ -36,6 +36,7 @@
 		A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCDC200264EE00A2D517 /* LoginViewController.swift */; };
 		A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357DCE020026F5700A2D517 /* SignUpViewController.swift */; };
 		A368935D2005921D000E7C69 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368935C2005921D000E7C69 /* config.swift */; };
+		A3AF6B702023884D009EE15B /* AboutTheApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AF6B6F2023884D009EE15B /* AboutTheApp.storyboard */; };
 		A3E1FF3220095ACF00DD8B0C /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */; };
 		A3E4B5CC2006C2A200368D95 /* Pods_Nexus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D56260E29AEDCDE2F1EE2C /* Pods_Nexus.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		A357DCDC200264EE00A2D517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A357DCE020026F5700A2D517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A368935C2005921D000E7C69 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		A3AF6B6F2023884D009EE15B /* AboutTheApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutTheApp.storyboard; sourceTree = "<group>"; };
 		A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "nexus-Bridging-Header.h"; path = "/Users/nickpotts/Documents/NexusApp/Nexus/nexus-Bridging-Header.h"; sourceTree = "<absolute>"; };
 		A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TabBar.storyboard; path = ../TabBar.storyboard; sourceTree = "<group>"; };
 		BEE9E106AD8BBDE20BA3EA95 /* Pods-NexusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NexusTests/Pods-NexusTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
 				A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */,
 				A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */,
+				A3AF6B6F2023884D009EE15B /* AboutTheApp.storyboard */,
 				9DC436E320019D4E00335A4A /* Main.storyboard */,
 				A34C3B862002EA1500C256FE /* SignUp.storyboard */,
 				A3456514200A5301005B8330 /* Launch Screen.storyboard */,
@@ -369,6 +372,7 @@
 				A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */,
 				9D0BE7ED200324AA00945119 /* Snapchat.png in Resources */,
 				9D0BE7E72003243B00945119 /* Twitter.png in Resources */,
+				A3AF6B702023884D009EE15B /* AboutTheApp.storyboard in Resources */,
 				A340909920141F6C0023E3AF /* Assets.xcassets in Resources */,
 				9D0BE7E82003243B00945119 /* LinkedIn.png in Resources */,
 				A3E1FF3220095ACF00DD8B0C /* TabBar.storyboard in Resources */,

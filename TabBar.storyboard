@@ -414,6 +414,11 @@
                                 <action selector="menu_TouchUpInside:" destination="hTM-uw-5oA" id="l8p-V2-dEV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="about" id="Ond-X9-ma5">
+                            <connections>
+                                <segue destination="jhr-ci-RjA" kind="presentation" id="1V4-Hx-Fii"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
@@ -441,7 +446,15 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="335.19999999999999" y="1190.3940886699509"/>
+            <point key="canvasLocation" x="335" y="1168"/>
+        </scene>
+        <!--AboutTheApp-->
+        <scene sceneID="yLv-ZH-RRk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AboutTheApp" id="jhr-ci-RjA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gt9-b7-His" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="1605"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -518,6 +531,7 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="about" width="50" height="50"/>
         <image name="qr" width="20" height="21"/>
         <image name="qrFilled" width="20" height="21"/>
         <image name="vertMenu" width="20" height="21"/>

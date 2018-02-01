@@ -288,6 +288,8 @@ class ProfileViewController: UIViewController {
             navigationController?.navigationBar.tintColor = UIColor.black
             dummyViewController.navigationItem.title = Setting.name
             navigationController?.pushViewController(dummyViewController, animated: true)
+            //Might need to make this a website and have the button be a link to the webpage
+            
         }
         
     }
