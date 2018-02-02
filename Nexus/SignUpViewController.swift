@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpErrorLabel.isHidden = true
+        signUpErrorLabel.isHidden = false
         //Google sign in
       //  GIDSignIn.sharedInstance().uiDelegate = self
        // GIDSignIn.sharedInstance().signIn()
@@ -53,6 +53,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         signUpButton.isEnabled = false
         signUpButton.layer.cornerRadius = 7.0
+        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        signUpButton.backgroundColor = UIColor.clear
+        
+        
+        
        // signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
        // signUpButton.backgroundColor = UIColor.clear
         
@@ -157,9 +162,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
  */
     
+    @objc func passwordIsLongEnough() {
+        if (passwordTextField.text?.count)! < 6 {
+        signUpButton.isEnabled = false
+        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        signUpButton.backgroundColor = UIColor.clear
+        self.signUpErrorLabel.text = "The password must be 6 characters."
+        }
+        else {
+            self.signUpErrorLabel.text = " "
+        }
+    }
+    
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
         passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.passwordIsLongEnough), for: UIControlEvents.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -170,6 +188,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if isValidEmailAddress(emailAddressString: emailTextField.text!) {
             signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
             signUpButton.isEnabled = true
+            signUpButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
         }
         
     }
@@ -184,23 +203,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
-            displayAlertMessage(messageToDisplay: "Invalid Email Address.")
+            self.signUpErrorLabel.text = "Please enter a valid email address."
+        }
+        
+        if !isValidPassword(passwordLength: passwordTextField.text!) {
+            signUpErrorLabel.text = "The password must be at least 6 characters"
         }
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
             if error != nil {
+                print("Inside auth")
                 self.signUpErrorLabel.isHidden = false
-                if error?.localizedDescription == "The email address is already in use by another account." {
+                if error!.localizedDescription == "The email address is already in use by another account." {
                     self.signUpErrorLabel.text = "Sign up error. Email already used."
                 }
-                if error?.localizedDescription == "The password must be 6 characters long or more." {
+                if error!.localizedDescription == "The password must be 6 characters long or more." {
+                    print("Inside password error if statement")
                     self.signUpErrorLabel.text = "Password must be 6 characters."
                 }
-                print(error?.localizedDescription as Any)
+                print(error!.localizedDescription as Any)
                 return
             }
-        
+            else if (error == nil) {
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
@@ -216,7 +241,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 })
                 
             }
-            else {
+            
                 self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
                // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
 
@@ -224,6 +249,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
         })
 
+    }
+    
+    func isValidPassword(passwordLength: String) -> Bool {
+       // let length = passwordTextField.text?.count
+        if (passwordLength.count < 6) {
+            return false;
+        }
+        return true
     }
  
     func setUserInformation(email: String, uid: String, profileImgUrl: String) {
