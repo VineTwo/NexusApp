@@ -69,19 +69,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-GP-bxb">
-                                <rect key="frame" x="0.0" y="736" width="375" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="GrN-IP-fDo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Don't have an account? Sign Up">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dMv-Aq-Hos" kind="show" id="I9M-m6-u2P"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
                                 <rect key="frame" x="0.0" y="133" width="375" height="48.666666666666657"/>
                                 <constraints>
@@ -100,6 +87,19 @@
                                     <segue destination="afe-M5-bbo" kind="show" id="6j9-fZ-QOL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-GP-bxb">
+                                <rect key="frame" x="0.0" y="746" width="375" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="GrN-IP-fDo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Don't have an account? Sign Up">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dMv-Aq-Hos" kind="show" id="I9M-m6-u2P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233378410339" green="0.79865586757659912" blue="0.93291705846786499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -107,11 +107,11 @@
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="7Eb-Ui-bt1"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E7w-4N-GiB"/>
                             <constraint firstItem="WRX-GP-bxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EDY-rq-G6d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WRX-GP-bxb" secondAttribute="bottom" constant="10" id="Jth-it-G6v"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vdy-no-NPs"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="top" secondItem="gzs-Pa-vvM" secondAttribute="bottom" constant="111.67" id="W4i-7B-oLn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VSG-yF-qUB" secondAttribute="trailing" constant="35.670000000000002" id="aPJ-Ur-VNe"/>
                             <constraint firstItem="gzs-Pa-vvM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dRp-6x-s9S"/>
+                            <constraint firstItem="WRX-GP-bxb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tSL-Ok-bWz"/>
                             <constraint firstItem="gzs-Pa-vvM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vpD-7c-Oa2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

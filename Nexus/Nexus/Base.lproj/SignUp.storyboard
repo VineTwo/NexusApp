@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXc-gd-wtP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6EM-Ke-819">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -46,7 +46,7 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an email and password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtH-Xm-Ugj">
-                                <rect key="frame" x="16" y="294" width="343" height="20.666666666666686"/>
+                                <rect key="frame" x="16" y="249.99999999999997" width="343" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,20 +59,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-gz-FAr">
-                                <rect key="frame" x="0.0" y="747" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="767" width="375" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="EzW-OU-lOe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Already have an account? Sign in.">
-                                    <color key="titleColor" red="0.0" green="0.0081174608130000006" blue="0.80316952720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="sju-cF-ZOq" kind="presentation" id="mUu-pH-gcV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a profile picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ2-Yw-DdC">
-                                <rect key="frame" x="0.0" y="88" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="X1o-DW-JCw"/>
                                 </constraints>
@@ -81,7 +81,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-0M-zTN">
-                                <rect key="frame" x="119" y="141" width="137" height="96"/>
+                                <rect key="frame" x="119" y="97" width="137" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="Apz-IU-aF4"/>
                                     <constraint firstAttribute="width" constant="137" id="pfx-vm-vDk"/>
@@ -98,8 +98,8 @@
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="top" secondItem="jgd-nf-CHJ" secondAttribute="top" id="9oR-kk-CZi"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="trailing" secondItem="jgd-nf-CHJ" secondAttribute="trailing" id="AFn-S4-jxC"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="HHU-dS-w9y"/>
+                            <constraint firstAttribute="bottom" secondItem="3sh-gz-FAr" secondAttribute="bottom" id="OZe-F2-47V"/>
                             <constraint firstItem="oQ2-0M-zTN" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="119" id="X0G-pq-nAv"/>
-                            <constraint firstAttribute="bottom" secondItem="3sh-gz-FAr" secondAttribute="bottom" constant="20" id="aeN-cv-BxH"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="3sh-gz-FAr" secondAttribute="trailing" id="bog-Sq-QcT"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="16" id="nhV-KP-x0t"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="xCf-JG-Aso"/>
@@ -118,26 +118,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-o3-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-756" y="982.75862068965523"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ikl-hu-IuN">
-            <objects>
-                <navigationController hidesBarsWhenKeyboardAppears="YES" id="qXc-gd-wtP" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bfC-4s-Kbj">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ya-AO-ddi">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="6EM-Ke-819" kind="relationship" relationship="rootViewController" id="KJZ-OH-5ri"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OMT-Fr-TvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1631" y="983"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mN8-yb-lXS">
