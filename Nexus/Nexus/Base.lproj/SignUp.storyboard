@@ -45,12 +45,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-0M-zTN">
-                                <rect key="frame" x="108" y="146" width="158" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="NYc-Is-gcU"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an email and password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtH-Xm-Ugj">
                                 <rect key="frame" x="16" y="294" width="343" height="20.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,18 +80,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-0M-zTN">
+                                <rect key="frame" x="119" y="141" width="137" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Apz-IU-aF4"/>
+                                    <constraint firstAttribute="width" constant="137" id="pfx-vm-vDk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="oQ2-0M-zTN" secondAttribute="trailing" constant="119" id="3Pb-cb-XpN"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="OtH-Xm-Ugj" secondAttribute="trailing" constant="16" id="42u-Aq-KIP"/>
+                            <constraint firstItem="oQ2-0M-zTN" firstAttribute="top" secondItem="AQ2-Yw-DdC" secondAttribute="bottom" constant="8" id="4Ct-8F-c85"/>
+                            <constraint firstItem="OtH-Xm-Ugj" firstAttribute="top" secondItem="oQ2-0M-zTN" secondAttribute="bottom" constant="57" id="4u3-cl-CXc"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="top" secondItem="jgd-nf-CHJ" secondAttribute="top" id="9oR-kk-CZi"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="trailing" secondItem="jgd-nf-CHJ" secondAttribute="trailing" id="AFn-S4-jxC"/>
-                            <constraint firstItem="OtH-Xm-Ugj" firstAttribute="top" secondItem="oQ2-0M-zTN" secondAttribute="bottom" constant="8" id="AXf-kP-46x"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="HHU-dS-w9y"/>
-                            <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="oQ2-0M-zTN" secondAttribute="trailing" constant="109" id="KgT-UU-qId"/>
-                            <constraint firstItem="oQ2-0M-zTN" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="108" id="Mhh-So-c0B"/>
-                            <constraint firstItem="oQ2-0M-zTN" firstAttribute="top" secondItem="AQ2-Yw-DdC" secondAttribute="bottom" constant="13" id="XgI-Dr-ys1"/>
+                            <constraint firstItem="oQ2-0M-zTN" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="119" id="X0G-pq-nAv"/>
                             <constraint firstAttribute="bottom" secondItem="3sh-gz-FAr" secondAttribute="bottom" constant="20" id="aeN-cv-BxH"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="3sh-gz-FAr" secondAttribute="trailing" id="bog-Sq-QcT"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="16" id="nhV-KP-x0t"/>
