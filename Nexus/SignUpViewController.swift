@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailTextField.textColor = UIColor.black
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
         let bottomLayer = CALayer()
-        bottomLayer.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayer.frame = CGRect(x: 0, y: emailTextField.frame.height, width: emailTextField.frame.width, height: 0.6)
         bottomLayer.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(bottomLayer)
         
@@ -47,7 +47,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.textColor = UIColor.black
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
         let bottomLayerPassword = CALayer()
-        bottomLayerPassword.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayerPassword.frame = CGRect(x: 0, y: 0 + passwordTextField.frame.height
+            , width: passwordTextField.frame.width, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor.white.cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
