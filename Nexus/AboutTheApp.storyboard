@@ -32,9 +32,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uky-t5-n5z">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtZ-Sb-ek3">
-                                                <rect key="frame" x="0.0" y="607" width="375" height="273"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtZ-Sb-ek3">
+                                                <rect key="frame" x="0.0" y="607" width="375" height="272"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="272" id="v9b-pU-TUD"/>
+                                                </constraints>
                                                 <mutableString key="text">Welcome to Nexus ("Nexus", "we", "us", or "our"). Nexus provides users with a quick and easy way to share their information through the use of QR Codes. Just enter the information and let the app do the rest. Copyright pending.                                                                  
                                                                    
 Our Open Source Libraries section gives credit the the third party and open source software that may be contained in portions of this app. We thank those who made our lives easier and made this app possible.            </mutableString>
@@ -42,24 +44,27 @@ Our Open Source Libraries section gives credit the the third party and open sour
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CocoaPods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-Bz-Fkc">
-                                                <rect key="frame" x="8" y="928" width="359" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CocoaPods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-Bz-Fkc">
+                                                <rect key="frame" x="0.0" y="929" width="375" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="8cm-gc-Evy"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cocoapods" translatesAutoresizingMaskIntoConstraints="NO" id="GBG-2l-cis">
-                                                <rect key="frame" x="0.0" y="986" width="375" height="328"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocoapods" translatesAutoresizingMaskIntoConstraints="NO" id="GBG-2l-cis">
+                                                <rect key="frame" x="0.0" y="1004" width="375" height="328"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="328" id="mcF-bC-Eho"/>
+                                                </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-zK-pUC">
-                                                <rect key="frame" x="0.0" y="1428" width="375" height="358"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-zK-pUC">
+                                                <rect key="frame" x="0.0" y="1456" width="375" height="358"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <mutableString key="content">Apache License
+                                                        <string key="content">Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -232,7 +237,7 @@ Our Open Source Libraries section gives credit the the third party and open sour
       of any other Contributor, and only if You agree to indemnify,
       defend, and hold each Contributor harmless for any liability
       incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.</mutableString>
+      of your accepting any such warranty or additional liability.</string>
                                                         <attributes>
                                                             <font key="NSFont" metaFont="cellTitle"/>
                                                         </attributes>
@@ -240,18 +245,10 @@ Our Open Source Libraries section gives credit the the third party and open sour
                                                 </attributedString>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SDWebImage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-Ka-Sez">
-                                                <rect key="frame" x="16" y="1830" width="343" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1mw-L7-BPR">
-                                                <rect key="frame" x="0.0" y="1888" width="375" height="358"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1mw-L7-BPR">
+                                                <rect key="frame" x="0.0" y="1938" width="375" height="358"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <mutableString key="text">Copyright (c) 2009-2017 Olivier Poitrey rs@dailymotion.com
+                                                <string key="text">Copyright (c) 2009-2017 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -270,22 +267,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noo-mv-kVR">
-                                                <rect key="frame" x="16" y="1357" width="343" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noo-mv-kVR">
+                                                <rect key="frame" x="0.0" y="1381" width="375" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="vz5-nr-ObO"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-J6-lys">
-                                                <rect key="frame" x="0.0" y="25" width="375" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-J6-lys">
+                                                <rect key="frame" x="0.0" y="5" width="375" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="IrW-Io-05i"/>
+                                                </constraints>
                                                 <items>
-                                                    <navigationItem title="Legality" id="YYD-1c-bGd">
+                                                    <navigationItem title="About The App" id="YYD-1c-bGd">
+                                                        <barButtonItem key="backBarButtonItem" title="Profile" id="Rgn-zd-209"/>
                                                         <barButtonItem key="leftBarButtonItem" title="Profile" id="85u-hy-D3I">
                                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
@@ -297,11 +299,10 @@ THE SOFTWARE.
                                                     </navigationItem>
                                                 </items>
                                             </navigationBar>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-KB-BZN">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-KB-BZN">
                                                 <rect key="frame" x="0.0" y="102" width="375" height="381"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <mutableString key="text">Copyright Pending 2018 Nicholas Potts
+                                                <string key="text">Copyright Pending 2018 Nicholas Potts
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -313,21 +314,64 @@ THE SOFTWARE.
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.</mutableString>
+   limitations under the License.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open Source Libraries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-bg-jCS">
-                                                <rect key="frame" x="8" y="541" width="359" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source Libraries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-bg-jCS">
+                                                <rect key="frame" x="82" y="532" width="211" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="CUx-Ym-uQ3"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDWebImage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-Ka-Sez">
+                                                <rect key="frame" x="0.0" y="1863" width="375" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="ivn-Ve-8FW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="GBG-2l-cis" firstAttribute="top" secondItem="bcT-Bz-Fkc" secondAttribute="bottom" constant="50" id="2Mk-Cx-vK4"/>
+                                            <constraint firstItem="IOX-zK-pUC" firstAttribute="top" secondItem="Noo-mv-kVR" secondAttribute="bottom" constant="50" id="4Ps-eZ-Nws"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="IOX-zK-pUC" secondAttribute="leading" id="4mn-pv-BCD"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="5fs-KB-BZN" secondAttribute="trailing" id="7fw-TA-TdT"/>
+                                            <constraint firstItem="Noo-mv-kVR" firstAttribute="top" secondItem="GBG-2l-cis" secondAttribute="bottom" constant="49" id="8aq-VE-uYh"/>
+                                            <constraint firstItem="QtZ-Sb-ek3" firstAttribute="top" secondItem="Uky-t5-n5z" secondAttribute="top" constant="607" id="91p-cN-HRQ"/>
+                                            <constraint firstItem="AH4-J6-lys" firstAttribute="top" secondItem="Uky-t5-n5z" secondAttribute="top" constant="5" id="9Li-bc-NLP"/>
+                                            <constraint firstAttribute="trailing" secondItem="1mw-L7-BPR" secondAttribute="trailing" id="EQD-zD-uvx"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="top" secondItem="IOX-zK-pUC" secondAttribute="bottom" constant="49" id="Fyx-h0-3MJ"/>
+                                            <constraint firstItem="1mw-L7-BPR" firstAttribute="leading" secondItem="Uky-t5-n5z" secondAttribute="leading" id="IbI-JY-j3u"/>
+                                            <constraint firstAttribute="bottom" secondItem="1mw-L7-BPR" secondAttribute="bottom" constant="4" id="PHe-9i-vVe"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="5fs-KB-BZN" secondAttribute="leading" id="RG9-Ec-R99"/>
+                                            <constraint firstAttribute="bottom" secondItem="58B-Ka-Sez" secondAttribute="bottom" constant="412" id="X9q-5n-Oup"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="1mw-L7-BPR" secondAttribute="trailing" id="YLz-9l-fdU"/>
+                                            <constraint firstItem="QtZ-Sb-ek3" firstAttribute="top" secondItem="a9B-bg-jCS" secondAttribute="bottom" constant="50" id="ZIx-y7-kmQ"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="bcT-Bz-Fkc" secondAttribute="trailing" id="cdd-Jb-XPw"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="Noo-mv-kVR" secondAttribute="trailing" id="f6L-jm-8Cs"/>
+                                            <constraint firstItem="1mw-L7-BPR" firstAttribute="top" secondItem="58B-Ka-Sez" secondAttribute="bottom" constant="50" id="gSP-Ne-TCP"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="centerX" secondItem="a9B-bg-jCS" secondAttribute="centerX" id="gjG-QR-Wj5"/>
+                                            <constraint firstItem="bcT-Bz-Fkc" firstAttribute="top" secondItem="QtZ-Sb-ek3" secondAttribute="bottom" constant="50" id="hjx-2g-h1T"/>
+                                            <constraint firstItem="QtZ-Sb-ek3" firstAttribute="width" secondItem="Uky-t5-n5z" secondAttribute="width" id="i6e-X1-nux"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="Noo-mv-kVR" secondAttribute="leading" id="kIm-qY-PGq"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="bcT-Bz-Fkc" secondAttribute="leading" id="mZV-8C-hfd"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="IOX-zK-pUC" secondAttribute="trailing" id="nyf-TT-Tmj"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="GBG-2l-cis" secondAttribute="leading" id="p0Y-8q-tcK"/>
+                                            <constraint firstItem="AH4-J6-lys" firstAttribute="leading" secondItem="Uky-t5-n5z" secondAttribute="leading" id="qqr-f2-UA2"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="GBG-2l-cis" secondAttribute="trailing" id="qx3-wc-ec6"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="1mw-L7-BPR" secondAttribute="leading" id="rJk-dv-7oH"/>
+                                            <constraint firstItem="5fs-KB-BZN" firstAttribute="top" secondItem="AH4-J6-lys" secondAttribute="bottom" constant="53" id="sO8-0q-cPW"/>
                                             <constraint firstAttribute="height" constant="2300" id="si8-Hs-vYl"/>
+                                            <constraint firstAttribute="trailing" secondItem="AH4-J6-lys" secondAttribute="trailing" id="wlG-b3-a6H"/>
+                                            <constraint firstItem="a9B-bg-jCS" firstAttribute="top" secondItem="5fs-KB-BZN" secondAttribute="bottom" constant="49" id="xAr-5v-u7k"/>
+                                            <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="QtZ-Sb-ek3" secondAttribute="leading" id="z9e-ci-7Ld"/>
                                         </constraints>
                                     </view>
                                 </subviews>
