@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,18 +76,9 @@
                                     <constraint firstAttribute="height" constant="48.333333333333329" id="d7K-8O-RlG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="42"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFz-Vu-Sfx">
-                                <rect key="frame" x="80" y="548" width="214" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Forgot password?"/>
-                                <connections>
-                                    <action selector="forgotPasswordButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="teX-di-kLA"/>
-                                    <segue destination="afe-M5-bbo" kind="show" id="6j9-fZ-QOL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-GP-bxb">
                                 <rect key="frame" x="0.0" y="746" width="375" height="32"/>
                                 <constraints>
@@ -100,17 +92,31 @@
                                     <segue destination="dMv-Aq-Hos" kind="show" id="I9M-m6-u2P"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFz-Vu-Sfx">
+                                <rect key="frame" x="112" y="555" width="150" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="9rk-d3-D4I"/>
+                                </constraints>
+                                <state key="normal" title="Forgot password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="teX-di-kLA"/>
+                                    <segue destination="afe-M5-bbo" kind="show" identifier="forgotPassword" id="6j9-fZ-QOL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233378410339" green="0.79865586757659912" blue="0.93291705846786499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WRX-GP-bxb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="41G-c2-JGC"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="7Eb-Ui-bt1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OFz-Vu-Sfx" secondAttribute="trailing" constant="113" id="8WR-Sw-hIm"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E7w-4N-GiB"/>
                             <constraint firstItem="WRX-GP-bxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EDY-rq-G6d"/>
+                            <constraint firstItem="OFz-Vu-Sfx" firstAttribute="top" secondItem="VSG-yF-qUB" secondAttribute="bottom" constant="37" id="Glb-jG-LYp"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vdy-no-NPs"/>
                             <constraint firstItem="VSG-yF-qUB" firstAttribute="top" secondItem="gzs-Pa-vvM" secondAttribute="bottom" constant="111.67" id="W4i-7B-oLn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VSG-yF-qUB" secondAttribute="trailing" constant="35.670000000000002" id="aPJ-Ur-VNe"/>
                             <constraint firstItem="gzs-Pa-vvM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dRp-6x-s9S"/>
+                            <constraint firstItem="OFz-Vu-Sfx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="h25-yB-aRn"/>
                             <constraint firstItem="WRX-GP-bxb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tSL-Ok-bWz"/>
                             <constraint firstItem="gzs-Pa-vvM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vpD-7c-Oa2"/>
                         </constraints>
@@ -186,7 +192,20 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="wlk-r4-m2s"/>
                                     <constraint firstAttribute="height" constant="40" id="yWV-Tb-vP4"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Send Email"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apq-3e-lNL">
+                                <rect key="frame" x="0.0" y="748" width="375" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="J1x-uK-RZQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="838-Bo-7If"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,9 +217,12 @@
                             <constraint firstItem="JPL-Aq-Qti" firstAttribute="top" secondItem="w5p-3q-PAO" secondAttribute="bottom" constant="86" id="G5y-2d-C3P"/>
                             <constraint firstItem="7x0-fi-GGI" firstAttribute="trailing" secondItem="P4Z-Md-L3O" secondAttribute="trailing" constant="16" id="Gve-uN-VbN"/>
                             <constraint firstItem="qxF-Dh-oYL" firstAttribute="top" secondItem="7x0-fi-GGI" secondAttribute="top" constant="57" id="Oou-qr-Yhw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Apq-3e-lNL" secondAttribute="bottom" constant="-2" id="PUc-gK-O3O"/>
                             <constraint firstItem="7x0-fi-GGI" firstAttribute="trailing" secondItem="JPL-Aq-Qti" secondAttribute="trailing" constant="88" id="Wqp-sK-byG"/>
+                            <constraint firstItem="Apq-3e-lNL" firstAttribute="trailing" secondItem="7x0-fi-GGI" secondAttribute="trailing" id="ea7-py-dOZ"/>
                             <constraint firstItem="7x0-fi-GGI" firstAttribute="trailing" secondItem="w5p-3q-PAO" secondAttribute="trailing" constant="16" id="gc9-CO-pRA"/>
                             <constraint firstItem="qxF-Dh-oYL" firstAttribute="leading" secondItem="7x0-fi-GGI" secondAttribute="leading" constant="16" id="o93-Ob-vpu"/>
+                            <constraint firstItem="Apq-3e-lNL" firstAttribute="leading" secondItem="7x0-fi-GGI" secondAttribute="leading" id="tkZ-kl-Gwo"/>
                             <constraint firstItem="w5p-3q-PAO" firstAttribute="top" secondItem="P4Z-Md-L3O" secondAttribute="bottom" constant="50" id="ttq-BH-jDW"/>
                             <constraint firstItem="P4Z-Md-L3O" firstAttribute="top" secondItem="qxF-Dh-oYL" secondAttribute="bottom" constant="84" id="wLt-dN-aFw"/>
                         </constraints>
