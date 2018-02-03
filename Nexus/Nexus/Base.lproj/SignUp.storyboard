@@ -48,21 +48,8 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-gz-FAr">
-                                <rect key="frame" x="0.0" y="572" width="375" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="EzW-OU-lOe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Already have an account? Sign in.">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="sju-cF-ZOq" kind="presentation" id="mUu-pH-gcV"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a profile picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ2-Yw-DdC">
-                                <rect key="frame" x="0.0" y="43.999999999999986" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="X1o-DW-JCw"/>
                                 </constraints>
@@ -104,6 +91,19 @@
                                     <constraint firstAttribute="height" constant="129" id="tHg-73-i35"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-gz-FAr">
+                                <rect key="frame" x="0.0" y="733" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="EzW-OU-lOe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Already have an account? Sign in.">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sju-cF-ZOq" kind="presentation" id="mUu-pH-gcV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -119,8 +119,8 @@
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="trailing" secondItem="jgd-nf-CHJ" secondAttribute="trailing" id="AFn-S4-jxC"/>
                             <constraint firstItem="PVD-Su-8QO" firstAttribute="top" secondItem="OtH-Xm-Ugj" secondAttribute="bottom" constant="13" id="BfS-NB-BdU"/>
                             <constraint firstItem="Lbf-iy-Xbr" firstAttribute="centerX" secondItem="PVD-Su-8QO" secondAttribute="centerX" id="CeV-Ub-VQ7"/>
+                            <constraint firstItem="3sh-gz-FAr" firstAttribute="bottom" secondItem="jgd-nf-CHJ" secondAttribute="bottom" id="Drc-sf-c5L"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="HHU-dS-w9y"/>
-                            <constraint firstAttribute="bottom" secondItem="3sh-gz-FAr" secondAttribute="bottom" id="OZe-F2-47V"/>
                             <constraint firstItem="Lbf-iy-Xbr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="37" id="W58-c6-pnU"/>
                             <constraint firstItem="oQ2-0M-zTN" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="119" id="X0G-pq-nAv"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="top" secondItem="EJf-by-b0A" secondAttribute="bottom" constant="44" id="bBj-PG-trg"/>
