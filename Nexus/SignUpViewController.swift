@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 //import GoogleSignIn
 
+
 class SignUpViewController: UIViewController, UITextFieldDelegate {
   
     
@@ -28,7 +29,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpErrorLabel.isHidden = true
+        signUpErrorLabel.isHidden = false
         //Google sign in
       //  GIDSignIn.sharedInstance().uiDelegate = self
        // GIDSignIn.sharedInstance().signIn()
@@ -38,7 +39,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailTextField.textColor = UIColor.black
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
         let bottomLayer = CALayer()
-        bottomLayer.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayer.frame = CGRect(x: 0, y: emailTextField.frame.height, width: emailTextField.frame.width, height: 0.6)
         bottomLayer.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(bottomLayer)
         
@@ -46,13 +47,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.textColor = UIColor.black
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
         let bottomLayerPassword = CALayer()
-        bottomLayerPassword.frame = CGRect(x: 0, y: 34, width: 335.53, height: 0.6)
+        bottomLayerPassword.frame = CGRect(x: 0, y: 0 + passwordTextField.frame.height
+            , width: passwordTextField.frame.width, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor.white.cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         
         signUpButton.isEnabled = false
         signUpButton.layer.cornerRadius = 7.0
+        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        signUpButton.backgroundColor = UIColor.clear
+        
+        
+        
        // signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
        // signUpButton.backgroundColor = UIColor.clear
         
@@ -156,10 +163,158 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
  */
+     func emailHasBeenUsedBefore() {
+        
+        let err = NSError()
+        if let errCode = AuthErrorCode(rawValue: err.code) {
+            
+            if errCode == AuthErrorCode.emailAlreadyInUse {
+                print("Email has been used")
+                self.signUpErrorLabel.text = "The email has already been used."
+                self.signUpButton.isEnabled = false
+            }
+            /*
+            switch errCode {
+            case .emailAlreadyInUse:
+                print("Email has been used")
+                self.signUpErrorLabel.text = "The email has already been used."
+                self.signUpButton.isEnabled = false
+                break;
+            case .invalidCustomToken:
+                break;
+            case .customTokenMismatch:
+                break;
+            case .invalidCredential:
+                break;
+            case .userDisabled:
+                break;
+            case .operationNotAllowed:
+                break;
+            case .invalidEmail:
+                break;
+            case .wrongPassword:
+                break;
+            case .tooManyRequests:
+                break;
+            case .userNotFound:
+                break;
+            case .accountExistsWithDifferentCredential:
+                break;
+            case .requiresRecentLogin:
+                break;
+            case .providerAlreadyLinked:
+                break;
+            case .noSuchProvider:
+                break;
+            case .invalidUserToken:
+                break;
+            case .networkError:
+                break;
+            case .userTokenExpired:
+                break;
+            case .invalidAPIKey:
+                break;
+            case .userMismatch:
+                break;
+            case .credentialAlreadyInUse:
+                break;
+            case .weakPassword:
+                break;
+            case .appNotAuthorized:
+                break;
+            case .expiredActionCode:
+                break;
+            case .invalidActionCode:
+                break;
+            case .invalidMessagePayload:
+                break;
+            case .invalidSender:
+                break;
+            case .invalidRecipientEmail:
+                break;
+            case .missingEmail:
+                break;
+            case .missingIosBundleID:
+                break;
+            case .missingAndroidPackageName:
+                break;
+            case .unauthorizedDomain:
+                break;
+            case .invalidContinueURI:
+                break;
+            case .missingContinueURI:
+                break;
+            case .missingPhoneNumber:
+                break;
+            case .invalidPhoneNumber:
+                break;
+            case .missingVerificationCode:
+                break;
+            case .invalidVerificationCode:
+                break;
+            case .missingVerificationID:
+                break;
+            case .invalidVerificationID:
+                break;
+            case .missingAppCredential:
+                break;
+            case .invalidAppCredential:
+                break;
+            case .sessionExpired:
+                break;
+            case .quotaExceeded:
+                break;
+            case .missingAppToken:
+                break;
+            case .notificationNotForwarded:
+                break;
+            case .appNotVerified:
+                break;
+            case .captchaCheckFailed:
+                break;
+            case .webContextAlreadyPresented:
+                break;
+            case .webContextCancelled:
+                break;
+            case .appVerificationUserInteractionFailure:
+                break;
+            case .invalidClientID:
+                break;
+            case .webNetworkRequestFailed:
+                break;
+            case .webInternalError:
+                break;
+            case .keychainError:
+                break;
+            case .internalError:
+                break;
+                
+            }
+ */
+            signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
+        }
+        
+    }
+    
+    @objc func passwordIsLongEnough() {
+        if (passwordTextField.text?.count)! < 6 {
+        signUpButton.isEnabled = false
+        signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        signUpButton.backgroundColor = UIColor.clear
+        self.signUpErrorLabel.text = "The password must be 6 characters."
+        }
+        else {
+            self.signUpErrorLabel.text = " "
+        }
+    }
     
     func handleTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+      //  emailTextField.addTarget(self, action: #selector(SignUpViewController.emailHasBeenUsedBefore), for: UIControlEvents.editingDidEnd)
         passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.passwordIsLongEnough), for: UIControlEvents.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -168,10 +323,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if isValidEmailAddress(emailAddressString: emailTextField.text!) {
+            emailHasBeenUsedBefore()
             signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-            signUpButton.isEnabled = true
+            //signUpButton.isEnabled = true
+            signUpButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
         }
-        
+        self.signUpErrorLabel.text = "Please enter a valid email."
     }
     
     @objc func handleSelectProfileImageView() {
@@ -184,23 +341,139 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
-            displayAlertMessage(messageToDisplay: "Invalid Email Address.")
+            self.signUpErrorLabel.text = "Please enter a valid email address."
         }
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
+            let err = NSError()
             if error != nil {
+                if let errCode = AuthErrorCode(rawValue: err.code) {
+                    switch errCode {
+                    case .emailAlreadyInUse:
+                        print("Email has been used")
+                        self.signUpErrorLabel.text = "The email has already been used."
+                        break;
+                    case .invalidCustomToken:
+                        break;
+                    case .customTokenMismatch:
+                        break;
+                    case .invalidCredential:
+                        break;
+                    case .userDisabled:
+                        break;
+                    case .operationNotAllowed:
+                        break;
+                    case .invalidEmail:
+                        break;
+                    case .wrongPassword:
+                        break;
+                    case .tooManyRequests:
+                        break;
+                    case .userNotFound:
+                        break;
+                    case .accountExistsWithDifferentCredential:
+                        break;
+                    case .requiresRecentLogin:
+                        break;
+                    case .providerAlreadyLinked:
+                        break;
+                    case .noSuchProvider:
+                        break;
+                    case .invalidUserToken:
+                        break;
+                    case .networkError:
+                        break;
+                    case .userTokenExpired:
+                        break;
+                    case .invalidAPIKey:
+                        break;
+                    case .userMismatch:
+                        break;
+                    case .credentialAlreadyInUse:
+                        break;
+                    case .weakPassword:
+                        break;
+                    case .appNotAuthorized:
+                        break;
+                    case .expiredActionCode:
+                        break;
+                    case .invalidActionCode:
+                        break;
+                    case .invalidMessagePayload:
+                        break;
+                    case .invalidSender:
+                        break;
+                    case .invalidRecipientEmail:
+                        break;
+                    case .missingEmail:
+                        break;
+                    case .missingIosBundleID:
+                        break;
+                    case .missingAndroidPackageName:
+                        break;
+                    case .unauthorizedDomain:
+                        break;
+                    case .invalidContinueURI:
+                        break;
+                    case .missingContinueURI:
+                        break;
+                    case .missingPhoneNumber:
+                        break;
+                    case .invalidPhoneNumber:
+                        break;
+                    case .missingVerificationCode:
+                        break;
+                    case .invalidVerificationCode:
+                        break;
+                    case .missingVerificationID:
+                        break;
+                    case .invalidVerificationID:
+                        break;
+                    case .missingAppCredential:
+                        break;
+                    case .invalidAppCredential:
+                        break;
+                    case .sessionExpired:
+                        break;
+                    case .quotaExceeded:
+                        break;
+                    case .missingAppToken:
+                        break;
+                    case .notificationNotForwarded:
+                        break;
+                    case .appNotVerified:
+                        break;
+                    case .captchaCheckFailed:
+                        break;
+                    case .webContextAlreadyPresented:
+                        break;
+                    case .webContextCancelled:
+                        break;
+                    case .appVerificationUserInteractionFailure:
+                        break;
+                    case .invalidClientID:
+                        break;
+                    case .webNetworkRequestFailed:
+                        break;
+                    case .webInternalError:
+                        break;
+                    case .keychainError:
+                        break;
+                    case .internalError:
+                        break;
+                    }
+                    
+                }
+                print("Inside auth")
                 self.signUpErrorLabel.isHidden = false
-                if error?.localizedDescription == "The email address is already in use by another account." {
+                if error!.localizedDescription == "The email address is already in use by another account." {
                     self.signUpErrorLabel.text = "Sign up error. Email already used."
                 }
-                if error?.localizedDescription == "The password must be 6 characters long or more." {
-                    self.signUpErrorLabel.text = "Password must be 6 characters."
-                }
-                print(error?.localizedDescription as Any)
+                print(error!.localizedDescription as Any)
                 return
             }
-        
+            else {
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
@@ -216,7 +489,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 })
                 
             }
-            else {
+            
                 self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
                // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
 
@@ -224,6 +497,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
         })
 
+    }
+    
+    func isValidPassword(passwordLength: String) -> Bool {
+       // let length = passwordTextField.text?.count
+        if (passwordLength.count < 6) {
+            return false;
+        }
+        return true
     }
  
     func setUserInformation(email: String, uid: String, profileImgUrl: String) {
