@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="773" y="111"/>
         </scene>
-        <!--View Controller-->
+        <!--Password Reset View Controller-->
         <scene sceneID="pI4-If-nCV">
             <objects>
-                <viewController id="afe-M5-bbo" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="afe-M5-bbo" customClass="PasswordResetViewController" customModule="Nexus" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EcX-Gu-xrk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
                                     <constraint firstAttribute="height" constant="32" id="J1x-uK-RZQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Back To Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
