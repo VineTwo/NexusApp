@@ -177,7 +177,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4Z-Md-L3O">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4Z-Md-L3O">
                                 <rect key="frame" x="16" y="225" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="euE-VQ-f1n"/>
@@ -233,6 +233,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="w5p-3q-PAO" id="v3P-w5-jZs"/>
+                        <outlet property="errorLabel" destination="P4Z-Md-L3O" id="25G-rL-eRe"/>
                         <outlet property="sendEmailButton" destination="JPL-Aq-Qti" id="sGP-5z-Cf6"/>
                     </connections>
                 </viewController>

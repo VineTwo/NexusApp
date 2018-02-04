@@ -14,11 +14,16 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
   //  @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBAction func sendEmailButton_TouchUpInside(_ sender: Any) {
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
-            
+            print(error?.localizedDescription)
+            if error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
+                self.errorLabel.textColor = UIColor.red
+                self.errorLabel.text = "The email is not associated with an account."
+            }
         }
     }
     
