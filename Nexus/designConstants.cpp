@@ -29,6 +29,14 @@
  SHADOW OFFSET: (0,0)
  
  
+ TEXTFIELD LINE LAYER
+ 
+ let bottomLayer = CALayer()
+ bottomLayer.frame = CGRect(x: 0, y: 28, width: emailTextField.frame.width, height: 0.6)
+ bottomLayer.backgroundColor = UIColor.white.cgColor
+ emailTextField.layer.addSublayer(bottomLayer)
+ emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+ 
  
  
  */

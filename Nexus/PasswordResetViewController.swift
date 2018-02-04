@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var passwordTextField: UITextField!
-
+  //  @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBAction func sendEmailButton_TouchUpInside(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
+            
+        }
+    }
+    
+    @IBOutlet weak var sendEmailButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let bottomLayer = CALayer()
+        bottomLayer.frame = CGRect(x: 0, y: 28, width: emailTextField.frame.width, height: 0.6)
+        bottomLayer.backgroundColor = UIColor.white.cgColor
+        emailTextField.layer.addSublayer(bottomLayer)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        
+        
+        sendEmailButton.layer.cornerRadius = 7.0
+        sendEmailButton.isEnabled = false
+        sendEmailButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        sendEmailButton.backgroundColor = UIColor.clear
+        
+        handleTextField()
 
     }
     
@@ -40,6 +66,44 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var validEmail = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                validEmail = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            validEmail = false
+        }
+        
+        return  validEmail
+    }
+    
+    func handleTextField() {
+        emailTextField.addTarget(self, action: #selector(PasswordResetViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        guard let email = emailTextField.text, !email.isEmpty else {return}
+        
+        if(isValidEmailAddress(emailAddressString: email)) {
+            sendEmailButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            sendEmailButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
+            sendEmailButton.isEnabled = true
+        }
     }
 
 }
