@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-yF-qUB">
-                                <rect key="frame" x="36" y="304" width="303.33333333333331" height="204"/>
+                                <rect key="frame" x="36" y="308" width="303.33333333333331" height="196"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login error. Incorrect email or password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-1m-yoP">
                                         <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="40"/>
@@ -55,10 +55,10 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tja-bd-liJ">
-                                        <rect key="frame" x="0.0" y="160" width="303.33333333333331" height="44"/>
+                                        <rect key="frame" x="0.0" y="160" width="303.33333333333331" height="36"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="4jd-jj-awJ"/>
+                                            <constraint firstAttribute="height" constant="36" id="OED-l3-z9I"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Login">
@@ -71,7 +71,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-Pa-vvM">
-                                <rect key="frame" x="0.0" y="143" width="375" height="48.666666666666657"/>
+                                <rect key="frame" x="0.0" y="147" width="375" height="48.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48.333333333333329" id="d7K-8O-RlG"/>
                                 </constraints>
@@ -93,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFz-Vu-Sfx">
-                                <rect key="frame" x="112" y="545" width="150" height="32"/>
+                                <rect key="frame" x="112" y="541" width="150" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="9rk-d3-D4I"/>
                                 </constraints>
@@ -187,10 +187,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-Aq-Qti">
-                                <rect key="frame" x="87" y="431" width="200" height="40"/>
+                                <rect key="frame" x="87" y="431" width="200" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="wlk-r4-m2s"/>
-                                    <constraint firstAttribute="height" constant="40" id="yWV-Tb-vP4"/>
+                                    <constraint firstAttribute="height" constant="36" id="b1H-c9-GdU"/>
                                 </constraints>
                                 <state key="normal" title="Send Email"/>
                                 <connections>
