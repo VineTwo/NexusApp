@@ -106,9 +106,9 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Social Media QR Codes. Check them out at the Profile page" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
-                                <rect key="frame" x="37.666666666666657" y="369" width="300" height="75"/>
+                                <rect key="frame" x="16" y="369" width="343" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="ddz-eb-pqv"/>
+                                    <constraint firstAttribute="width" constant="343" id="SjR-RV-3hm"/>
                                     <constraint firstAttribute="height" constant="75" id="jMy-23-LlH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -184,11 +184,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made a your Contact QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
-                                <rect key="frame" x="62" y="356.33333333333331" width="250" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Contact QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
+                                <rect key="frame" x="16" y="356" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BTS-DQ-cDr"/>
-                                    <constraint firstAttribute="width" constant="250" id="MRk-R5-4rr"/>
+                                    <constraint firstAttribute="width" constant="343" id="MRk-R5-4rr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -267,13 +267,12 @@
                             <constraint firstItem="spy-ur-2EL" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="16" id="HIk-LK-VdQ"/>
                             <constraint firstItem="0tY-JF-jLJ" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="37.670000000000002" id="Kcd-mR-moB"/>
                             <constraint firstItem="uTX-aa-JR2" firstAttribute="top" secondItem="0tY-JF-jLJ" secondAttribute="bottom" constant="46.670000000000002" id="M7O-Ju-sNq"/>
-                            <constraint firstItem="Dj1-73-wlN" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="62" id="Tdc-Vi-Mtw"/>
+                            <constraint firstItem="Dj1-73-wlN" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="16" id="Tdc-Vi-Mtw"/>
                             <constraint firstItem="uTX-aa-JR2" firstAttribute="leading" secondItem="SMd-Om-Efa" secondAttribute="leading" constant="87" id="dGi-z3-Mgf"/>
                             <constraint firstItem="0tY-JF-jLJ" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="elh-83-hFb"/>
-                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="Dj1-73-wlN" secondAttribute="trailing" constant="63" id="fYn-tW-EWt"/>
+                            <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="Dj1-73-wlN" secondAttribute="trailing" constant="16" id="fYn-tW-EWt"/>
                             <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="spy-ur-2EL" secondAttribute="trailing" constant="16" id="n8Y-H8-U1E"/>
                             <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="uTX-aa-JR2" secondAttribute="trailing" constant="88" id="sJC-Ql-zHd"/>
-                            <constraint firstItem="Dj1-73-wlN" firstAttribute="centerX" secondItem="PIS-13-Qzn" secondAttribute="centerX" id="sKz-Kj-9IK"/>
                             <constraint firstItem="spy-ur-2EL" firstAttribute="top" secondItem="SMd-Om-Efa" secondAttribute="top" constant="36" id="sPM-1p-edF"/>
                             <constraint firstItem="SMd-Om-Efa" firstAttribute="trailing" secondItem="0tY-JF-jLJ" secondAttribute="trailing" constant="37.329999999999998" id="wsz-EI-uaq"/>
                             <constraint firstItem="Dj1-73-wlN" firstAttribute="centerY" secondItem="PIS-13-Qzn" secondAttribute="centerY" id="zIQ-Vg-Ygk"/>
@@ -344,6 +343,9 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Da-YM-JWo">
                                                         <rect key="frame" x="0.0" y="564" width="229" height="168"/>
                                                         <gestureRecognizers/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="168" id="vOn-qU-Q6E"/>
+                                                        </constraints>
                                                         <connections>
                                                             <outletCollection property="gestureRecognizers" destination="vfH-nN-j5O" appends="YES" id="h7P-hC-aXc"/>
                                                         </connections>
