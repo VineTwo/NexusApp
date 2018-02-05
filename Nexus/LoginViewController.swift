@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginErrorLabel.isHidden = true
+     //   loginErrorLabel.isHidden = true
         loginErrorLabel.textColor = UIColor.red
         
         emailTextField.tintColor = UIColor.lightText
