@@ -133,13 +133,13 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func instagramQRCode() {
-        let insta = ("https://www.instagram.com/\(instagramTextField.text!)")
+        let trimmed = instagramTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let insta = ("https://www.instagram.com/\(trimmed!)")
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("InstagramQrUrl")
         
         
-      //  let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
         let instaQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
         userRef.setValue(["instQrURl": instaQrUrl])
  
@@ -151,25 +151,19 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("TwitterQrUrl")
         
-            let twitterURL = ("https://twitter.com/\(twitterTextField.text!)")
-       // let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
-        
+        let trimmed = twitterTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let twitterURL = ("https://twitter.com/\(trimmed!)")
         let twitQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
         userRef.setValue(["twitQrURl": twitQrUrl])
-        
-   
-        
     }
     
     func snapQRCode() {
-        
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("SnapQrUrl")
         
-        let snapURL = ("https://www.snapchat.com/add/\(snapchatTextField.text!)")
-      //  let imageURL = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
-        
+        let trimmed = snapchatTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let snapURL = ("https://www.snapchat.com/add/\(trimmed!)")
         let snapQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
         userRef.setValue(["snapQrURl": snapQrUrl])
         

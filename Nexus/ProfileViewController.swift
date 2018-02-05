@@ -76,11 +76,12 @@ class ProfileViewController: UIViewController {
     
     func performZoomInOnStartingImageView(startingImageView: UIImageView) {
         
+        if startingImageView.image?.sd_imageData() != nil {
         startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
         print(startingFrame!)
         
         let zoomingImageView = UIImageView(frame: startingFrame!)
-        zoomingImageView.backgroundColor = UIColor.red
+      //  zoomingImageView.backgroundColor = UIColor.red
         zoomingImageView.image = startingImageView.image
         zoomingImageView.isUserInteractionEnabled = true
         zoomingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleZoomOut)))
@@ -103,6 +104,7 @@ class ProfileViewController: UIViewController {
                 
                 zoomingImageView.center = keyWindow.center
             }, completion: nil)
+        }
         }
     }
     
