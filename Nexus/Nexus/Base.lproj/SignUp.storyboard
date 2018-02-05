@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJf-by-b0A">
-                                <rect key="frame" x="16" y="491.99999999999994" width="343" height="36.000000000000057"/>
+                                <rect key="frame" x="16" y="653" width="343" height="36"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="FIL-Wd-bC0"/>
@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVD-Su-8QO">
-                                <rect key="frame" x="16" y="283" width="343" height="0.0"/>
+                                <rect key="frame" x="16" y="283" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -64,8 +64,8 @@
                                     <constraint firstAttribute="width" constant="137" id="pfx-vm-vDk"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-iy-Xbr">
-                                <rect key="frame" x="37" y="303" width="300" height="129"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-iy-Xbr">
+                                <rect key="frame" x="37" y="353" width="300" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NGv-ZG-xxU">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
@@ -77,7 +77,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WPn-NY-sjE">
-                                        <rect key="frame" x="0.0" y="89" width="300" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="IhV-JR-WyA"/>
                                         </constraints>
@@ -88,10 +88,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="EmL-to-Jrl"/>
-                                    <constraint firstAttribute="height" constant="129" id="tHg-73-i35"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-gz-FAr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-gz-FAr">
                                 <rect key="frame" x="0.0" y="733" width="375" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="EzW-OU-lOe"/>
@@ -108,30 +107,29 @@
                         <color key="backgroundColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.33333333329999998" green="0.80000000000000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Lbf-iy-Xbr" firstAttribute="top" secondItem="OtH-Xm-Ugj" secondAttribute="bottom" constant="83" id="30c-kA-5lN"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="oQ2-0M-zTN" secondAttribute="trailing" constant="119" id="3Pb-cb-XpN"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="OtH-Xm-Ugj" secondAttribute="trailing" constant="16" id="42u-Aq-KIP"/>
                             <constraint firstItem="oQ2-0M-zTN" firstAttribute="top" secondItem="AQ2-Yw-DdC" secondAttribute="bottom" constant="8" id="4Ct-8F-c85"/>
                             <constraint firstItem="Lbf-iy-Xbr" firstAttribute="centerX" secondItem="2vS-MM-juE" secondAttribute="centerX" id="5qy-6U-Dl1"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="leading" secondItem="EJf-by-b0A" secondAttribute="leading" id="7TF-Vb-5TC"/>
-                            <constraint firstItem="Lbf-iy-Xbr" firstAttribute="top" secondItem="2vS-MM-juE" secondAttribute="top" constant="353" id="8O7-d4-ySJ"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="Lbf-iy-Xbr" secondAttribute="trailing" constant="38" id="9hJ-Aa-Ua0"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="top" secondItem="jgd-nf-CHJ" secondAttribute="top" id="9oR-kk-CZi"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="trailing" secondItem="jgd-nf-CHJ" secondAttribute="trailing" id="AFn-S4-jxC"/>
                             <constraint firstItem="PVD-Su-8QO" firstAttribute="top" secondItem="OtH-Xm-Ugj" secondAttribute="bottom" constant="13" id="BfS-NB-BdU"/>
-                            <constraint firstItem="Lbf-iy-Xbr" firstAttribute="centerX" secondItem="PVD-Su-8QO" secondAttribute="centerX" id="CeV-Ub-VQ7"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="bottom" secondItem="jgd-nf-CHJ" secondAttribute="bottom" id="Drc-sf-c5L"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="HHU-dS-w9y"/>
                             <constraint firstItem="Lbf-iy-Xbr" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="37" id="W58-c6-pnU"/>
                             <constraint firstItem="oQ2-0M-zTN" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="119" id="X0G-pq-nAv"/>
+                            <constraint firstItem="Lbf-iy-Xbr" firstAttribute="centerX" secondItem="2vS-MM-juE" secondAttribute="centerX" id="aqI-Em-0q8"/>
                             <constraint firstItem="3sh-gz-FAr" firstAttribute="top" secondItem="EJf-by-b0A" secondAttribute="bottom" constant="44" id="bBj-PG-trg"/>
                             <constraint firstItem="jgd-nf-CHJ" firstAttribute="trailing" secondItem="3sh-gz-FAr" secondAttribute="trailing" id="bog-Sq-QcT"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="leading" secondItem="PVD-Su-8QO" secondAttribute="leading" id="dJY-Y4-iUT"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="top" secondItem="oQ2-0M-zTN" secondAttribute="bottom" constant="57" id="jaO-EN-m1p"/>
                             <constraint firstItem="OtH-Xm-Ugj" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" constant="16" id="nhV-KP-x0t"/>
-                            <constraint firstItem="EJf-by-b0A" firstAttribute="top" secondItem="Lbf-iy-Xbr" secondAttribute="bottom" constant="60" id="rSk-8o-WzK"/>
                             <constraint firstItem="Lbf-iy-Xbr" firstAttribute="centerX" secondItem="EJf-by-b0A" secondAttribute="centerX" id="x3m-jG-bg8"/>
                             <constraint firstItem="AQ2-Yw-DdC" firstAttribute="leading" secondItem="jgd-nf-CHJ" secondAttribute="leading" id="xCf-JG-Aso"/>
-                            <constraint firstItem="Lbf-iy-Xbr" firstAttribute="top" secondItem="PVD-Su-8QO" secondAttribute="bottom" constant="20" id="zxR-V6-IPR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PVD-Su-8QO" secondAttribute="trailing" constant="20" symbolic="YES" id="znY-cx-Pzl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jgd-nf-CHJ"/>
                     </view>
