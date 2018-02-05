@@ -99,9 +99,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         emailTextField.layer.addSublayer(emailBottomLayerPassword)
         
         handleTextField()
-        
+                
     }
     
+  
     @IBAction func generateButton_TouchUpInside(_ sender: Any) {
      
         
@@ -195,9 +196,15 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         // Try to find next responder
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
+            
+            if (nextField.tag == 3 || textField.tag == 3) {
+                self.view.frame.origin.y -= 100
+            }
         } else {
+            print("Not found")
             // Not found, so remove keyboard.
             textField.resignFirstResponder()
+            self.view.frame.origin.y += 100
         }
         // Do not add a line break
         return false
@@ -206,6 +213,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     //Hide keyboard when user touches outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
     }
     
     //Ensuring all fields are filled out before button can be pressed
