@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         let topLayer = CALayer()
-        topLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 0.6)
+        topLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 0.7)
         topLayer.backgroundColor = UIColor.darkGray.cgColor
         signUpButton.layer.addSublayer(topLayer)
         

@@ -256,6 +256,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="w5p-3q-PAO" id="v3P-w5-jZs"/>
                         <outlet property="errorLabel" destination="P4Z-Md-L3O" id="25G-rL-eRe"/>
+                        <outlet property="loginButton" destination="Apq-3e-lNL" id="lYp-8s-ypE"/>
                         <outlet property="sendEmailButton" destination="JPL-Aq-Qti" id="sGP-5z-Cf6"/>
                     </connections>
                 </viewController>

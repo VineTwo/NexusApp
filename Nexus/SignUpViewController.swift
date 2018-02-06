@@ -70,7 +70,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         //layer above sign in button on bottom of screen
         let topLayer = CALayer()
-        topLayer.frame = CGRect(x: 0, y: 3, width: view.frame.width, height: 0.6)
+        topLayer.frame = CGRect(x: 0, y: 3, width: view.frame.width, height: 0.7)
         topLayer.backgroundColor = UIColor.darkGray.cgColor
         signInButton.layer.addSublayer(topLayer)
         

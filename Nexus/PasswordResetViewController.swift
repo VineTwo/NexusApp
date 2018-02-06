@@ -14,6 +14,8 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
   //  @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -38,6 +40,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         bottomLayer.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(bottomLayer)
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        
+        let topLayer = CALayer()
+        topLayer.frame = CGRect(x: 0, y: 0, width: loginButton.frame.width, height: 0.7)
+        topLayer.backgroundColor = UIColor.darkGray.cgColor
+        loginButton.layer.addSublayer(topLayer)
+        
         
         
         sendEmailButton.layer.cornerRadius = 7.0
