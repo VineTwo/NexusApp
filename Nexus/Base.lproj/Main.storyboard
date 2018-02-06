@@ -11,8 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GillSans.ttc">
-            <string>GillSans-SemiBold</string>
+        <array key="PingFang.ttc">
+            <string>PingFangHK-Regular</string>
+            <string>PingFangHK-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -60,7 +61,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="OED-l3-z9I"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="20"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -78,7 +79,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48.333333333333329" id="d7K-8O-RlG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="42"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="42"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -87,7 +88,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="GrN-IP-fDo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="16"/>
                                 <state key="normal" title="Don't have an account? Sign Up">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -100,6 +101,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="9rk-d3-D4I"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                 <state key="normal" title="Forgot password?"/>
                                 <connections>
                                     <action selector="forgotPasswordButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="teX-di-kLA"/>
@@ -174,7 +176,7 @@
                                     <constraint firstAttribute="height" constant="40" id="QAb-cf-Zs7"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="vpu-aj-E2c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -192,7 +194,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="b1H-c9-GdU"/>
                                 </constraints>
-                                <state key="normal" title="Send Email"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
+                                <state key="normal" title="Send Email">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="sendEmailButton_TouchUpInside:" destination="afe-M5-bbo" eventType="touchUpInside" id="2yo-4A-8Mn"/>
                                 </connections>
@@ -202,7 +207,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="J1x-uK-RZQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="16"/>
                                 <state key="normal" title="Back To Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

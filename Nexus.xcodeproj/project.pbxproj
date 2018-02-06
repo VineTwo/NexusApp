@@ -176,6 +176,7 @@
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
+				A35DDE4B2028E1750009D94A /* Resources */,
 				9DC436DE20019D4E00335A4A /* Nexus */,
 				9DC436F320019D4E00335A4A /* NexusTests */,
 				9DC436FE20019D4E00335A4A /* NexusUITests */,
@@ -251,6 +252,13 @@
 			);
 			name = Model;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A35DDE4B2028E1750009D94A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
