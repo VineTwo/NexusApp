@@ -24,6 +24,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
                 self.errorLabel.textColor = UIColor.red
                 self.errorLabel.text = "The email is not associated with an account."
             }
+            self.showConfirmationAlert()
         }
     }
     
@@ -110,5 +111,45 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
             sendEmailButton.isEnabled = true
         }
     }
+    
+    func showConfirmationAlert() {
+        let alert = UIAlertController(title: "Reset Password", message: "A password reset email has been sent.", preferredStyle: .alert)
+       // let recognition = UIAlertAction(title: "OK", style: .destructive) { (alert: UIAlertAction!) -> Void in
+           // PasswordResetViewController.canvas.image = nil
+        
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
