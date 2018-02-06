@@ -16,6 +16,7 @@ import FirebaseStorage
 class SignUpViewController: UIViewController, UITextFieldDelegate {
   
     
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -66,6 +67,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         profilePicture.layer.cornerRadius = 30
         profilePicture.clipsToBounds = true
+        
+        //layer above sign in button on bottom of screen
+        let topLayer = CALayer()
+        topLayer.frame = CGRect(x: 0, y: 3, width: view.frame.width, height: 0.6)
+        topLayer.backgroundColor = UIColor.darkGray.cgColor
+        signInButton.layer.addSublayer(topLayer)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
         profilePicture.addGestureRecognizer(tapGesture)

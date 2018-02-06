@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="height" constant="45" id="EzW-OU-lOe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="16"/>
-                                <state key="normal" title="Already have an account? Sign in.">
+                                <state key="normal" title="Already have an account? Sign In.">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -148,6 +148,7 @@
                         <outlet property="emailTextField" destination="NGv-ZG-xxU" id="BjV-sU-2If"/>
                         <outlet property="passwordTextField" destination="WPn-NY-sjE" id="4QR-Wk-ZIW"/>
                         <outlet property="profilePicture" destination="oQ2-0M-zTN" id="5GY-PQ-JT5"/>
+                        <outlet property="signInButton" destination="3sh-gz-FAr" id="osr-ik-jDZ"/>
                         <outlet property="signUpButton" destination="EJf-by-b0A" id="ztX-R3-fxa"/>
                         <outlet property="signUpErrorLabel" destination="PVD-Su-8QO" id="GLk-tc-KDV"/>
                     </connections>

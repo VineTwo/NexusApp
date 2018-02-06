@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     let textFieldColor = UIColor(red: 0, green: 0.1, blue: 0.4, alpha: 0.2)
     
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginErrorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -53,6 +54,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         bottomLayerPassword.frame = CGRect(x: 0, y: 34, width: passwordTextField.frame.width, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor.white.cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
+        
+        let topLayer = CALayer()
+        topLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 0.6)
+        topLayer.backgroundColor = UIColor.darkGray.cgColor
+        signUpButton.layer.addSublayer(topLayer)
         
         loginButton.layer.cornerRadius = 7.0
         loginButton.isEnabled = false
