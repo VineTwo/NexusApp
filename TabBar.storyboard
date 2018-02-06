@@ -10,10 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
         <array key="PingFang.ttc">
-            <string>PingFangHK-Medium</string>
             <string>PingFangHK-Regular</string>
-            <string>PingFangHK-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,21 +29,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-pJ-pwl">
-                                <rect key="frame" x="87" y="343" width="200" height="126"/>
+                                <rect key="frame" x="87" y="347.33333333333331" width="200" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-3j-Wby">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Contact Code"/>
                                         <connections>
                                             <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
-                                        <rect key="frame" x="0.0" y="88" width="200" height="38"/>
+                                        <rect key="frame" x="0.0" y="84" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Social Code"/>
                                         <connections>
                                             <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
@@ -118,7 +121,7 @@
                                     <constraint firstAttribute="width" constant="343" id="SjR-RV-3hm"/>
                                     <constraint firstAttribute="height" constant="75" id="jMy-23-LlH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -128,7 +131,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Coz-0Q-VFz"/>
                                     <constraint firstAttribute="width" constant="343" id="KqG-7W-wGX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -139,7 +142,7 @@
                                     <constraint firstAttribute="width" constant="200" id="7jT-kH-gdn"/>
                                     <constraint firstAttribute="height" constant="36" id="IRV-Md-pVq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Generate QR Code">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -189,7 +192,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Vt8-eO-h7U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -199,7 +202,7 @@
                                     <constraint firstAttribute="height" constant="100" id="BTS-DQ-cDr"/>
                                     <constraint firstAttribute="width" constant="343" id="MRk-R5-4rr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -261,7 +264,7 @@
                                     <constraint firstAttribute="height" constant="36" id="K6m-vb-Le1"/>
                                     <constraint firstAttribute="width" constant="200" id="Kzx-kg-DAd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Generate QR Code">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -386,41 +389,41 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="lK1-aL-hpL">
-                                                <rect key="frame" x="44.000000000000007" y="70" width="84.666666666666686" height="557"/>
+                                                <rect key="frame" x="44.000000000000007" y="70" width="80.666666666666686" height="557"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYj-hJ-jdH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="U3j-cz-BNy"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-rl-BeJ">
-                                                        <rect key="frame" x="0.0" y="179" width="84.666666666666671" height="19"/>
+                                                        <rect key="frame" x="0.0" y="179" width="80.666666666666671" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="O6s-uK-qcl"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snapchat:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-N3-LvJ">
-                                                        <rect key="frame" x="0.0" y="358" width="84.666666666666671" height="19"/>
+                                                        <rect key="frame" x="0.0" y="358" width="80.666666666666671" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="xj8-1h-W5q"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRW-xv-nxI">
-                                                        <rect key="frame" x="0.0" y="537" width="84.666666666666671" height="20"/>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="537" width="80.666666666666671" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
