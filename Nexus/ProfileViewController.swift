@@ -124,7 +124,7 @@ class ProfileViewController: UIViewController {
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
         self.performZoomInOnStartingImageView(startingImageView: snapCodeImageView)
     }
-    // need to get this to work
+   
     func retrieveInstaQrUrl() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
