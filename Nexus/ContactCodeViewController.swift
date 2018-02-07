@@ -199,6 +199,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             
             if (nextField.tag == 3 || textField.tag == 3) {
                 self.view.frame.origin.y -= 100
+                
             }
         } else {
             print("Not found")
