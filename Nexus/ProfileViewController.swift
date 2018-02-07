@@ -305,7 +305,7 @@ class ProfileViewController: UIViewController {
         }
         
         alert.addAction(signOutAction)
-        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         
         self.present(alert, animated: true)
         
