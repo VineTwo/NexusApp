@@ -31,6 +31,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
         profilePagePrompt.isHidden = true
        generateButton.isEnabled = false
         
@@ -188,6 +190,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         return  validEmail
     }
     
+    @objc func keyboardWillDisappear() {
+        if(phoneNumberTextField.isFirstResponder || !((phoneNumberTextField.text?.isEmpty)!)) { self.view.frame.origin.y += 100}
+    }
+    
     
     //If not last textField it will go to next textField when enter is pressed
     //If last textField, keyboard will dismiss when enter key is pressed
@@ -199,12 +205,13 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             
             if (nextField.tag == 3 || textField.tag == 3) {
                 self.view.frame.origin.y -= 100
+                
             }
         } else {
             print("Not found")
             // Not found, so remove keyboard.
             textField.resignFirstResponder()
-            self.view.frame.origin.y += 100
+          //  self.view.frame.origin.y += 100
         }
         // Do not add a line break
         return false
@@ -238,6 +245,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
       
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
 
 }

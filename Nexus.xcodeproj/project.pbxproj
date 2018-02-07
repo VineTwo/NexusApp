@@ -25,6 +25,8 @@
 		A308DA83201C219600F126A6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308DA82201C219600F126A6 /* BaseCell.swift */; };
 		A331A07C200914A5005776C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07B200914A5005776C2 /* ProfileViewController.swift */; };
 		A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331A07D20091519005776C2 /* ConnectViewController.swift */; };
+		A334BC302029EB720052A52D /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334BC2F2029EB720052A52D /* SplashScreenViewController.swift */; };
+		A334BC322029EB7F0052A52D /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A334BC312029EB7F0052A52D /* SplashScreen.storyboard */; };
 		A340909920141F6C0023E3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A340909820141F6C0023E3AF /* Assets.xcassets */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
 		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
@@ -87,6 +89,8 @@
 		A308DA82201C219600F126A6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		A331A07B200914A5005776C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A331A07D20091519005776C2 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		A334BC2F2029EB720052A52D /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A334BC312029EB7F0052A52D /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A340909820141F6C0023E3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
 		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		9DC436D320019D4E00335A4A = {
 			isa = PBXGroup;
 			children = (
+				A35DDE4B2028E1750009D94A /* Resources */,
 				9DC436DE20019D4E00335A4A /* Nexus */,
 				9DC436F320019D4E00335A4A /* NexusTests */,
 				9DC436FE20019D4E00335A4A /* NexusUITests */,
@@ -198,6 +203,7 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				A334BC2E2029EB5F0052A52D /* SplashScreen */,
 				A350ABB6200D1CF600D846AD /* Model */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
@@ -244,6 +250,15 @@
 			path = NexusUITests;
 			sourceTree = "<group>";
 		};
+		A334BC2E2029EB5F0052A52D /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A334BC2F2029EB720052A52D /* SplashScreenViewController.swift */,
+				A334BC312029EB7F0052A52D /* SplashScreen.storyboard */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		A350ABB6200D1CF600D846AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +266,13 @@
 			);
 			name = Model;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A35DDE4B2028E1750009D94A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +404,7 @@
 				9D0BE7E62003243B00945119 /* Instagram.png in Resources */,
 				A30259692008975600479AF0 /* NexusLogoNobackground.png in Resources */,
 				9DC436E520019D4E00335A4A /* Main.storyboard in Resources */,
+				A334BC322029EB7F0052A52D /* SplashScreen.storyboard in Resources */,
 				A3447C882004291B008BAB5F /* profilePicture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +601,7 @@
 				A308DA81201C212300F126A6 /* SettingCell.swift in Sources */,
 				A35455B1201D55A00055C582 /* designConstants.cpp in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
+				A334BC302029EB720052A52D /* SplashScreenViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
 				9DBFCBFF20262C6400933DE1 /* PasswordResetViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,

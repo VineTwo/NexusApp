@@ -37,6 +37,20 @@
  emailTextField.layer.addSublayer(bottomLayer)
  emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
  
+ TEXT FONTS AND STYLES
+ ALL USE PINGFANG HK
+ 
+ BUTTONS:
+ Semibold size 18
+ 
+ SCENE LABELS:
+ Semibold size 20
+ 
+ ERROR LABELS and bottom scene buttons:
+ Medium Size 16
+ 
+ REGULAR LABELS(Labels for an object)
+ Regular size 17
  
  
  */

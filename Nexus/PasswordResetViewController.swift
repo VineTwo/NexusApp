@@ -14,6 +14,8 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
   //  @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -24,6 +26,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
                 self.errorLabel.textColor = UIColor.red
                 self.errorLabel.text = "The email is not associated with an account."
             }
+            self.showConfirmationAlert()
         }
     }
     
@@ -37,6 +40,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         bottomLayer.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(bottomLayer)
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        
+        let topLayer = CALayer()
+        topLayer.frame = CGRect(x: 0, y: 0, width: loginButton.frame.width, height: 0.7)
+        topLayer.backgroundColor = UIColor.darkGray.cgColor
+        loginButton.layer.addSublayer(topLayer)
+        
         
         
         sendEmailButton.layer.cornerRadius = 7.0
@@ -110,5 +119,45 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
             sendEmailButton.isEnabled = true
         }
     }
+    
+    func showConfirmationAlert() {
+        let alert = UIAlertController(title: "Reset Password", message: "A password reset email has been sent.", preferredStyle: .alert)
+       // let recognition = UIAlertAction(title: "OK", style: .destructive) { (alert: UIAlertAction!) -> Void in
+           // PasswordResetViewController.canvas.image = nil
+        
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

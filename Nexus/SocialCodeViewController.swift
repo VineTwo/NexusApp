@@ -137,11 +137,12 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         let insta = ("https://www.instagram.com/\(trimmed!)")
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
+        //if the field is not empty then create a node in the database and store it
+        if(!(trimmed?.isEmpty)!) {
         let userRef = ref.child("users").child(uid!).child("InstagramQrUrl")
-        
-        
         let instaQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
         userRef.setValue(["instQrURl": instaQrUrl])
+        }
  
     }
     
@@ -150,24 +151,26 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("TwitterQrUrl")
-        
         let trimmed = twitterTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if(!(trimmed?.isEmpty)!) {
         let twitterURL = ("https://twitter.com/\(trimmed!)")
         let twitQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
         userRef.setValue(["twitQrURl": twitQrUrl])
+        }
     }
     
     func snapQRCode() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("SnapQrUrl")
-        
         let trimmed = snapchatTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if(!(trimmed?.isEmpty)!) {
         let snapURL = ("https://www.snapchat.com/add/\(trimmed!)")
         let snapQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
         userRef.setValue(["snapQrURl": snapQrUrl])
-        
-   
+        }
         profilePrompt.isHidden = false
     }
     

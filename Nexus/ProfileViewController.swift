@@ -124,7 +124,7 @@ class ProfileViewController: UIViewController {
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
         self.performZoomInOnStartingImageView(startingImageView: snapCodeImageView)
     }
-    // need to get this to work
+   
     func retrieveInstaQrUrl() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
@@ -276,8 +276,7 @@ class ProfileViewController: UIViewController {
     func showControllerForLogin(Setting: SignOut) {
         print(Setting.name)
         if (Setting.name == "Sign Out") {
-            print("Sign out tapped")
-            signOutUser()
+            showSignOutConfirmation()
         }
         
         if(Setting.name == "Write A Review"){
@@ -296,6 +295,22 @@ class ProfileViewController: UIViewController {
         
     }
     
+    func showSignOutConfirmation() {
+        let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+         //let recognition = UIAlertAction(title: "OK", style: .destructive) { (alert: UIAlertAction!) -> Void in
+        // PasswordResetViewController.canvas.image = nil
+        let signOutAction = UIAlertAction(title: "Yes", style: .destructive) {
+            (action: UIAlertAction!) in
+            self.signOutUser()
+        }
+        
+        alert.addAction(signOutAction)
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+        
+    }
+    
     func signOutUser() {
        
         do {
@@ -309,5 +324,6 @@ class ProfileViewController: UIViewController {
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
+
  
 }

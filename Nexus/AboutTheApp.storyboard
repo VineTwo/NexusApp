@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--TabBar-->
         <scene sceneID="tCI-zc-bIA">
@@ -23,23 +28,23 @@
             <objects>
                 <viewController id="MBu-TB-7hA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRd-7X-QQb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-yL-PBl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uky-t5-n5z">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2800"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtZ-Sb-ek3">
                                                 <rect key="frame" x="0.0" y="607" width="375" height="272"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="272" id="v9b-pU-TUD"/>
                                                 </constraints>
-                                                <mutableString key="text">Welcome to Nexus ("Nexus", "we", "us", or "our"). Nexus provides users with a quick and easy way to share their information through the use of QR Codes. Just enter the information and let the app do the rest. Copyright pending.                                                                  
+                                                <string key="text">Welcome to Nexus ("Nexus", "we", "us", or "our"). Nexus provides users with a quick and easy way to share their information through the use of QR Codes. Just enter the information and let the app do the rest. Copyright pending.                                                                  
                                                                    
-Our Open Source Libraries section gives credit the the third party and open source software that may be contained in portions of this app. We thank those who made our lives easier and made this app possible.            </mutableString>
+Our Open Source Libraries section gives credit the the third party and open source software that may be contained in portions of this app. We thank those who made our lives easier and made this app possible.            </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -49,7 +54,7 @@ Our Open Source Libraries section gives credit the the third party and open sour
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="8cm-gc-Evy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -276,7 +281,7 @@ THE SOFTWARE.
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="vz5-nr-ObO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -319,11 +324,11 @@ THE SOFTWARE.
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source Libraries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-bg-jCS">
-                                                <rect key="frame" x="82" y="532" width="211" height="25"/>
+                                                <rect key="frame" x="102.5" y="532" width="170.5" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CUx-Ym-uQ3"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -332,10 +337,40 @@ THE SOFTWARE.
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="ivn-Ve-8FW"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR Code API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruK-SJ-47v">
+                                                <rect key="frame" x="0.0" y="2345" width="375" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hz5-9d-xEw">
+                                                <rect key="frame" x="0.0" y="2420" width="375" height="107"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">To generate the QR Codes, we use an online QR Code API. None of the information you enter is saved in the API's database, only our Firebase Database. To view the Imprint, Terms of Use, and Privacy Policy please follow this link. http://goqr.me/de/rechtliches/</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copyright Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLu-jj-9Rg">
+                                                <rect key="frame" x="0.0" y="2576" width="375" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-cK-FCc">
+                                                <rect key="frame" x="0.0" y="2651" width="375" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">The Instagram logo is a property of Instagram. The Twitter logo is a property of Twitter. The Snapchat Image is a property of Snap Inc. The contact image is a property of Apple. We do not own any of those images, nor do we own any of the QR Codes generated by a user.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -349,9 +384,9 @@ THE SOFTWARE.
                                             <constraint firstAttribute="trailing" secondItem="1mw-L7-BPR" secondAttribute="trailing" id="EQD-zD-uvx"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="top" secondItem="IOX-zK-pUC" secondAttribute="bottom" constant="49" id="Fyx-h0-3MJ"/>
                                             <constraint firstItem="1mw-L7-BPR" firstAttribute="leading" secondItem="Uky-t5-n5z" secondAttribute="leading" id="IbI-JY-j3u"/>
-                                            <constraint firstAttribute="bottom" secondItem="1mw-L7-BPR" secondAttribute="bottom" constant="4" id="PHe-9i-vVe"/>
+                                            <constraint firstAttribute="bottom" secondItem="1mw-L7-BPR" secondAttribute="bottom" constant="504" id="PHe-9i-vVe"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="5fs-KB-BZN" secondAttribute="leading" id="RG9-Ec-R99"/>
-                                            <constraint firstAttribute="bottom" secondItem="58B-Ka-Sez" secondAttribute="bottom" constant="412" id="X9q-5n-Oup"/>
+                                            <constraint firstAttribute="bottom" secondItem="58B-Ka-Sez" secondAttribute="bottom" constant="912" id="X9q-5n-Oup"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="1mw-L7-BPR" secondAttribute="trailing" id="YLz-9l-fdU"/>
                                             <constraint firstItem="QtZ-Sb-ek3" firstAttribute="top" secondItem="a9B-bg-jCS" secondAttribute="bottom" constant="50" id="ZIx-y7-kmQ"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="bcT-Bz-Fkc" secondAttribute="trailing" id="cdd-Jb-XPw"/>
@@ -368,7 +403,7 @@ THE SOFTWARE.
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="trailing" secondItem="GBG-2l-cis" secondAttribute="trailing" id="qx3-wc-ec6"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="1mw-L7-BPR" secondAttribute="leading" id="rJk-dv-7oH"/>
                                             <constraint firstItem="5fs-KB-BZN" firstAttribute="top" secondItem="AH4-J6-lys" secondAttribute="bottom" constant="53" id="sO8-0q-cPW"/>
-                                            <constraint firstAttribute="height" constant="2300" id="si8-Hs-vYl"/>
+                                            <constraint firstAttribute="height" constant="2800" id="si8-Hs-vYl"/>
                                             <constraint firstAttribute="trailing" secondItem="AH4-J6-lys" secondAttribute="trailing" id="wlG-b3-a6H"/>
                                             <constraint firstItem="a9B-bg-jCS" firstAttribute="top" secondItem="5fs-KB-BZN" secondAttribute="bottom" constant="49" id="xAr-5v-u7k"/>
                                             <constraint firstItem="58B-Ka-Sez" firstAttribute="leading" secondItem="QtZ-Sb-ek3" secondAttribute="leading" id="z9e-ci-7Ld"/>
@@ -393,7 +428,7 @@ THE SOFTWARE.
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Eii-mr-TgV"/>
                     </view>
-                    <size key="freeformSize" width="375" height="2300"/>
+                    <size key="freeformSize" width="375" height="2800"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMX-kn-swR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
