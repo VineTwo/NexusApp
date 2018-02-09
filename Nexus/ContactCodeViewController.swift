@@ -126,14 +126,14 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 print("No error")
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-                let name = firstNameTrimmed! + "_" + lastNameTrimmed!
-                let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+               // let name = firstNameTrimmed! + ";" + lastNameTrimmed!
+              //  let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = emailTextField.text!
                 let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
                 // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
-                let contactInfo = "MECARD:N:\(trimmedName);TEL:\(trimmedPhone);EMAIL:\(trimmedEmail)"
+            let contactInfo = "MECARD:N:\(firstNameTrimmed!);NICKNAME:\(lastNameTrimmed!);TEL:\(trimmedPhone);EMAIL:\(trimmedEmail)"
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
