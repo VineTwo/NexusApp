@@ -25,19 +25,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var contactCodeImageView: UIImageView!
     
     @IBAction func didTapInstaCodeImage(_ sender: Any) {
-        print("Insta Tapped")
         self.performZoomInOnStartingImageView(startingImageView: instaCodeImageView)
-
     }
     
     @IBAction func didTapTwitterCodeImage(_ sender: Any) {
-        print("Twitter tapped")
         self.performZoomInOnStartingImageView(startingImageView: twitterCodeImageView)
-
     }
     
     @IBAction func didTapContactImage(_ sender: Any) {
-        print("Contact Image tapped")
         self.performZoomInOnStartingImageView(startingImageView: contactCodeImageView)
     }
     
@@ -149,8 +144,6 @@ class ProfileViewController: UIViewController {
                         }
                     }
                 }
-    
-                print(self.instaURL)
                 
             }
         }
@@ -255,9 +248,7 @@ class ProfileViewController: UIViewController {
     func profileURL() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference().child("users").child(uid!)
-        print("before")
         print(ref)
-        print("after")
     }
     @IBAction func menu_TouchUpInside(_ sender: Any) {
         handleMenu()
@@ -274,7 +265,6 @@ class ProfileViewController: UIViewController {
     }
     
     func showControllerForLogin(Setting: SignOut) {
-        print(Setting.name)
         if (Setting.name == "Sign Out") {
             showSignOutConfirmation()
         }
@@ -282,23 +272,10 @@ class ProfileViewController: UIViewController {
         if(Setting.name == "Write A Review"){
             print("Will take user to app page on App Store")
         }
-        
-        if(Setting.name == "About The App") {
-            let dummyViewController = UIViewController()
-            dummyViewController.view.backgroundColor = UIColor.white
-            navigationController?.navigationBar.tintColor = UIColor.black
-            dummyViewController.navigationItem.title = Setting.name
-            navigationController?.pushViewController(dummyViewController, animated: true)
-            //Might need to make this a website and have the button be a link to the webpage
-            
-        }
-        
     }
     
     func showSignOutConfirmation() {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
-         //let recognition = UIAlertAction(title: "OK", style: .destructive) { (alert: UIAlertAction!) -> Void in
-        // PasswordResetViewController.canvas.image = nil
         let signOutAction = UIAlertAction(title: "Yes", style: .destructive) {
             (action: UIAlertAction!) in
             self.signOutUser()
@@ -308,7 +285,6 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         
         self.present(alert, animated: true)
-        
     }
     
     func signOutUser() {
@@ -324,6 +300,4 @@ class ProfileViewController: UIViewController {
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
-
- 
 }

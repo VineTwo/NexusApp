@@ -127,7 +127,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                // let name = firstNameTrimmed! + ";" + lastNameTrimmed!
-              //  let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+               // let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = emailTextField.text!
