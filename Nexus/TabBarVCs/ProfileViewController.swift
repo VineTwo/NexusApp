@@ -39,15 +39,10 @@ class ProfileViewController: UIViewController {
     
     
     var databaseHandle: DatabaseHandle?
-    var instaURL = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileURL()
+     //This calls the remaining urls
         retrieveInstaQrUrl()
-        retrieveTwitterQrUrl()
-        retrieveSnapQrUrl()
-        retrieveContactQrUrl()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
@@ -64,6 +59,10 @@ class ProfileViewController: UIViewController {
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+      //  let instaImageData = instaCodeImageView.image
     }
     var startingFrame: CGRect?
     var blackBackground: UIView?
@@ -125,6 +124,7 @@ class ProfileViewController: UIViewController {
         let ref = Database.database().reference()
         databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
            let instaCode = snapshot.value as? String
+            self.retrieveTwitterQrUrl(uid: uid!,ref: ref)
             if let actualCode  = instaCode {
                 let imageURL = URL(string: actualCode)
                 
@@ -150,14 +150,12 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func retrieveTwitterQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("TwitterQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveTwitterQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("TwitterQrUrl").observe(.childAdded) { (snapshot) in
             let twitterCode = snapshot.value as? String
             if let actualCode  = twitterCode {
                 let imageURL = URL(string: actualCode)
-                
+                self.retrieveSnapQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
                 
                 if let url = imageURL {
@@ -181,14 +179,12 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func retrieveSnapQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("SnapQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveSnapQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("SnapQrUrl").observe(.childAdded) { (snapshot) in
             let snapCode = snapshot.value as? String
             if let actualCode  = snapCode {
                 let imageURL = URL(string: actualCode)
-                
+                self.retrieveContactQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
                 
                 if let url = imageURL {
@@ -211,10 +207,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func retrieveContactQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveContactQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
             let contactCode = snapshot.value as? String
             if let actualCode  = contactCode {
                 let imageURL = URL(string: actualCode)
@@ -242,8 +236,6 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
-    
     
     func profileURL() {
         let uid = Auth.auth().currentUser?.uid
