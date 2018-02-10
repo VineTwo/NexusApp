@@ -43,14 +43,14 @@ class ProfileViewController: UIViewController {
     var databaseHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.startAnimating()
-     //This calls the remaining urls
-        retrieveInstaQrUrl()
-        
+        //For the activity indicator
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+     //This calls the remaining urls
+        retrieveInstaQrUrl()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
@@ -68,10 +68,6 @@ class ProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-      //  let instaImageData = instaCodeImageView.image
-    }
     var startingFrame: CGRect?
     var blackBackground: UIView?
     
@@ -80,7 +76,6 @@ class ProfileViewController: UIViewController {
         
         if startingImageView.image?.sd_imageData() != nil {
         startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
-        print(startingFrame!)
         
         let zoomingImageView = UIImageView(frame: startingFrame!)
       //  zoomingImageView.backgroundColor = UIColor.red
@@ -130,14 +125,13 @@ class ProfileViewController: UIViewController {
     func retrieveInstaQrUrl() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
-        self.activityIndicator.stopAnimating()
         databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
             let instaCode = snapshot.value as? String
             self.retrieveTwitterQrUrl(uid: uid!,ref: ref)
             if let actualCode  = instaCode {
                 let imageURL = URL(string: actualCode)
-                
                 var image: UIImage?
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -165,7 +159,7 @@ class ProfileViewController: UIViewController {
                 let imageURL = URL(string: actualCode)
                 self.retrieveSnapQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
-                
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -194,7 +188,7 @@ class ProfileViewController: UIViewController {
                 let imageURL = URL(string: actualCode)
                 self.retrieveContactQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
-                
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -220,17 +214,14 @@ class ProfileViewController: UIViewController {
             let contactCode = snapshot.value as? String
             if let actualCode  = contactCode {
                 let imageURL = URL(string: actualCode)
-                print("First if let inside retrieve contact")
                 var image: UIImage?
-    
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
-                    print("Second if let of contact retrieval")
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
                         //All UI operations has to run on main thread.
                         DispatchQueue.main.async {
                             if imageData != nil {
-                                print("Should see contact code")
                                 image = UIImage(data: imageData! as Data)!
                                 self.contactCodeImageView.image = image
                                 self.contactCodeImageView.sizeToFit()
@@ -245,11 +236,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func profileURL() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(uid!)
-        print(ref)
-    }
     @IBAction func menu_TouchUpInside(_ sender: Any) {
         handleMenu()
         
@@ -270,7 +256,7 @@ class ProfileViewController: UIViewController {
         }
         
         if(Setting.name == "Write A Review"){
-            print("Will take user to app page on App Store")
+            //Link to app store review page
         }
     }
     
