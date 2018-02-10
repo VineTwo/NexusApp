@@ -203,22 +203,15 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				A3A93C8E202F5A0B00F72B61 /* MainVC's */,
+				A3A93C8D202F59CD00F72B61 /* SignUpVCs */,
+				A3A93C8C202F598000F72B61 /* TabBarVCs */,
 				A334BC2E2029EB5F0052A52D /* SplashScreen */,
 				A350ABB6200D1CF600D846AD /* Model */,
 				9D0BE7E12003243B00945119 /* Social Media Icons */,
 				9DC436DF20019D4E00335A4A /* AppDelegate.swift */,
-				A308DA7E201C179000F126A6 /* menuLauncherViewController.swift */,
-				A308DA80201C212300F126A6 /* SettingCell.swift */,
-				A308DA82201C219600F126A6 /* BaseCell.swift */,
-				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
-				9DBFCBFE20262C6400933DE1 /* PasswordResetViewController.swift */,
-				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
 				A35455AF201D55A00055C582 /* designConstants.cpp */,
-				A331A07D20091519005776C2 /* ConnectViewController.swift */,
-				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
 				A368935C2005921D000E7C69 /* config.swift */,
-				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
-				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
 				A3DEFE852013A66400F44EC9 /* nexus-Bridging-Header.h */,
 				A3E1FF3120095ACF00DD8B0C /* TabBar.storyboard */,
 				A3AF6B6F2023884D009EE15B /* AboutTheApp.storyboard */,
@@ -273,6 +266,37 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3A93C8C202F598000F72B61 /* TabBarVCs */ = {
+			isa = PBXGroup;
+			children = (
+				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
+				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
+				A308DA80201C212300F126A6 /* SettingCell.swift */,
+				A331A07D20091519005776C2 /* ConnectViewController.swift */,
+				A308DA82201C219600F126A6 /* BaseCell.swift */,
+				A308DA7E201C179000F126A6 /* menuLauncherViewController.swift */,
+				A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */,
+			);
+			path = TabBarVCs;
+			sourceTree = "<group>";
+		};
+		A3A93C8D202F59CD00F72B61 /* SignUpVCs */ = {
+			isa = PBXGroup;
+			children = (
+				A357DCE020026F5700A2D517 /* SignUpViewController.swift */,
+			);
+			path = SignUpVCs;
+			sourceTree = "<group>";
+		};
+		A3A93C8E202F5A0B00F72B61 /* MainVC's */ = {
+			isa = PBXGroup;
+			children = (
+				9DBFCBFE20262C6400933DE1 /* PasswordResetViewController.swift */,
+				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
+			);
+			path = "MainVC's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
