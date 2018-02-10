@@ -13,6 +13,8 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var instaCodeImageView: UIImageView!
@@ -41,8 +43,14 @@ class ProfileViewController: UIViewController {
     var databaseHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
      //This calls the remaining urls
         retrieveInstaQrUrl()
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
@@ -122,14 +130,14 @@ class ProfileViewController: UIViewController {
     func retrieveInstaQrUrl() {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
+        self.activityIndicator.stopAnimating()
         databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
-           let instaCode = snapshot.value as? String
+            let instaCode = snapshot.value as? String
             self.retrieveTwitterQrUrl(uid: uid!,ref: ref)
             if let actualCode  = instaCode {
                 let imageURL = URL(string: actualCode)
                 
                 var image: UIImage?
-                
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
