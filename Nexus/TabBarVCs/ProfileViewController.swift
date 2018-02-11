@@ -48,9 +48,9 @@ class ProfileViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
-       // activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
      //This calls the remaining urls
-    //    retrieveInstaQrUrl()
+      //  retrieveInstaQrUrl()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
@@ -62,7 +62,6 @@ class ProfileViewController: UIViewController {
         contactCodeImageView.addGestureRecognizer(tapGesture)
         contactCodeImageView.isUserInteractionEnabled = true
         
-
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
@@ -74,14 +73,13 @@ class ProfileViewController: UIViewController {
         getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
         // Need to cache the contact url
         getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
-
-
     }
     var startingFrame: CGRect?
     var blackBackground: UIView?
     
     func getImageFromCache(keyName: String, imageName: UIImageView) {
          let instaCache = UserDefaults.standard.object(forKey: keyName) as? String
+            activityIndicator.stopAnimating()
             if let instaAsString = instaCache {
                 let imageURL = URL(string: instaAsString)
                 var image: UIImage?
@@ -317,7 +315,10 @@ class ProfileViewController: UIViewController {
             print(logoutError)
         }
         // print(Auth.auth().currentUser)
-        
+        UserDefaults.standard.removeObject(forKey: "instagramURL")
+        UserDefaults.standard.removeObject(forKey: "snapchatURL")
+        UserDefaults.standard.removeObject(forKey: "twitterURL")
+        UserDefaults.standard.removeObject(forKey: "contactURL")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
