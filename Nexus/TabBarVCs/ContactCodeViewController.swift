@@ -137,6 +137,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
+                UserDefaults.standard.set(contactInfoAsString, forKey: "contactURL")
                 setContactQrCode(contactImageString: contactInfoAsString)
         
                 generateButton.isHidden = true

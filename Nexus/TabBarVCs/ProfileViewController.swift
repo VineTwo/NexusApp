@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController {
         getImageFromCache(keyName: "twitterURL", imageName: twitterCodeImageView)
         getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
         // Need to cache the contact url
-       // getImageFromCache(keyName: "instagramURL", imageName: instaCodeImageView)
+        getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
 
 
     }
