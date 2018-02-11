@@ -141,6 +141,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         if(!(trimmed?.isEmpty)!) {
         let userRef = ref.child("users").child(uid!).child("InstagramQrUrl")
         let instaQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(insta)")
+        UserDefaults.standard.set(instaQrUrl, forKey: "instagramURL")
         userRef.setValue(["instQrURl": instaQrUrl])
         }
  
@@ -156,6 +157,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         if(!(trimmed?.isEmpty)!) {
         let twitterURL = ("https://twitter.com/\(trimmed!)")
         let twitQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(twitterURL)")
+        UserDefaults.standard.set(twitQrUrl, forKey: "twitterURL")
         userRef.setValue(["twitQrURl": twitQrUrl])
         }
     }
@@ -169,6 +171,7 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         if(!(trimmed?.isEmpty)!) {
         let snapURL = ("https://www.snapchat.com/add/\(trimmed!)")
         let snapQrUrl = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(snapURL)")
+        UserDefaults.standard.set(snapQrUrl, forKey: "snapchatURL")
         userRef.setValue(["snapQrURl": snapQrUrl])
         }
         profilePrompt.isHidden = false

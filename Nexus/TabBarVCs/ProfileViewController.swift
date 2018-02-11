@@ -13,6 +13,8 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var instaCodeImageView: UIImageView!
@@ -25,35 +27,30 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var contactCodeImageView: UIImageView!
     
     @IBAction func didTapInstaCodeImage(_ sender: Any) {
-        print("Insta Tapped")
         self.performZoomInOnStartingImageView(startingImageView: instaCodeImageView)
-
     }
     
     @IBAction func didTapTwitterCodeImage(_ sender: Any) {
-        print("Twitter tapped")
         self.performZoomInOnStartingImageView(startingImageView: twitterCodeImageView)
-
     }
     
     @IBAction func didTapContactImage(_ sender: Any) {
-        print("Contact Image tapped")
         self.performZoomInOnStartingImageView(startingImageView: contactCodeImageView)
     }
     
     
     
     var databaseHandle: DatabaseHandle?
-    var instaURL = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileURL()
-        retrieveInstaQrUrl()
-        retrieveTwitterQrUrl()
-        retrieveSnapQrUrl()
-        retrieveContactQrUrl()
-        
+        //For the activity indicator
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+     //This calls the remaining urls
+     //   retrieveInstaQrUrl()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
@@ -65,20 +62,56 @@ class ProfileViewController: UIViewController {
         contactCodeImageView.addGestureRecognizer(tapGesture)
         contactCodeImageView.isUserInteractionEnabled = true
         
-
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getImageFromCache(keyName: "instagramURL", imageName: instaCodeImageView)
+        getImageFromCache(keyName: "twitterURL", imageName: twitterCodeImageView)
+        getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
+        // Need to cache the contact url
+        getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
+    }
     var startingFrame: CGRect?
     var blackBackground: UIView?
     
+    func getImageFromCache(keyName: String, imageName: UIImageView) {
+        print("Inside cache")
+         let instaCache = UserDefaults.standard.object(forKey: keyName) as? String
+            activityIndicator.stopAnimating()
+            if let instaAsString = instaCache {
+                print("Inside first if let")
+                let imageURL = URL(string: instaAsString)
+                var image: UIImage?
+            if let url = imageURL {
+                print("Inside second if let")
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let imageData = NSData(contentsOf: url)
+                    //All UI operations has to run on main thread.
+                    DispatchQueue.main.async {
+                        if imageData != nil {
+                            print("Inside if imagedata != nil")
+                            image = UIImage(data: imageData! as Data)!
+                            //UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
+                            //print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
+                            imageName.image = image
+                            imageName.sizeToFit()
+                        }
+                        
+                    }
+                }
+            }
+            }
+        
+        
+    }
     
     func performZoomInOnStartingImageView(startingImageView: UIImageView) {
         
         if startingImageView.image?.sd_imageData() != nil {
         startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
-        print(startingFrame!)
         
         let zoomingImageView = UIImageView(frame: startingFrame!)
       //  zoomingImageView.backgroundColor = UIColor.red
@@ -129,12 +162,12 @@ class ProfileViewController: UIViewController {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         databaseHandle = ref.child("users").child(uid!).child("InstagramQrUrl").observe(.childAdded) { (snapshot) in
-           let instaCode = snapshot.value as? String
+            let instaCode = snapshot.value as? String
+            self.retrieveTwitterQrUrl(uid: uid!,ref: ref)
             if let actualCode  = instaCode {
                 let imageURL = URL(string: actualCode)
-                
                 var image: UIImage?
-                
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -142,6 +175,8 @@ class ProfileViewController: UIViewController {
                         DispatchQueue.main.async {
                             if imageData != nil {
                                 image = UIImage(data: imageData! as Data)!
+                                UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
+                                print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
                                 self.instaCodeImageView.image = image
                                 self.instaCodeImageView.sizeToFit()
                             }
@@ -149,24 +184,20 @@ class ProfileViewController: UIViewController {
                         }
                     }
                 }
-    
-                print(self.instaURL)
                 
             }
         }
         
     }
     
-    func retrieveTwitterQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("TwitterQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveTwitterQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("TwitterQrUrl").observe(.childAdded) { (snapshot) in
             let twitterCode = snapshot.value as? String
             if let actualCode  = twitterCode {
                 let imageURL = URL(string: actualCode)
-                
+                self.retrieveSnapQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
-                
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -188,16 +219,14 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func retrieveSnapQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("SnapQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveSnapQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("SnapQrUrl").observe(.childAdded) { (snapshot) in
             let snapCode = snapshot.value as? String
             if let actualCode  = snapCode {
                 let imageURL = URL(string: actualCode)
-                
+                self.retrieveContactQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
-                
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
@@ -218,24 +247,19 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func retrieveContactQrUrl() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-        databaseHandle = ref.child("users").child(uid!).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
+    func retrieveContactQrUrl(uid: String, ref: DatabaseReference) {
+        databaseHandle = ref.child("users").child(uid).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
             let contactCode = snapshot.value as? String
             if let actualCode  = contactCode {
                 let imageURL = URL(string: actualCode)
-                print("First if let inside retrieve contact")
                 var image: UIImage?
-    
+                self.activityIndicator.stopAnimating()
                 if let url = imageURL {
-                    print("Second if let of contact retrieval")
                     DispatchQueue.global(qos: .userInitiated).async {
                         let imageData = NSData(contentsOf: url)
                         //All UI operations has to run on main thread.
                         DispatchQueue.main.async {
                             if imageData != nil {
-                                print("Should see contact code")
                                 image = UIImage(data: imageData! as Data)!
                                 self.contactCodeImageView.image = image
                                 self.contactCodeImageView.sizeToFit()
@@ -250,15 +274,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    
-    
-    func profileURL() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(uid!)
-        print("before")
-        print(ref)
-        print("after")
-    }
     @IBAction func menu_TouchUpInside(_ sender: Any) {
         handleMenu()
         
@@ -274,31 +289,17 @@ class ProfileViewController: UIViewController {
     }
     
     func showControllerForLogin(Setting: SignOut) {
-        print(Setting.name)
         if (Setting.name == "Sign Out") {
             showSignOutConfirmation()
         }
         
         if(Setting.name == "Write A Review"){
-            print("Will take user to app page on App Store")
+            //Link to app store review page
         }
-        
-        if(Setting.name == "About The App") {
-            let dummyViewController = UIViewController()
-            dummyViewController.view.backgroundColor = UIColor.white
-            navigationController?.navigationBar.tintColor = UIColor.black
-            dummyViewController.navigationItem.title = Setting.name
-            navigationController?.pushViewController(dummyViewController, animated: true)
-            //Might need to make this a website and have the button be a link to the webpage
-            
-        }
-        
     }
     
     func showSignOutConfirmation() {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
-         //let recognition = UIAlertAction(title: "OK", style: .destructive) { (alert: UIAlertAction!) -> Void in
-        // PasswordResetViewController.canvas.image = nil
         let signOutAction = UIAlertAction(title: "Yes", style: .destructive) {
             (action: UIAlertAction!) in
             self.signOutUser()
@@ -308,7 +309,6 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         
         self.present(alert, animated: true)
-        
     }
     
     func signOutUser() {
@@ -319,11 +319,12 @@ class ProfileViewController: UIViewController {
             print(logoutError)
         }
         // print(Auth.auth().currentUser)
-        
+        UserDefaults.standard.removeObject(forKey: "instagramURL")
+        UserDefaults.standard.removeObject(forKey: "snapchatURL")
+        UserDefaults.standard.removeObject(forKey: "twitterURL")
+        UserDefaults.standard.removeObject(forKey: "contactURL")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signInVC = storyboard.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
         self.present(signInVC, animated: true, completion: nil)
     }
-
- 
 }
