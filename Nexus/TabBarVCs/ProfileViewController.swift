@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
      //This calls the remaining urls
-        retrieveInstaQrUrl()
+     //   retrieveInstaQrUrl()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
@@ -78,17 +78,21 @@ class ProfileViewController: UIViewController {
     var blackBackground: UIView?
     
     func getImageFromCache(keyName: String, imageName: UIImageView) {
+        print("Inside cache")
          let instaCache = UserDefaults.standard.object(forKey: keyName) as? String
             activityIndicator.stopAnimating()
             if let instaAsString = instaCache {
+                print("Inside first if let")
                 let imageURL = URL(string: instaAsString)
                 var image: UIImage?
             if let url = imageURL {
+                print("Inside second if let")
                 DispatchQueue.global(qos: .userInitiated).async {
                     let imageData = NSData(contentsOf: url)
                     //All UI operations has to run on main thread.
                     DispatchQueue.main.async {
                         if imageData != nil {
+                            print("Inside if imagedata != nil")
                             image = UIImage(data: imageData! as Data)!
                             //UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
                             //print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
