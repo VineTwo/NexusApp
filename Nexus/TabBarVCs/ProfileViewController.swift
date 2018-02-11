@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
      //This calls the remaining urls
-      //  retrieveInstaQrUrl()
+        retrieveInstaQrUrl()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
