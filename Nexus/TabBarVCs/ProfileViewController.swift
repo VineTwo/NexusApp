@@ -48,10 +48,9 @@ class ProfileViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
+       // activityIndicator.startAnimating()
      //This calls the remaining urls
-        retrieveInstaQrUrl()
-        
+    //    retrieveInstaQrUrl()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
@@ -68,9 +67,44 @@ class ProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getImageFromCache(keyName: "instagramURL", imageName: instaCodeImageView)
+        getImageFromCache(keyName: "twitterURL", imageName: twitterCodeImageView)
+        getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
+        // Need to cache the contact url
+       // getImageFromCache(keyName: "instagramURL", imageName: instaCodeImageView)
+
+
+    }
     var startingFrame: CGRect?
     var blackBackground: UIView?
     
+    func getImageFromCache(keyName: String, imageName: UIImageView) {
+         let instaCache = UserDefaults.standard.object(forKey: keyName) as? String
+            if let instaAsString = instaCache {
+                let imageURL = URL(string: instaAsString)
+                var image: UIImage?
+            if let url = imageURL {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let imageData = NSData(contentsOf: url)
+                    //All UI operations has to run on main thread.
+                    DispatchQueue.main.async {
+                        if imageData != nil {
+                            image = UIImage(data: imageData! as Data)!
+                            //UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
+                            //print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
+                            imageName.image = image
+                            imageName.sizeToFit()
+                        }
+                        
+                    }
+                }
+            }
+            }
+        
+        
+    }
     
     func performZoomInOnStartingImageView(startingImageView: UIImageView) {
         
@@ -139,6 +173,8 @@ class ProfileViewController: UIViewController {
                         DispatchQueue.main.async {
                             if imageData != nil {
                                 image = UIImage(data: imageData! as Data)!
+                                UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
+                                print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
                                 self.instaCodeImageView.image = image
                                 self.instaCodeImageView.sizeToFit()
                             }
