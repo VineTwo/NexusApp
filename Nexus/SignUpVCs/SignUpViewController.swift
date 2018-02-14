@@ -180,124 +180,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 self.signUpErrorLabel.text = "The email has already been used."
                 self.signUpButton.isEnabled = false
             }
-            /*
-            switch errCode {
-            case .emailAlreadyInUse:
-                print("Email has been used")
-                self.signUpErrorLabel.text = "The email has already been used."
-                self.signUpButton.isEnabled = false
-                break;
-            case .invalidCustomToken:
-                break;
-            case .customTokenMismatch:
-                break;
-            case .invalidCredential:
-                break;
-            case .userDisabled:
-                break;
-            case .operationNotAllowed:
-                break;
-            case .invalidEmail:
-                break;
-            case .wrongPassword:
-                break;
-            case .tooManyRequests:
-                break;
-            case .userNotFound:
-                break;
-            case .accountExistsWithDifferentCredential:
-                break;
-            case .requiresRecentLogin:
-                break;
-            case .providerAlreadyLinked:
-                break;
-            case .noSuchProvider:
-                break;
-            case .invalidUserToken:
-                break;
-            case .networkError:
-                break;
-            case .userTokenExpired:
-                break;
-            case .invalidAPIKey:
-                break;
-            case .userMismatch:
-                break;
-            case .credentialAlreadyInUse:
-                break;
-            case .weakPassword:
-                break;
-            case .appNotAuthorized:
-                break;
-            case .expiredActionCode:
-                break;
-            case .invalidActionCode:
-                break;
-            case .invalidMessagePayload:
-                break;
-            case .invalidSender:
-                break;
-            case .invalidRecipientEmail:
-                break;
-            case .missingEmail:
-                break;
-            case .missingIosBundleID:
-                break;
-            case .missingAndroidPackageName:
-                break;
-            case .unauthorizedDomain:
-                break;
-            case .invalidContinueURI:
-                break;
-            case .missingContinueURI:
-                break;
-            case .missingPhoneNumber:
-                break;
-            case .invalidPhoneNumber:
-                break;
-            case .missingVerificationCode:
-                break;
-            case .invalidVerificationCode:
-                break;
-            case .missingVerificationID:
-                break;
-            case .invalidVerificationID:
-                break;
-            case .missingAppCredential:
-                break;
-            case .invalidAppCredential:
-                break;
-            case .sessionExpired:
-                break;
-            case .quotaExceeded:
-                break;
-            case .missingAppToken:
-                break;
-            case .notificationNotForwarded:
-                break;
-            case .appNotVerified:
-                break;
-            case .captchaCheckFailed:
-                break;
-            case .webContextAlreadyPresented:
-                break;
-            case .webContextCancelled:
-                break;
-            case .appVerificationUserInteractionFailure:
-                break;
-            case .invalidClientID:
-                break;
-            case .webNetworkRequestFailed:
-                break;
-            case .webInternalError:
-                break;
-            case .keychainError:
-                break;
-            case .internalError:
-                break;
-                
-            }
- */
+  
             signUpButton.setTitleColor(UIColor.black, for: UIControlState.normal)
             signUpButton.isEnabled = true
             signUpButton.backgroundColor = UIColor(red: 0.4, green: 0.3, blue: 0.4, alpha: 0.6)
@@ -358,7 +241,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 if let errCode = AuthErrorCode(rawValue: err.code) {
                     switch errCode {
                     case .emailAlreadyInUse:
-                        print("Email has been used")
                         self.signUpErrorLabel.text = "The email has already been used."
                         break;
                     case .invalidCustomToken:
@@ -472,7 +354,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     }
                     
                 }
-                print("Inside auth")
                 self.signUpErrorLabel.isHidden = false
                 if error!.localizedDescription == "The email address is already in use by another account." {
                     self.signUpErrorLabel.text = "Sign up error. Email already used."
@@ -488,18 +369,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 storageRef.putData(imageData, metadata: nil, completion: {
                     (metadata, error) in
                     if error != nil {
-                        print("Error when no profile selected")
-                      // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
                     self.setUserInformation(email: self.emailTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
                 
             }
-            
                 self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
-               // self.setUserInfo(email: self.emailTextField.text!, password: self.passwordTextField.text!, uid: uid!)
-
+                
             }
 
         })
@@ -519,7 +396,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let usersReference = ref.child("users")
         let newUsersReference = usersReference.child(uid)
         newUsersReference.setValue(["email": email, "ProfileIMG": profileImgUrl, "Name": " "])
-        print("Added to database")
         self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
         
     }
@@ -540,7 +416,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             
         } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
             validEmail = false
         }
         
@@ -554,8 +429,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             
             // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped");
-            
         }
         
         alertController.addAction(OKAction)
@@ -566,7 +439,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("Did finish picking picture")
         if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             selectedImage = editedImage
             profilePicture.image = editedImage

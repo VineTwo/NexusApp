@@ -123,7 +123,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, Error) in
             if Error != nil {
                 self.loginErrorLabel.isHidden = false
-                print(Error!.localizedDescription)
                 if Error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
                     self.loginErrorLabel.text = "The account does not exist."
                 }

@@ -21,7 +21,6 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sendEmailButton_TouchUpInside(_ sender: Any) {
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
-            print(error?.localizedDescription as Any)
             if error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
                 self.errorLabel.textColor = UIColor.red
                 self.errorLabel.text = "The email is not associated with an account."
@@ -99,7 +98,6 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
             }
             
         } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
             validEmail = false
         }
         
@@ -132,32 +130,3 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

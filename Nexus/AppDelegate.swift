@@ -58,17 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let err = error {
-            print("Failed to login:", err)
             return
         }
-        print("Login successfull", user)
         guard let idToken = user.authentication.idToken else {return}
         guard let accessToken = user.authentication.accessToken else {return}
         let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
         
         Auth.auth().signIn(with: credentials) { (user, error) in
             if let err = error {
-                print("Failed to create Firebase user with Google account", err)
                 return
             }
             // User is signed in
@@ -83,8 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let usersReference = ref.child("GoogleUsers")
             let newUsersReference = usersReference.child(uid)
             newUsersReference.setValue(["email": email!, "phone": phone, "Name": name!])
-            print("Successfuly in firebase auth and database", uid)
-            print("before segue")
             let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
             let viewController: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
             let rootViewController = self.window!.rootViewController as! UINavigationController
