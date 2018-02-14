@@ -197,7 +197,6 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
     func areFieldsEmpty() {
         if(!(instagramTextField.text?.isEmpty)! && (twitterTextField.text?.isEmpty)! && (snapchatTextField.text?.isEmpty)!) {
            generateButtonIsEnabled()
-            print("Fields arent empty")
         }
     }
     
@@ -205,7 +204,6 @@ class SocialCodeViewController: UIViewController, UITextFieldDelegate {
         generateButton.isEnabled = true
         generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
         generateButton.backgroundColor = UIColor.gray
-        print("Button is enabled")
     }
 
 

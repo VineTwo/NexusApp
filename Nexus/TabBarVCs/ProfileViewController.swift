@@ -78,24 +78,18 @@ class ProfileViewController: UIViewController {
     var blackBackground: UIView?
     
     func getImageFromCache(keyName: String, imageName: UIImageView) {
-        print("Inside cache")
          let instaCache = UserDefaults.standard.object(forKey: keyName) as? String
             activityIndicator.stopAnimating()
             if let instaAsString = instaCache {
-                print("Inside first if let")
                 let imageURL = URL(string: instaAsString)
                 var image: UIImage?
             if let url = imageURL {
-                print("Inside second if let")
                 DispatchQueue.global(qos: .userInitiated).async {
                     let imageData = NSData(contentsOf: url)
                     //All UI operations has to run on main thread.
                     DispatchQueue.main.async {
                         if imageData != nil {
-                            print("Inside if imagedata != nil")
                             image = UIImage(data: imageData! as Data)!
-                            //UserDefaults.standard.set(imageData, forKey: "defaultInstaImage")
-                            //print(UserDefaults.standard.data(forKey: "defaultInstaImage") as Any)
                             imageName.image = image
                             imageName.sizeToFit()
                         }
@@ -318,7 +312,6 @@ class ProfileViewController: UIViewController {
         } catch let logoutError {
             print(logoutError)
         }
-        // print(Auth.auth().currentUser)
         UserDefaults.standard.removeObject(forKey: "instagramURL")
         UserDefaults.standard.removeObject(forKey: "snapchatURL")
         UserDefaults.standard.removeObject(forKey: "twitterURL")

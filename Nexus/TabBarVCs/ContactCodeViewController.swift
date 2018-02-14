@@ -112,18 +112,15 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             errorLabel.isHidden = false
             errorLabel.textColor = UIColor.red
             errorLabel.text = "Please enter a valid email address."
-            print("Email error")
         }
         
         else if !isValidPhoneNumber(phoneNumberString: phoneNumberTextField.text!) {
                 errorLabel.isHidden = false
                 errorLabel.textColor = .red
                 errorLabel.text = "Please enter a proper phone number."
-                print("Phone error")
             }
             else {
                 errorLabel.isHidden = true
-                print("No error")
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                // let name = firstNameTrimmed! + ";" + lastNameTrimmed!
@@ -157,7 +154,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid!).child("ContactQrUrl")
         userRef.setValue(["ContactQrURL": contactImageString])
-        print("code sent to database")
         
     }
    
@@ -165,7 +161,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result =  phoneTest.evaluate(with: phoneNumberString)
-        print(result)
         return result
     }
     
@@ -184,7 +179,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             }
             
         } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
             validEmail = false
         }
         
@@ -209,7 +203,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 
             }
         } else {
-            print("Not found")
             // Not found, so remove keyboard.
             textField.resignFirstResponder()
           //  self.view.frame.origin.y += 100
