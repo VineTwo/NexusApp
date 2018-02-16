@@ -181,7 +181,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         } catch let error as NSError {
             validEmail = false
         }
-        
         return  validEmail
     }
     
