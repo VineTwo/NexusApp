@@ -290,7 +290,22 @@ class ProfileViewController: UIViewController {
         
         if(Setting.name == "Write A Review"){
             //Link to app store review page
+            rateApp(appId: "1349876313") { success in
+                print("RateApp \(success)")
+            }
         }
+    }
+    
+    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+            completion(false)
+            return
+        }
+        guard #available(iOS 10, *) else {
+            completion(UIApplication.shared.openURL(url))
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: completion)
     }
     
     func showSignOutConfirmation() {
