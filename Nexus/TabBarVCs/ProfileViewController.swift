@@ -12,6 +12,7 @@ import FirebaseStorage
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
 
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     

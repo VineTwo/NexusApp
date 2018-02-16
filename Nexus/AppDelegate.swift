@@ -20,8 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     private func application(application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initialize sign-in
+       
         
         return true
+    }
+    
+    private func initialViewController() -> UIViewController {
+        if Auth.auth().currentUser != nil {
+            print("current user:\(String(describing: Auth.auth().currentUser))")
+            print("Logged user")
+            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarID")
+        }
+        else {
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
+        }
+    
     }
 
     var window: UIWindow?
@@ -33,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //For google Sign in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        window?.rootViewController = initialViewController()
         
         // Override point for customization after application launch.
       //  let navigationBarAppearance = UINavigationBar.appearance()

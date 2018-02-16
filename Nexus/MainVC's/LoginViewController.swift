@@ -97,10 +97,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            print("current user:\(String(describing: Auth.auth().currentUser))")
-            self.performSegue(withIdentifier: "signInToTabBarVC", sender: nil)
-        }
+       // if Auth.auth().currentUser != nil {
+       //     print("current user:\(String(describing: Auth.auth().currentUser))")
+       //     self.performSegue(withIdentifier: "signInToTabBarVC", sender: nil)
+      //  }
     }
     
     
