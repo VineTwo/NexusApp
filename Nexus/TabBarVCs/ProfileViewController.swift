@@ -289,15 +289,24 @@ class ProfileViewController: UIViewController {
         }
         
         if(Setting.name == "Write A Review"){
-            //Link to app store review page
+           //Link to app store review page
+           /*
+            let appID = "959379869"
+            if let checkURL = URL(string: "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appID)&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8") {
+                open(url: checkURL)
+            } else {
+                print("invalid url")
+            }
+*/
             rateApp(appId: "1349876313") { success in
                 print("RateApp \(success)")
             }
+ 
         }
     }
-    
+ 
     func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+        guard let url = URL(string : "https://itunes.apple.com/us/app/nexus-communications/id1349876313?ls=1&mt=8") else {
             completion(false)
             return
         }
@@ -307,7 +316,17 @@ class ProfileViewController: UIViewController {
         }
         UIApplication.shared.open(url, options: [:], completionHandler: completion)
     }
-    
+ /*
+    func open(url: URL) {
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                print("Open \(url): \(success)")
+            })
+        } else if UIApplication.shared.openURL(url) {
+            print("Open \(url)")
+        }
+    }
+   */
     func showSignOutConfirmation() {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
         let signOutAction = UIAlertAction(title: "Yes", style: .destructive) {
