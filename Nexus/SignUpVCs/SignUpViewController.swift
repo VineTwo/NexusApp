@@ -236,6 +236,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {
             (user: User?, error: Error?) in
+           /*
             let err = NSError()
             if error != nil {
                 if let errCode = AuthErrorCode(rawValue: err.code) {
@@ -360,8 +361,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
                 print(error!.localizedDescription as Any)
                 return
-            }
-            else {
+            } */
+           // else {
             let uid = user?.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Profile Image").child(uid!)
             
@@ -369,15 +370,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 storageRef.putData(imageData, metadata: nil, completion: {
                     (metadata, error) in
                     if error != nil {
+                        //There is an error so the profile image was not selected thus the URL is blank
                     }
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
                     self.setUserInformation(email: self.emailTextField.text!, uid: uid!,profileImgUrl: profileImageUrl! )
                 })
-                
             }
                 self.setUserInformation(email: self.emailTextField.text!, uid: uid!, profileImgUrl: " ")
                 
-            }
+            //}
 
         })
 
