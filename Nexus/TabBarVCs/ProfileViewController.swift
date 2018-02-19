@@ -102,8 +102,13 @@ class ProfileViewController: UIViewController {
         
         
     }
+
+    var startingImageView: UIImageView?
     
     func performZoomInOnStartingImageView(startingImageView: UIImageView) {
+        
+        self.startingImageView = startingImageView
+        self.startingImageView?.alpha = 0.0
         
         if startingImageView.image?.sd_imageData() != nil {
         startingFrame = startingImageView.superview?.convert(startingImageView.frame, to: nil)
@@ -144,11 +149,12 @@ class ProfileViewController: UIViewController {
             
         }, completion: { (Bool) in
             zoomOutImageView.removeFromSuperview()
-            
+            self.startingImageView?.alpha = 1.0
         })
         
         }
     }
+    
     @objc func handleSelectImageView(tapGesture: UITapGestureRecognizer) {
         self.performZoomInOnStartingImageView(startingImageView: snapCodeImageView)
     }
