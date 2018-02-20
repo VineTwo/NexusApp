@@ -28,6 +28,11 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var generateButton: UIButton!
     
+    @IBOutlet weak var viewOnScroll: UIView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -183,11 +188,15 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         }
         return  validEmail
     }
-    
+  
     @objc func keyboardWillDisappear() {
-        if(phoneNumberTextField.isFirstResponder || !((phoneNumberTextField.text?.isEmpty)!)) { self.view.frame.origin.y += 100}
+        if( (phoneNumberTextField.isFirstResponder || phoneNumberTextField.isTouchInside) ){
+        
+           // if( phoneNumberTextField.resignFirstResponder() || !((phoneNumberTextField.text?.isEmpty)!)) { self.view.frame.origin.y += 100}
+
+        }
     }
-    
+ 
     
     //If not last textField it will go to next textField when enter is pressed
     //If last textField, keyboard will dismiss when enter key is pressed
@@ -197,9 +206,9 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
             
+            
             if (nextField.tag == 3 || textField.tag == 3) {
-                self.view.frame.origin.y -= 100
-                
+             //   self.view.frame.origin.y -= 100
             }
         } else {
             // Not found, so remove keyboard.
@@ -210,9 +219,11 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    
+    
     //Hide keyboard when user touches outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        self.scrollView.endEditing(true)
         
     }
     
@@ -235,9 +246,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
             generateButton.backgroundColor = UIColor.gray
             generateButton.isEnabled = true
-        
-      
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
