@@ -21,6 +21,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var linkedInTextField: UITextField!
+    
     @IBOutlet weak var profilePagePrompt: UILabel!
     
     
@@ -31,11 +33,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewOnScroll: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var jobTitleTextField: UITextField!
-    
-    
-    @IBOutlet weak var linkedInTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +60,14 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         self.lastNameTextField.delegate = self
         self.phoneNumberTextField.delegate = self
         self.emailTextField.delegate = self
+        self.linkedInTextField.delegate = self
         
         firstNameTextField.tag = 0
         lastNameTextField.tag = 1
-        phoneNumberTextField.tag = 3
         emailTextField.tag = 2
+        linkedInTextField.tag = 3
+        phoneNumberTextField.tag = 4
+        
         
         //Design of first name textfield
         let firstNameLayerWidth = firstNameTextField.frame.width
@@ -108,6 +108,19 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         emailBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: emailLayerWidth, height: 0.6)
         emailBottomLayerPassword.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(emailBottomLayerPassword)
+     
+ /*
+        //LinkedIn Design
+        let linkedLayerWidth = linkedInTextField.frame.width
+        linkedInTextField.tintColor = UIColor.lightText
+        linkedInTextField.textColor = UIColor.black
+        linkedInTextField.attributedPlaceholder = NSAttributedString(string: linkedInTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let inBottomLayer = CALayer()
+        inBottomLayer.frame = CGRect(x: 0, y: 28, width: linkedLayerWidth, height: 0.6)
+        inBottomLayer.backgroundColor = UIColor.white.cgColor
+        linkedInTextField.layer.addSublayer(inBottomLayer)
+   */
+        
         
         handleTextField()
                 

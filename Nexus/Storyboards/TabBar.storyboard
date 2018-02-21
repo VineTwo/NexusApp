@@ -200,7 +200,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="0tY-JF-jLJ">
-                                                <rect key="frame" x="37" y="105" width="300" height="440"/>
+                                                <rect key="frame" x="37" y="105" width="300" height="370"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYw-io-F1a">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
@@ -226,17 +226,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXJ-Cl-nhy">
-                                                        <rect key="frame" x="0.0" y="200" width="300" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="4NN-5q-u7H"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9k-wp-eEX">
-                                                        <rect key="frame" x="0.0" y="270" width="300" height="30"/>
+                                                        <rect key="frame" x="0.0" y="200" width="300" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Sm0-PW-YOb"/>
                                                         </constraints>
@@ -244,8 +235,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gr4-ER-hDI">
-                                                        <rect key="frame" x="0.0" y="340" width="300" height="30"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gr4-ER-hDI">
+                                                        <rect key="frame" x="0.0" y="270" width="300" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="iMI-Qp-Yzx"/>
                                                         </constraints>
@@ -254,7 +245,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone(Ex: 1234567890)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-HQ-GAo">
-                                                        <rect key="frame" x="0.0" y="410" width="300" height="30"/>
+                                                        <rect key="frame" x="0.0" y="340" width="300" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="dpX-KG-bSr"/>
                                                         </constraints>
@@ -268,7 +259,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTX-aa-JR2">
-                                                <rect key="frame" x="87" y="599" width="200" height="36"/>
+                                                <rect key="frame" x="87" y="529" width="200" height="36"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="K6m-vb-Le1"/>
@@ -283,7 +274,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Contact QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
-                                                <rect key="frame" x="16" y="275" width="343" height="100"/>
+                                                <rect key="frame" x="16" y="240" width="343" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="BTS-DQ-cDr"/>
                                                     <constraint firstAttribute="width" constant="343" id="MRk-R5-4rr"/>
@@ -332,7 +323,6 @@
                         <outlet property="errorLabel" destination="sYw-io-F1a" id="kgY-Td-Lb1"/>
                         <outlet property="firstNameTextField" destination="zUU-47-ceq" id="71M-tW-AKQ"/>
                         <outlet property="generateButton" destination="uTX-aa-JR2" id="fyk-Ha-Unf"/>
-                        <outlet property="jobTitleTextField" destination="jXJ-Cl-nhy" id="1NG-Je-h22"/>
                         <outlet property="lastNameTextField" destination="I0F-OH-QCX" id="xDT-IH-Idu"/>
                         <outlet property="linkedInTextField" destination="Gr4-ER-hDI" id="0ap-7A-Bq2"/>
                         <outlet property="phoneNumberTextField" destination="J3Q-HQ-GAo" id="io4-n9-FbX"/>
