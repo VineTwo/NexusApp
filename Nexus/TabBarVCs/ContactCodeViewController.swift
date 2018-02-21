@@ -32,6 +32,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var jobTitleTextField: UITextField!
+    
+    
+    @IBOutlet weak var linkedInTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,8 +132,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 errorLabel.isHidden = true
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-               // let name = firstNameTrimmed! + ";" + lastNameTrimmed!
-               // let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = emailTextField.text!
@@ -139,6 +141,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
+                print(contactInfo as String!)
                 UserDefaults.standard.set(contactInfoAsString, forKey: "contactURL")
                 setContactQrCode(contactImageString: contactInfoAsString)
         
