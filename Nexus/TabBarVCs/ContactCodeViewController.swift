@@ -157,6 +157,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 errorLabel.text = "Please enter a proper phone number."
             }
             else {
+            var trimmedURL: String
                 errorLabel.isHidden = true
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -166,7 +167,12 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let twitterURL = linkedInTextField.text
-                let trimmedURL = "https://www.twitter.com/" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                if (twitterURL?.isEmpty)! {
+                    trimmedURL = ""
+                    print("empty twitter")
+                } else {
+                    trimmedURL = "https://www.twitter.com/" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                  }
                 let email = emailTextField.text!
                 let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
                 // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
@@ -191,6 +197,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
             }
     }
+    
+
 
     
     func setContactQrCode(contactImageString: String) {
