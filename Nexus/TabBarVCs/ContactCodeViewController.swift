@@ -64,6 +64,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.delegate = self
         self.emailTextField.delegate = self
         self.linkedInTextField.delegate = self
+        self.jobTitleTextField.delegate = self
         
         firstNameTextField.tag = 0
         lastNameTextField.tag = 1
@@ -162,7 +163,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let fullName = firstNameTrimmed! + "%20" + lastNameTrimmed!
                 let jobTitle = jobTitleTextField.text
                 let jobTitleURL = jobTitle?.replacingOccurrences(of: " ", with: "%20")
-                print(jobTitle!)
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let twitterURL = linkedInTextField.text
@@ -174,7 +174,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
-                print(contactInfo as String!)
                 UserDefaults.standard.set(contactInfoAsString, forKey: "contactURL")
                 setContactQrCode(contactImageString: contactInfoAsString)
         
