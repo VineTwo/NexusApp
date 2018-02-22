@@ -23,6 +23,9 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var linkedInTextField: UITextField!
     
+    @IBOutlet weak var jobTitleTextField: UITextField!
+    
+    
     @IBOutlet weak var profilePagePrompt: UILabel!
     
     
@@ -64,9 +67,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         
         firstNameTextField.tag = 0
         lastNameTextField.tag = 1
-        emailTextField.tag = 2
-        linkedInTextField.tag = 3
-        phoneNumberTextField.tag = 4
+        jobTitleTextField.tag = 2
+        emailTextField.tag = 3
+        linkedInTextField.tag = 4
+        phoneNumberTextField.tag = 5
         
         
         //Design of first name textfield
@@ -120,6 +124,17 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         inBottomLayer.backgroundColor = UIColor.white.cgColor
         linkedInTextField.layer.addSublayer(inBottomLayer)
         
+        //job title design
+        let titleLayerWidth = jobTitleTextField.frame.width
+        jobTitleTextField.tintColor = UIColor.lightText
+        jobTitleTextField.textColor = UIColor.black
+        jobTitleTextField.attributedPlaceholder = NSAttributedString(string: jobTitleTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let titleBottomLayer = CALayer()
+        titleBottomLayer.frame = CGRect(x: 0, y: 28, width: titleLayerWidth, height: 0.6)
+        titleBottomLayer.backgroundColor = UIColor.white.cgColor
+        jobTitleTextField.layer.addSublayer(titleBottomLayer)
+        
+        
         
         handleTextField()
                 
@@ -145,12 +160,17 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let fullName = firstNameTrimmed! + "%20" + lastNameTrimmed!
+                let jobTitle = jobTitleTextField.text
+                let jobTitleURL = jobTitle?.replacingOccurrences(of: " ", with: "%20")
+                print(jobTitle!)
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
+                let twitterURL = linkedInTextField.text
+                let trimmedURL = "https://www.twitter.com/" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
                 let email = emailTextField.text!
                 let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
                 // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
-            let contactInfo = "MECARD:N:\(fullName);TEL:\(trimmedPhone);EMAIL:\(trimmedEmail)"
+                let contactInfo = "MECARD:N:\(fullName);NICKNAME:\(jobTitleURL!);TEL:\(trimmedPhone);URL:\(trimmedURL);EMAIL:\(trimmedEmail)"
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
