@@ -109,7 +109,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         emailBottomLayerPassword.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(emailBottomLayerPassword)
      
- /*
+ 
         //LinkedIn Design
         let linkedLayerWidth = linkedInTextField.frame.width
         linkedInTextField.tintColor = UIColor.lightText
@@ -119,7 +119,6 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         inBottomLayer.frame = CGRect(x: 0, y: 28, width: linkedLayerWidth, height: 0.6)
         inBottomLayer.backgroundColor = UIColor.white.cgColor
         linkedInTextField.layer.addSublayer(inBottomLayer)
-   */
         
         
         handleTextField()
@@ -165,6 +164,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 emailTextField.isHidden = true
                 phoneNumberTextField.isHidden = true
                 profilePagePrompt.isHidden = false
+                linkedInTextField.isHidden = true
         
             }
     }
