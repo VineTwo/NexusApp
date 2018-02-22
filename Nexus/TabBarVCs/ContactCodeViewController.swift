@@ -39,6 +39,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.becomeFirstResponder()
         
          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
@@ -289,6 +290,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     @objc func textFieldDidChange() {
         guard let firstName = firstNameTextField.text, !firstName.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty, let email = emailTextField.text, !email.isEmpty, let phone = phoneNumberTextField.text, !phone.isEmpty else {
             errorLabel.text = "Please fill out all fields."
+            errorLabel.textColor = .red
             return
         }
             generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)
