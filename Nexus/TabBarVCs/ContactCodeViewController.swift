@@ -182,9 +182,13 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 firstNameTextField.isHidden = true
                 lastNameTextField.isHidden = true
                 emailTextField.isHidden = true
+                jobTitleTextField.isHidden = true
                 phoneNumberTextField.isHidden = true
                 profilePagePrompt.isHidden = false
                 linkedInTextField.isHidden = true
+            
+            let desiredOffset = CGPoint(x: 0, y: -self.scrollView.contentInset.top)
+            self.scrollView.setContentOffset(desiredOffset, animated: true)
         
             }
     }
