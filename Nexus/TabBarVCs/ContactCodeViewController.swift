@@ -21,6 +21,11 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var linkedInTextField: UITextField!
+    
+    @IBOutlet weak var jobTitleTextField: UITextField!
+    
+    
     @IBOutlet weak var profilePagePrompt: UILabel!
     
     
@@ -32,9 +37,9 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.becomeFirstResponder()
         
          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
@@ -59,11 +64,16 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         self.lastNameTextField.delegate = self
         self.phoneNumberTextField.delegate = self
         self.emailTextField.delegate = self
+        self.linkedInTextField.delegate = self
+        self.jobTitleTextField.delegate = self
         
         firstNameTextField.tag = 0
         lastNameTextField.tag = 1
-        phoneNumberTextField.tag = 3
-        emailTextField.tag = 2
+        jobTitleTextField.tag = 2
+        emailTextField.tag = 3
+        linkedInTextField.tag = 4
+        phoneNumberTextField.tag = 5
+        
         
         //Design of first name textfield
         let firstNameLayerWidth = firstNameTextField.frame.width
@@ -104,6 +114,29 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         emailBottomLayerPassword.frame = CGRect(x: 0, y: 28, width: emailLayerWidth, height: 0.6)
         emailBottomLayerPassword.backgroundColor = UIColor.white.cgColor
         emailTextField.layer.addSublayer(emailBottomLayerPassword)
+     
+ 
+        //LinkedIn Design
+        let linkedLayerWidth = linkedInTextField.frame.width
+        linkedInTextField.tintColor = UIColor.lightText
+        linkedInTextField.textColor = UIColor.black
+        linkedInTextField.attributedPlaceholder = NSAttributedString(string: linkedInTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let inBottomLayer = CALayer()
+        inBottomLayer.frame = CGRect(x: 0, y: 28, width: linkedLayerWidth, height: 0.6)
+        inBottomLayer.backgroundColor = UIColor.white.cgColor
+        linkedInTextField.layer.addSublayer(inBottomLayer)
+        
+        //job title design
+        let titleLayerWidth = jobTitleTextField.frame.width
+        jobTitleTextField.tintColor = UIColor.lightText
+        jobTitleTextField.textColor = UIColor.black
+        jobTitleTextField.attributedPlaceholder = NSAttributedString(string: jobTitleTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
+        let titleBottomLayer = CALayer()
+        titleBottomLayer.frame = CGRect(x: 0, y: 28, width: titleLayerWidth, height: 0.6)
+        titleBottomLayer.backgroundColor = UIColor.white.cgColor
+        jobTitleTextField.layer.addSublayer(titleBottomLayer)
+        
+        
         
         handleTextField()
                 
@@ -125,17 +158,26 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 errorLabel.text = "Please enter a proper phone number."
             }
             else {
+            var trimmedURL: String
                 errorLabel.isHidden = true
                 let firstNameTrimmed = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let lastNameTrimmed = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-               // let name = firstNameTrimmed! + ";" + lastNameTrimmed!
-               // let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+                let fullName = firstNameTrimmed! + "%20" + lastNameTrimmed!
+                let jobTitle = jobTitleTextField.text
+                let jobTitleURL = jobTitle?.replacingOccurrences(of: " ", with: "%20")
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
+                let twitterURL = linkedInTextField.text
+                if (twitterURL?.isEmpty)! {
+                    trimmedURL = ""
+                    print("empty twitter")
+                } else {
+                    trimmedURL = "https://www.twitter.com/" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                  }
                 let email = emailTextField.text!
                 let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
                 // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
-            let contactInfo = "MECARD:N:\(firstNameTrimmed!);NICKNAME:\(lastNameTrimmed!);TEL:\(trimmedPhone);EMAIL:\(trimmedEmail)"
+                let contactInfo = "MECARD:N:\(fullName);NICKNAME:\(jobTitleURL!);TEL:\(trimmedPhone);URL:\(trimmedURL);EMAIL:\(trimmedEmail)"
         
         
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
@@ -146,11 +188,18 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 firstNameTextField.isHidden = true
                 lastNameTextField.isHidden = true
                 emailTextField.isHidden = true
+                jobTitleTextField.isHidden = true
                 phoneNumberTextField.isHidden = true
                 profilePagePrompt.isHidden = false
+                linkedInTextField.isHidden = true
+            
+            let desiredOffset = CGPoint(x: 0, y: -self.scrollView.contentInset.top)
+            self.scrollView.setContentOffset(desiredOffset, animated: true)
         
             }
     }
+    
+
 
     
     func setContactQrCode(contactImageString: String) {
@@ -241,6 +290,7 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     @objc func textFieldDidChange() {
         guard let firstName = firstNameTextField.text, !firstName.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty, let email = emailTextField.text, !email.isEmpty, let phone = phoneNumberTextField.text, !phone.isEmpty else {
             errorLabel.text = "Please fill out all fields."
+            errorLabel.textColor = .red
             return
         }
             generateButton.setTitleColor(UIColor.black, for: UIControlState.normal)

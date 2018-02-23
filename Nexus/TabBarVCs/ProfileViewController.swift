@@ -249,10 +249,14 @@ class ProfileViewController: UIViewController {
     }
     
     func retrieveContactQrUrl(uid: String, ref: DatabaseReference) {
+        print("Inside contact")
         databaseHandle = ref.child("users").child(uid).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
             let contactCode = snapshot.value as? String
+            print(contactCode! + " This is contact code")
             if let actualCode  = contactCode {
+                print(actualCode)
                 let imageURL = URL(string: actualCode)
+                print(imageURL!)
                 var image: UIImage?
                 self.activityIndicator.stopAnimating()
                 if let url = imageURL {
