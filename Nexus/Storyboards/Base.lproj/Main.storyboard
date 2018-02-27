@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htT-IX-xdS">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -264,5 +265,65 @@
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="656.1576354679803"/>
         </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="eDN-hd-4BX">
+            <objects>
+                <viewController storyboardIdentifier="Splash" id="htT-IX-xdS" customClass="SplashScreenViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ha-qp-Pv5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaO-sE-EqT">
+                                <rect key="frame" x="0.0" y="243.00000000000003" width="375" height="57.333333333333343"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="nex">
+                                        <attributes>
+                                            <font key="NSFont" size="51" name="Copperplate"/>
+                                            <font key="NSOriginalFont" size="51" name="Copperplate"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="US">
+                                        <attributes>
+                                            <font key="NSFont" size="48" name="Menlo-BoldItalic"/>
+                                            <font key="NSOriginalFont" size="48" name="Menlo-BoldItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NexusLogoNobackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="jtV-tB-bld">
+                                <rect key="frame" x="129" y="343" width="117" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="jyu-QT-57b"/>
+                                    <constraint firstAttribute="height" constant="126" id="wuf-VD-bZE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iaO-sE-EqT" firstAttribute="leading" secondItem="h1u-eK-w3e" secondAttribute="leading" symbolic="YES" id="2yI-fw-dAG"/>
+                            <constraint firstItem="h1u-eK-w3e" firstAttribute="centerX" secondItem="iaO-sE-EqT" secondAttribute="centerX" id="5hK-7I-cqk"/>
+                            <constraint firstItem="iaO-sE-EqT" firstAttribute="centerY" secondItem="0ha-qp-Pv5" secondAttribute="bottom" multiplier="1/3" constant="1" id="D4F-bR-qgm"/>
+                            <constraint firstItem="jtV-tB-bld" firstAttribute="centerX" secondItem="0ha-qp-Pv5" secondAttribute="centerX" id="PDD-5n-bRP"/>
+                            <constraint firstItem="jtV-tB-bld" firstAttribute="centerY" secondItem="0ha-qp-Pv5" secondAttribute="centerY" id="cSe-fw-HgP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h1u-eK-w3e"/>
+                    </view>
+                    <connections>
+                        <outlet property="nexusLogo" destination="jtV-tB-bld" id="F5N-LQ-0VA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRh-7Z-gZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263.19999999999999" y="-600"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="NexusLogoNobackground.png" width="180" height="180"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6j9-fZ-QOL"/>
+    </inferredMetricsTieBreakers>
 </document>

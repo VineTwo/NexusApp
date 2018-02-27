@@ -242,7 +242,6 @@
 		A334BC2E2029EB5F0052A52D /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A334BC2F2029EB720052A52D /* SplashScreenViewController.swift */,
 				A334BC312029EB7F0052A52D /* SplashScreen.storyboard */,
 			);
 			path = SplashScreen;
@@ -290,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				9DBFCBFE20262C6400933DE1 /* PasswordResetViewController.swift */,
+				A334BC2F2029EB720052A52D /* SplashScreenViewController.swift */,
 				A357DCDC200264EE00A2D517 /* LoginViewController.swift */,
 			);
 			path = "MainVC's";
@@ -812,7 +812,7 @@
 				INFOPLIST_FILE = Nexus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nexusapp.nexus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nexusapp.Nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Nexus/nexus-Bridging-Header.h";
@@ -832,7 +832,7 @@
 				INFOPLIST_FILE = Nexus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nexusapp.nexus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nexusapp.Nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Nexus/nexus-Bridging-Header.h";
