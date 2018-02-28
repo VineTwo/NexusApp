@@ -21,6 +21,7 @@ class SplashScreenViewController: UIViewController {
         let bottomLayer = CALayer()
         bottomLayer.frame = CGRect(x: 0, y: nexusLogo.frame.height, width: nexusLogo.frame.width, height: 5)
         bottomLayer.backgroundColor = UIColor.red.cgColor
+        bottomLayer.cornerRadius = 5;
         nexusLogo.layer.addSublayer(bottomLayer)
         
        /*
@@ -31,27 +32,32 @@ class SplashScreenViewController: UIViewController {
         self.view.layer.addSublayer(topLayer)
         
       */
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveLinear, animations: {
+        let signedInView: UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
+        let signUpView: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileVC = signedInView.instantiateInitialViewController()
+        let logInVC = signUpView.instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
+        
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseIn, animations: {
             bottomLayer.frame = CGRect(x: 0, y: self.nexusLogo.frame.height, width: self.nexusLogo.frame.width, height: 5)
         }, completion: { (signedIn: Bool) in
-            
-            UIView.animate(withDuration: 2.0, animations: {
+    
+            UIView.animate(withDuration: 3.0, delay: 0.0, options: .curveEaseIn, animations: {
                 bottomLayer.frame = CGRect(x: 0, y: 0, width: self.nexusLogo.frame.width, height: 5)
+            }, completion: { (isDone: Bool) in
+                if(Auth.auth().currentUser != nil) {
+                    self.present(profileVC!, animated: false, completion: nil)
+                    print("Is signed in")
+                }
+                else {
+                    self.present(logInVC, animated: false, completion: nil)
+                    print("Is not signed in")
+                }
+                
             })
-            if(Auth.auth().currentUser != nil) {
-                let vc = ProfileViewController()
-              //  self.show(vc, sender: nil)
-            }
-            else {
-                let vc2 = LoginViewController()
-               // self.show(vc2, sender: nil)
-                print("Is not signed int. Move to sign in page.")
-            }
+            
         })
-        
-        
 
-        // Do any additional setup after loading the view.
+        
     }
 
    
