@@ -24,15 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         return true
     }
-    
+  
     private func initialViewController() -> UIViewController {
         if Auth.auth().currentUser != nil {
             print("current user:\(String(describing: Auth.auth().currentUser))")
             print("Logged user")
-            return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarID")
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Splash")
         }
         else {
-            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UIViewController-BYZ-38-t0r")
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Splash")
         }
     
     }
