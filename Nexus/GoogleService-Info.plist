@@ -17,21 +17,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.MattFoote.Nexus</string>
+	<string>com.nexusapp.Nexus</string>
 	<key>PROJECT_ID</key>
 	<string>nexus-app-6f0eb</string>
 	<key>STORAGE_BUCKET</key>
 	<string>nexus-app-6f0eb.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:458197629344:ios:7a9a4b9f39beb385</string>
 	<key>DATABASE_URL</key>
