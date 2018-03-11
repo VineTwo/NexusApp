@@ -46,6 +46,25 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         profilePagePrompt.isHidden = true
        generateButton.isEnabled = false
         
+        
+        //init toolbar
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        //create left side empty space so that done button set on right side
+        let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        //setting toolbar as inputAccessoryView
+        self.firstNameTextField.inputAccessoryView = toolbar
+        self.lastNameTextField.inputAccessoryView = toolbar
+        self.phoneNumberTextField.inputAccessoryView = toolbar
+        self.emailTextField.inputAccessoryView = toolbar
+        self.linkedInTextField.inputAccessoryView = toolbar
+        self.jobTitleTextField.inputAccessoryView = toolbar
+        
+        
+        
+        
         //button design
         generateButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         generateButton.layer.cornerRadius = 7.0
@@ -239,6 +258,11 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     }
   
     @objc func keyboardWillDisappear() {
+        
+        self.view.endEditing(true)
+        self.viewOnScroll.endEditing(true)
+        self.scrollView.endEditing(true)
+        
         if( (phoneNumberTextField.isFirstResponder || phoneNumberTextField.isTouchInside) ){
         
            // if( phoneNumberTextField.resignFirstResponder() || !((phoneNumberTextField.text?.isEmpty)!)) { self.view.frame.origin.y += 100}
@@ -272,6 +296,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     //Hide keyboard when user touches outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        self.viewOnScroll.endEditing(true)
         self.scrollView.endEditing(true)
         
     }
@@ -300,6 +326,10 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+   @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
 
 }
