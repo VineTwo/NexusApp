@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Contact Code"/>
+                                        <state key="normal" title="Create Contact Code"/>
                                         <connections>
                                             <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
                                         </connections>
@@ -41,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="84" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Social Code"/>
+                                        <state key="normal" title="Create Social Code"/>
                                         <connections>
                                             <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
                                         </connections>

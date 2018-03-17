@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nexusapp.Nexus</string>
+	<string>com.nexusapp.nexus</string>
 	<key>PROJECT_ID</key>
 	<string>nexus-app-6f0eb</string>
 	<key>STORAGE_BUCKET</key>
