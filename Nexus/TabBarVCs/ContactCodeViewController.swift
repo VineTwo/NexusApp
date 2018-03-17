@@ -170,12 +170,17 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             errorLabel.textColor = UIColor.red
             errorLabel.text = "Please enter a valid email address."
         }
+        else if (!isValidURL(urlString: linkedInTextField.text!)) {
+            errorLabel.isHidden = false
+            errorLabel.textColor = UIColor.red
+            errorLabel.text = "Please enter a valid URL"
+        }
         
         else if !isValidPhoneNumber(phoneNumberString: phoneNumberTextField.text!) {
                 errorLabel.isHidden = false
                 errorLabel.textColor = .red
                 errorLabel.text = "Please enter a proper phone number."
-            }
+        }
             else {
             var trimmedURL: String
                 errorLabel.isHidden = true
@@ -187,14 +192,19 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let phone = phoneNumberTextField.text!
                 let trimmedPhone = phone.trimmingCharacters(in: .whitespacesAndNewlines)
                 let twitterURL = linkedInTextField.text
-                if (twitterURL?.isEmpty)! {
-                    trimmedURL = ""
-                    print("empty twitter")
-                } else {
-                    trimmedURL = "https://www.twitter.com/" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
-                  }
+            
                 let email = emailTextField.text!
                 let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
+                if (twitterURL?.isEmpty)! {
+                     trimmedURL = ""
+                    let contactInfoEmptyURL = "MECARD:N:\(fullName);NICKNAME:\(jobTitleURL!);TEL:\(trimmedPhone);EMAIL:\(trimmedEmail)"
+                    let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfoEmptyURL)")
+                    UserDefaults.standard.set(contactInfoAsString, forKey: "contactURL")
+                    setContactQrCode(contactImageString: contactInfoAsString)
+                     print("empty twitter")
+                } else {
+                    trimmedURL = "https://" + (twitterURL?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                
                 // "MECARD:N:Joe_Morales;TEL:6191029501;EMAIL:first.last@email.com;URL:http://website.com;;"
                 let contactInfo = "MECARD:N:\(fullName);NICKNAME:\(jobTitleURL!);TEL:\(trimmedPhone);URL:\(trimmedURL);EMAIL:\(trimmedEmail)"
         
@@ -202,7 +212,8 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
                 let contactInfoAsString = ("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(contactInfo)")
                 UserDefaults.standard.set(contactInfoAsString, forKey: "contactURL")
                 setContactQrCode(contactImageString: contactInfoAsString)
-        
+                }
+            
                 generateButton.isHidden = true
                 firstNameTextField.isHidden = true
                 lastNameTextField.isHidden = true
@@ -255,6 +266,18 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
             validEmail = false
         }
         return  validEmail
+    }
+    
+    func isValidURL(urlString: String) -> Bool {
+        let fullURL = "https://" + urlString.trimmingCharacters(in: .whitespacesAndNewlines)
+        if (linkedInTextField.text?.isEmpty)! {
+            return true
+        }
+            if let url = URL(string: fullURL) {
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        
+        return false
     }
   
     @objc func keyboardWillDisappear() {
