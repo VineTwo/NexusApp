@@ -28,13 +28,40 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var defaultImage: UIImage?
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        emailTextField.isHidden = false
+        passwordTextField.isHidden = false
+        signUpButton.isHidden = false
+        emailTextField.center.x = self.view.frame.width + 300
+        passwordTextField.center.x = self.view.frame.width + 300
+        signUpButton.center.x = self.view.frame.width + 300
+        
+        UIView.animate(withDuration: 1.5, delay: 0.5, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.emailTextField.center.x = self.view.frame.width / 2.4
+            
+        }), completion: nil)
+        
+        UIView.animate(withDuration: 1.5, delay: 1.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.passwordTextField.center.x = self.view.frame.width / 2.4
+            
+        }), completion: nil)
+        
+        UIView.animate(withDuration: 1.5, delay: 1.8, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.signUpButton.center.x = self.view.frame.width / 2.0
+            
+        }), completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpErrorLabel.isHidden = false
-        //Google sign in
-      //  GIDSignIn.sharedInstance().uiDelegate = self
-       // GIDSignIn.sharedInstance().signIn()
-       // GIDSignIn.sharedInstance().delegate = self
+        emailTextField.isHidden = true
+        passwordTextField.isHidden = true
+        signUpButton.isHidden = true
+        
         
         emailTextField.tintColor = UIColor.lightText
         emailTextField.textColor = UIColor.black
