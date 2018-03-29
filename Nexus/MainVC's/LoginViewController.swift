@@ -128,9 +128,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 }
                 if Error?.localizedDescription == "The password is invalid or the user does not have a password." {
                     self.loginErrorLabel.text = "The password is incorrect."
+                    self.passwordTextField.shake()
                 }
                 if Error?.localizedDescription == "The email address is badly formatted." {
                     self.loginErrorLabel.text = "The email address is incorrect"
+                    self.emailTextField.shake()
                 }
                 
             }
@@ -139,5 +141,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 self.performSegue(withIdentifier: "signInToTabBarVC", sender: nil)
             }
         })
+    }
+}
+
+extension UITextField {
+    func shake() {
+        let shake = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.1
+        shake.repeatCount = 1
+        shake.autoreverses = true
+        let fromPoint = CGPoint(x: center.x - 5, y: center.y)
+        let fromValue = NSValue(cgPoint: fromPoint)
+        
+        let toPoint = CGPoint(x: center.x + 5, y: center.y)
+        let toValue = NSValue(cgPoint: toPoint)
+        
+        shake.fromValue = fromValue
+        shake.toValue = toValue
+        
+        layer.add(shake, forKey: nil)
     }
 }
