@@ -218,6 +218,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @objc func passwordIsLongEnough() {
         if (passwordTextField.text?.count)! < 6 {
         signUpButton.isEnabled = false
+        self.passwordTextField.shake()
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         signUpButton.backgroundColor = UIColor.clear
         self.signUpErrorLabel.text = "The password must be 6 characters."
@@ -259,6 +260,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SignUpBtn_TouchUpInside(_ sender: Any) {
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
             self.signUpErrorLabel.text = "Please enter a valid email address."
+            self.emailTextField.shake()
         }
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text! , completion: {

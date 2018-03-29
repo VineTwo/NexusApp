@@ -168,17 +168,20 @@ class ContactCodeViewController: UIViewController, UITextFieldDelegate {
         if !isValidEmailAddress(emailAddressString: emailTextField.text!) {
             errorLabel.isHidden = false
             errorLabel.textColor = UIColor.red
+            self.emailTextField.shake()
             errorLabel.text = "Please enter a valid email address."
         }
         else if (!isValidURL(urlString: linkedInTextField.text!)) {
             errorLabel.isHidden = false
             errorLabel.textColor = UIColor.red
+            linkedInTextField.shake()
             errorLabel.text = "Please enter a valid URL"
         }
         
         else if !isValidPhoneNumber(phoneNumberString: phoneNumberTextField.text!) {
                 errorLabel.isHidden = false
                 errorLabel.textColor = .red
+                phoneNumberTextField.shake()
                 errorLabel.text = "Please enter a proper phone number."
         }
             else {
