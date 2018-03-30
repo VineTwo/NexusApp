@@ -136,7 +136,7 @@
         <!--Connect-->
         <scene sceneID="Ycj-vI-WHN">
             <objects>
-                <viewController id="GGr-jJ-shn" customClass="ConnectViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="connect" id="GGr-jJ-shn" customClass="ConnectViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3mB-xB-NQH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

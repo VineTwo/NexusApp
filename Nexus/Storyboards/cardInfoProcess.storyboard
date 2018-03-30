@@ -87,7 +87,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oXn-0S-8Ev"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Name and Phone Number" id="Rdk-bU-hYb"/>
+                    <navigationItem key="navigationItem" title="Name and Phone Number" id="Rdk-bU-hYb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gmT-KD-rOh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="errorLabel" destination="akS-fA-AZr" id="3PM-gZ-G2e"/>
                         <outlet property="nameTextField" destination="drS-7c-uBO" id="PgH-q1-PFF"/>
