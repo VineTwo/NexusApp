@@ -119,23 +119,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1BR-d8-KwV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1BR-d8-KwV">
                                 <rect key="frame" x="37" y="270" width="300" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="08x-Bc-OGh"/>
+                                    <constraint firstAttribute="height" constant="30" id="N9R-zu-hDN"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-YU-3LI">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-YU-3LI">
                                 <rect key="frame" x="37" y="168" width="300" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HSr-QR-MnQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="mUS-V3-Jx0"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3P-Qs-WYz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3P-Qs-WYz">
                                 <rect key="frame" x="37" y="130" width="300" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="e9K-uL-IcD"/>
+                                    <constraint firstAttribute="height" constant="20" id="yDa-rm-RNS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -152,8 +161,16 @@
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g79-qv-VPx" firstAttribute="leading" secondItem="Txd-dh-4hY" secondAttribute="leading" constant="16" id="8kk-Pq-qMi"/>
+                            <constraint firstItem="1BR-d8-KwV" firstAttribute="leading" secondItem="Txd-dh-4hY" secondAttribute="leading" constant="37" id="AgJ-Md-GJ5"/>
+                            <constraint firstItem="Txd-dh-4hY" firstAttribute="trailing" secondItem="1BR-d8-KwV" secondAttribute="trailing" constant="38" id="B3r-oe-OoI"/>
+                            <constraint firstItem="G3P-Qs-WYz" firstAttribute="centerX" secondItem="nJ8-Dr-zbx" secondAttribute="centerX" id="CIM-we-PQk"/>
+                            <constraint firstItem="UzA-YU-3LI" firstAttribute="top" secondItem="G3P-Qs-WYz" secondAttribute="bottom" constant="18" id="Cfo-2z-h9J"/>
+                            <constraint firstItem="UzA-YU-3LI" firstAttribute="leading" secondItem="Txd-dh-4hY" secondAttribute="leading" constant="37" id="LSB-ii-w7Y"/>
                             <constraint firstItem="Txd-dh-4hY" firstAttribute="trailing" secondItem="g79-qv-VPx" secondAttribute="trailing" constant="16" id="P7k-Vn-rFy"/>
                             <constraint firstItem="g79-qv-VPx" firstAttribute="top" secondItem="Txd-dh-4hY" secondAttribute="top" constant="18" id="ZQQ-fM-w73"/>
+                            <constraint firstItem="G3P-Qs-WYz" firstAttribute="top" secondItem="g79-qv-VPx" secondAttribute="bottom" constant="8" id="aYd-RE-dNZ"/>
+                            <constraint firstItem="1BR-d8-KwV" firstAttribute="top" secondItem="UzA-YU-3LI" secondAttribute="bottom" constant="72" id="dtd-3T-7MC"/>
+                            <constraint firstItem="Txd-dh-4hY" firstAttribute="trailing" secondItem="UzA-YU-3LI" secondAttribute="trailing" constant="38" id="pWi-IF-5lR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Txd-dh-4hY"/>
                     </view>

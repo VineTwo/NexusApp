@@ -22,6 +22,7 @@ class jobAndEmailViewController: UIViewController {
 
         jobTextField.center.x = self.view.frame.width + 300
         emailTextField.center.x = self.view.frame.width + 300
+        nextButton.center.x = self.view.frame.width + 300
         
         UIView.animate(withDuration: 1.5, delay: 0.5, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
             
