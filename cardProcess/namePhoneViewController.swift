@@ -21,16 +21,23 @@ class namePhoneViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+  
     @IBAction func nextButton_TouchUpInside(_ sender: Any) {
-        if(isValidPhoneNumber(phoneNumberString: self.phoneTextField.text!) && !((nameTextField.text?.isEmpty)!)) {
-            self.show(jobAndEmailViewController(), sender: nil)
             UserDefaults.standard.set(nameTextField.text, forKey: "name")
             UserDefaults.standard.set(phoneTextField.text, forKey: "phone")
-        } else {
-            self.errorLabel.text = "Please enter a valid phone number or name."
+    }
+   
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "nextSegue" {
+            if( isValidPhoneNumber(phoneNumberString: self.phoneTextField.text!)  &&  !((self.nameTextField.text?.isEmpty)!)   ) {
+                return true
+            } else {
+                self.errorLabel.text = "Please enter a valid phone number or name"
+                return false
+            }
+            
         }
-        
+        return true
     }
     
 
