@@ -34,6 +34,9 @@
 		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
+		A34ECFF3206E6D53008922CD /* namePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34ECFF2206E6D53008922CD /* namePhoneViewController.swift */; };
+		A34ECFF5206E7044008922CD /* jobAndEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34ECFF4206E7044008922CD /* jobAndEmailViewController.swift */; };
+		A34ECFF7206E705A008922CD /* companyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34ECFF6206E705A008922CD /* companyInfoViewController.swift */; };
 		A350ABB0200C130900D846AD /* SocialCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABAF200C130900D846AD /* SocialCodeViewController.swift */; };
 		A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */; };
 		A350ABB8200D1D1600D846AD /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ABB7200D1D1600D846AD /* users.swift */; };
@@ -100,6 +103,9 @@
 		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A34ECFF2206E6D53008922CD /* namePhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = namePhoneViewController.swift; sourceTree = "<group>"; };
+		A34ECFF4206E7044008922CD /* jobAndEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobAndEmailViewController.swift; sourceTree = "<group>"; };
+		A34ECFF6206E705A008922CD /* companyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companyInfoViewController.swift; sourceTree = "<group>"; };
 		A350ABAF200C130900D846AD /* SocialCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCodeViewController.swift; sourceTree = "<group>"; };
 		A350ABB1200C131E00D846AD /* ContactCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCodeViewController.swift; sourceTree = "<group>"; };
 		A350ABB7200D1D1600D846AD /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 		9DC436DE20019D4E00335A4A /* Nexus */ = {
 			isa = PBXGroup;
 			children = (
+				A34ECFF1206E6D33008922CD /* cardProcess */,
 				A3A93C8F202F5A3B00F72B61 /* Storyboards */,
 				A3A93C8E202F5A0B00F72B61 /* MainVC's */,
 				A3A93C8D202F59CD00F72B61 /* SignUpVCs */,
@@ -249,6 +256,17 @@
 				A334BC312029EB7F0052A52D /* SplashScreen.storyboard */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		A34ECFF1206E6D33008922CD /* cardProcess */ = {
+			isa = PBXGroup;
+			children = (
+				A34ECFF2206E6D53008922CD /* namePhoneViewController.swift */,
+				A34ECFF4206E7044008922CD /* jobAndEmailViewController.swift */,
+				A34ECFF6206E705A008922CD /* companyInfoViewController.swift */,
+			);
+			name = cardProcess;
+			path = ../cardProcess;
 			sourceTree = "<group>";
 		};
 		A350ABB6200D1CF600D846AD /* Model */ = {
@@ -641,13 +659,16 @@
 				A308DA81201C212300F126A6 /* SettingCell.swift in Sources */,
 				A35455B1201D55A00055C582 /* designConstants.cpp in Sources */,
 				A357DCDD200264EE00A2D517 /* LoginViewController.swift in Sources */,
+				A34ECFF3206E6D53008922CD /* namePhoneViewController.swift in Sources */,
 				A334BC302029EB720052A52D /* SplashScreenViewController.swift in Sources */,
 				A350ABB2200C131E00D846AD /* ContactCodeViewController.swift in Sources */,
+				A34ECFF7206E705A008922CD /* companyInfoViewController.swift in Sources */,
 				9DBFCBFF20262C6400933DE1 /* PasswordResetViewController.swift in Sources */,
 				A357DCE120026F5700A2D517 /* SignUpViewController.swift in Sources */,
 				A368935D2005921D000E7C69 /* config.swift in Sources */,
 				A350ABB0200C130900D846AD /* SocialCodeViewController.swift in Sources */,
 				9DC436E020019D4E00335A4A /* AppDelegate.swift in Sources */,
+				A34ECFF5206E7044008922CD /* jobAndEmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

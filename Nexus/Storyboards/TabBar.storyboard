@@ -161,7 +161,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Create Business Card"/>
                                         <connections>
-                                            <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
+                                            <segue destination="v4C-HF-oz7" kind="show" id="LMf-Tb-vgE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-bI-tsg">
@@ -303,6 +303,14 @@
             </objects>
             <point key="canvasLocation" x="2127" y="2113"/>
         </scene>
+        <!--cardInfoProcess-->
+        <scene sceneID="9Zp-Qb-dp2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="cardInfoProcess" id="v4C-HF-oz7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6e-wS-M6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="1627"/>
+        </scene>
         <!--Contact Code View Controller-->
         <scene sceneID="dyS-2M-RGc">
             <objects>
@@ -312,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOW-QU-zOf">
-                                <rect key="frame" x="0.0" y="88" width="375" height="629"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykp-8n-ITW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>

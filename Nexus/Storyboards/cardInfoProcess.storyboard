@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5p-Mk-GvN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5p-Mk-GvN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="mmW-ej-u48">
@@ -33,7 +28,7 @@
         <!--Name and Phone Number-->
         <scene sceneID="J4g-qA-tWo">
             <objects>
-                <viewController id="maX-Ol-ygR" sceneMemberID="viewController">
+                <viewController id="maX-Ol-ygR" customClass="namePhoneViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Syq-h1-IvW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,23 +52,37 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
+                                    <action selector="nextButton_TouchUpInside:" destination="maX-Ol-ygR" eventType="touchUpInside" id="URs-wh-2vn"/>
                                     <segue destination="mfg-Pb-46z" kind="show" id="BA9-WE-IzG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akS-fA-AZr">
+                                <rect key="frame" x="67" y="202" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="oXn-0S-8Ev"/>
                     </view>
                     <navigationItem key="navigationItem" title="Name and Phone Number" id="Rdk-bU-hYb"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="akS-fA-AZr" id="3PM-gZ-G2e"/>
+                        <outlet property="nameTextField" destination="drS-7c-uBO" id="PgH-q1-PFF"/>
+                        <outlet property="nextButton" destination="zW7-ch-K7m" id="s4X-rb-1Bu"/>
+                        <outlet property="phoneTextField" destination="qVY-jL-WrB" id="TfG-a3-VHT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrT-HN-QVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60" y="-106.59670164917542"/>
         </scene>
-        <!--View Controller-->
+        <!--Job And Email View Controller-->
         <scene sceneID="NjB-dP-C0l">
             <objects>
-                <viewController id="mfg-Pb-46z" sceneMemberID="viewController">
+                <viewController id="mfg-Pb-46z" customClass="jobAndEmailViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJ8-Dr-zbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="-107.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--Company Info View Controller-->
         <scene sceneID="5V8-6t-ZbC">
             <objects>
-                <viewController id="0WO-Nb-5Bq" sceneMemberID="viewController">
+                <viewController id="0WO-Nb-5Bq" customClass="companyInfoViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PqU-ev-3fh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
