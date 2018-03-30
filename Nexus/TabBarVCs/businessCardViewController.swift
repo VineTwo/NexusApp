@@ -16,6 +16,13 @@ class businessCardViewController: UIViewController {
     @IBOutlet weak var nameTextField: UILabel!
     @IBOutlet weak var jobTextField: UILabel!
     
+    @IBOutlet weak var phoneNumTextField: UILabel!
+    
+    @IBOutlet weak var emailTextField: UILabel!
+    
+    @IBOutlet weak var websiteTextField: UILabel!
+    
+    @IBOutlet weak var addressTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -129,11 +129,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Business Card" id="6Pj-ya-QTn"/>
                     <connections>
+                        <outlet property="addressTextField" destination="Zrk-we-LKJ" id="yCw-Nt-3nG"/>
                         <outlet property="bottomLayer" destination="cJr-0f-VsG" id="FBx-h9-WZj"/>
                         <outlet property="companyLabel" destination="ZaI-dL-mXj" id="HRz-so-oVe"/>
+                        <outlet property="emailTextField" destination="SPg-cF-ym6" id="0QI-Fw-B76"/>
                         <outlet property="jobTextField" destination="lFz-mZ-VX7" id="nHn-Ak-YKP"/>
                         <outlet property="nameTextField" destination="eVw-3h-zVS" id="9KK-vM-UWZ"/>
+                        <outlet property="phoneNumTextField" destination="aUV-NV-UpQ" id="FHd-lI-B4H"/>
                         <outlet property="topLayer" destination="se4-zO-nak" id="O3a-ju-Mp1"/>
+                        <outlet property="websiteTextField" destination="urg-tl-6NM" id="Meh-ce-R1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYl-KP-vbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
