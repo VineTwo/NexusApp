@@ -203,7 +203,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnM-Rh-CvN">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnM-Rh-CvN">
                                 <rect key="frame" x="62" y="172" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -234,9 +234,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqG-0n-gNt">
                                 <rect key="frame" x="150" y="553" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="Jvx-Po-SX6" kind="presentation" identifier="done" id="c2r-0t-yGz"/>
+                                    <segue destination="80N-bD-bZ6" kind="show" identifier="toColorSegue" id="ZL7-gF-uyu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,10 +248,56 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sb8-5P-trb"/>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="dcd-b2-TIw" id="Byf-DZ-zYK"/>
+                        <outlet property="companyAddyTextField" destination="qHJ-CZ-mcv" id="Tce-lE-ZxJ"/>
+                        <outlet property="companyNameTextField" destination="rnM-Rh-CvN" id="fp3-7S-yxf"/>
+                        <outlet property="nextButton" destination="MqG-0n-gNt" id="QhP-4j-neO"/>
+                        <outlet property="stateZipTextField" destination="ybS-SJ-dQw" id="E1r-kJ-xOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCH-2F-rra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1600.8" y="-105.69715142428787"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ODn-Yv-wit">
+            <objects>
+                <viewController id="80N-bD-bZ6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kC-tI-SGF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Card Colors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWC-di-O6W">
+                                <rect key="frame" x="16" y="82" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="2XY-fV-z1c"/>
+                                    <constraint firstAttribute="height" constant="40" id="9Cx-ty-Stn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're almost done! The final step is to pick two colors for your business card." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-iE-4NO">
+                                <rect key="frame" x="16" y="143" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="prq-T7-r2S" firstAttribute="trailing" secondItem="EWC-di-O6W" secondAttribute="trailing" constant="16" id="Vrd-Wj-e9h"/>
+                            <constraint firstItem="EWC-di-O6W" firstAttribute="leading" secondItem="prq-T7-r2S" secondAttribute="leading" constant="16" id="h4A-5E-usK"/>
+                            <constraint firstItem="EWC-di-O6W" firstAttribute="top" secondItem="prq-T7-r2S" secondAttribute="top" constant="18" id="lSg-3h-Ja8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="prq-T7-r2S"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3a-aE-krJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.8000000000002" y="-107.49625187406298"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="Pqa-1A-LbD">
@@ -259,7 +305,7 @@
                 <viewControllerPlaceholder storyboardName="TabBar" id="Jvx-Po-SX6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bc-fT-QSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2191" y="-105"/>
+            <point key="canvasLocation" x="2764" y="-106"/>
         </scene>
     </scenes>
 </document>
