@@ -29,6 +29,7 @@
 		A334BC322029EB7F0052A52D /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A334BC312029EB7F0052A52D /* SplashScreen.storyboard */; };
 		A340909920141F6C0023E3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A340909820141F6C0023E3AF /* Assets.xcassets */; };
 		A3447C882004291B008BAB5F /* profilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = A3447C872004291B008BAB5F /* profilePicture.png */; };
+		A345167B206DDF2B007F9279 /* businessCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345167A206DDF2B007F9279 /* businessCardViewController.swift */; };
 		A3456515200A5301005B8330 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3456514200A5301005B8330 /* Launch Screen.storyboard */; };
 		A34C3B882002EA1500C256FE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B862002EA1500C256FE /* SignUp.storyboard */; };
 		A34C3B8A200310EF00C256FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34C3B89200310EE00C256FE /* GoogleService-Info.plist */; };
@@ -93,6 +94,7 @@
 		A334BC312029EB7F0052A52D /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A340909820141F6C0023E3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3447C872004291B008BAB5F /* profilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePicture.png; path = "Nexus/Social Media Icons/profilePicture.png"; sourceTree = SOURCE_ROOT; };
+		A345167A206DDF2B007F9279 /* businessCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardViewController.swift; sourceTree = "<group>"; };
 		A3456514200A5301005B8330 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A34C3B872002EA1500C256FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Nexus/Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		A34C3B89200310EE00C256FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				A350ABAF200C130900D846AD /* SocialCodeViewController.swift */,
 				A331A07B200914A5005776C2 /* ProfileViewController.swift */,
+				A345167A206DDF2B007F9279 /* businessCardViewController.swift */,
 				A308DA80201C212300F126A6 /* SettingCell.swift */,
 				A331A07D20091519005776C2 /* ConnectViewController.swift */,
 				A308DA82201C219600F126A6 /* BaseCell.swift */,
@@ -625,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A345167B206DDF2B007F9279 /* businessCardViewController.swift in Sources */,
 				A331A07E20091519005776C2 /* ConnectViewController.swift in Sources */,
 				A350ABB8200D1D1600D846AD /* users.swift in Sources */,
 				A308DA7F201C179000F126A6 /* menuLauncherViewController.swift in Sources */,

@@ -9,6 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-CondensedMedium</string>
+            <string>Futura-Medium</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
@@ -19,18 +23,90 @@
         <!--Business Card-->
         <scene sceneID="Ema-3D-97v">
             <objects>
-                <viewController id="IZ9-3I-dxx" sceneMemberID="viewController">
+                <viewController id="IZ9-3I-dxx" customClass="businessCardViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVp-oL-Dxt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-0f-VsG">
+                                <rect key="frame" x="37" y="203" width="300" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaI-dL-mXj">
+                                        <rect key="frame" x="150" y="8" width="150" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="7FF-kI-EdA"/>
+                                            <constraint firstAttribute="width" constant="150" id="pRp-go-0dU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se4-zO-nak">
+                                        <rect key="frame" x="0.0" y="45" width="300" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVw-3h-zVS">
+                                                <rect key="frame" x="185" y="32" width="115" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Ccc-ac-wTo"/>
+                                                    <constraint firstAttribute="width" constant="115" id="Dqk-xE-GoI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-mZ-VX7">
+                                                <rect key="frame" x="185" y="53" width="115" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="ptp-Og-BOb"/>
+                                                    <constraint firstAttribute="width" constant="115" id="zra-WT-vIb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="lFz-mZ-VX7" firstAttribute="top" secondItem="eVw-3h-zVS" secondAttribute="bottom" constant="1" id="7el-2v-Tb2"/>
+                                            <constraint firstItem="eVw-3h-zVS" firstAttribute="top" secondItem="se4-zO-nak" secondAttribute="top" constant="32" id="AcF-gy-on4"/>
+                                            <constraint firstAttribute="trailing" secondItem="eVw-3h-zVS" secondAttribute="trailing" id="JfO-zy-pI8"/>
+                                            <constraint firstAttribute="height" constant="120" id="N5B-eu-CVv"/>
+                                            <constraint firstAttribute="width" constant="300" id="Uo7-qK-WqW"/>
+                                            <constraint firstAttribute="trailing" secondItem="lFz-mZ-VX7" secondAttribute="trailing" id="d6p-bi-ANT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZaI-dL-mXj" firstAttribute="top" secondItem="cJr-0f-VsG" secondAttribute="top" constant="8" id="3Uy-Y6-qbw"/>
+                                    <constraint firstItem="se4-zO-nak" firstAttribute="leading" secondItem="cJr-0f-VsG" secondAttribute="leading" id="Arh-fV-kSa"/>
+                                    <constraint firstAttribute="trailing" secondItem="se4-zO-nak" secondAttribute="trailing" id="DMe-6j-WR2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZaI-dL-mXj" secondAttribute="trailing" id="Dgu-H0-j7C"/>
+                                    <constraint firstAttribute="bottom" secondItem="se4-zO-nak" secondAttribute="bottom" id="aLJ-eL-DX7"/>
+                                    <constraint firstAttribute="height" constant="165" id="cYv-8O-8sZ"/>
+                                    <constraint firstAttribute="width" constant="300" id="dW3-Af-zc7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cJr-0f-VsG" firstAttribute="top" secondItem="6QY-BR-2BD" secondAttribute="top" constant="115" id="AX6-xK-Du1"/>
+                            <constraint firstItem="cJr-0f-VsG" firstAttribute="centerX" secondItem="dVp-oL-Dxt" secondAttribute="centerX" id="Xwm-Du-CaA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6QY-BR-2BD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Business Card" id="6Pj-ya-QTn"/>
+                    <connections>
+                        <outlet property="bottomLayer" destination="cJr-0f-VsG" id="FBx-h9-WZj"/>
+                        <outlet property="companyLabel" destination="ZaI-dL-mXj" id="HRz-so-oVe"/>
+                        <outlet property="jobTextField" destination="lFz-mZ-VX7" id="nHn-Ak-YKP"/>
+                        <outlet property="nameTextField" destination="eVw-3h-zVS" id="9KK-vM-UWZ"/>
+                        <outlet property="topLayer" destination="se4-zO-nak" id="O3a-ju-Mp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYl-KP-vbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="1190"/>
+            <point key="canvasLocation" x="880.79999999999995" y="1189.6551724137933"/>
         </scene>
         <!--Connect-->
         <scene sceneID="Ycj-vI-WHN">
@@ -47,7 +123,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Create Contact Code"/>
+                                        <state key="normal" title="Create Business Card"/>
                                         <connections>
                                             <segue destination="Pbu-Zr-4NM" kind="show" id="qU1-qR-eVO"/>
                                         </connections>
@@ -56,7 +132,7 @@
                                         <rect key="frame" x="0.0" y="84" width="200" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Create Social Code"/>
+                                        <state key="normal" title="Create Social Codes"/>
                                         <connections>
                                             <segue destination="n2H-Em-2Zv" kind="show" id="WI5-KS-kOd"/>
                                         </connections>
