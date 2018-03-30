@@ -16,6 +16,22 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Business Card-->
+        <scene sceneID="Ema-3D-97v">
+            <objects>
+                <viewController id="IZ9-3I-dxx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVp-oL-Dxt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6QY-BR-2BD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Business Card" id="6Pj-ya-QTn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYl-KP-vbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="1190"/>
+        </scene>
         <!--Connect-->
         <scene sceneID="Ycj-vI-WHN">
             <objects>
@@ -66,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-PH-JrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="1191.8719211822661"/>
+            <point key="canvasLocation" x="2486" y="1191"/>
         </scene>
         <!--Social Code View Controller-->
         <scene sceneID="eAs-el-XtT">
@@ -173,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-Ym-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064.8" y="2113.3004926108374"/>
+            <point key="canvasLocation" x="2127" y="2113"/>
         </scene>
         <!--Contact Code View Controller-->
         <scene sceneID="dyS-2M-RGc">
@@ -281,7 +297,7 @@
                                                     <action selector="generateButton_TouchUpInside:" destination="Pbu-Zr-4NM" eventType="touchUpInside" id="FIz-Ri-RB3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Contact QR Code. Check it out at the Profile page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Virtual Business Card. Check it out at the Business Card Page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-73-wlN">
                                                 <rect key="frame" x="16" y="275.33333333333331" width="343" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="BTS-DQ-cDr"/>
@@ -342,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvH-JE-ilK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="2112.5615763546798"/>
+            <point key="canvasLocation" x="2868" y="2107"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fOy-vw-SPb">
@@ -575,7 +591,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="333.60000000000002" y="1167.4876847290641"/>
+            <point key="canvasLocation" x="-748" y="1168"/>
         </scene>
         <!--AboutTheApp-->
         <scene sceneID="yLv-ZH-RRk">
@@ -583,7 +599,7 @@
                 <viewControllerPlaceholder storyboardName="AboutTheApp" id="jhr-ci-RjA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gt9-b7-His" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="1605"/>
+            <point key="canvasLocation" x="-749" y="1686"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wxJ-uA-vde">
@@ -598,11 +614,32 @@
                     <connections>
                         <segue destination="WcA-Gy-PoJ" kind="relationship" relationship="viewControllers" id="q8v-dj-N7i"/>
                         <segue destination="tc1-PC-cPX" kind="relationship" relationship="viewControllers" id="8yP-O4-ggY"/>
+                        <segue destination="8zY-JV-0PZ" kind="relationship" relationship="viewControllers" id="cDN-qR-vhY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upF-AE-lMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="881" y="-576"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DM7-G8-UaQ">
+            <objects>
+                <navigationController id="8zY-JV-0PZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="bCard" selectedImage="bCardFilled" id="zUk-Gk-gqb">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TPp-Ke-s4V">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IZ9-3I-dxx" kind="relationship" relationship="rootViewController" id="6Lb-bm-HRt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fc9-tC-YgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="327"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cd6-hA-361">
@@ -632,7 +669,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4U-kg-jg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="328"/>
+            <point key="canvasLocation" x="2486" y="327"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HNr-hq-VNx">
@@ -655,13 +692,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-Jt-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="328"/>
+            <point key="canvasLocation" x="-746" y="327"/>
         </scene>
     </scenes>
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
         <image name="about" width="20" height="21"/>
+        <image name="bCard" width="20" height="21"/>
+        <image name="bCardFilled" width="20" height="21"/>
         <image name="contactsLogo" width="300" height="300"/>
         <image name="instagramLogo" width="327" height="327"/>
         <image name="qr" width="20" height="21"/>
