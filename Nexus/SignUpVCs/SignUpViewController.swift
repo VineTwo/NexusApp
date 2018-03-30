@@ -218,7 +218,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @objc func passwordIsLongEnough() {
         if (passwordTextField.text?.count)! < 6 {
         signUpButton.isEnabled = false
-        self.passwordTextField.shake()
         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         signUpButton.backgroundColor = UIColor.clear
         self.signUpErrorLabel.text = "The password must be 6 characters."
@@ -416,6 +415,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func isValidPassword(passwordLength: String) -> Bool {
        // let length = passwordTextField.text?.count
         if (passwordLength.count < 6) {
+            self.passwordTextField.shake()
             return false;
         }
         return true

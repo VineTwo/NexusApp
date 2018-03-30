@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oXn-0S-8Ev" firstAttribute="trailing" secondItem="qVY-jL-WrB" secondAttribute="trailing" constant="38" id="4xR-bt-kWm"/>
                             <constraint firstItem="qVY-jL-WrB" firstAttribute="top" secondItem="drS-7c-uBO" secondAttribute="bottom" constant="68" id="55J-oK-8jO"/>
@@ -145,11 +145,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="0WO-Nb-5Bq" kind="show" id="O3p-RT-7rq"/>
+                                    <segue destination="0WO-Nb-5Bq" kind="show" identifier="toFinalSegue" id="O3p-RT-7rq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g79-qv-VPx" firstAttribute="leading" secondItem="Txd-dh-4hY" secondAttribute="leading" constant="16" id="8kk-Pq-qMi"/>
                             <constraint firstItem="Txd-dh-4hY" firstAttribute="trailing" secondItem="g79-qv-VPx" secondAttribute="trailing" constant="16" id="P7k-Vn-rFy"/>
@@ -157,6 +157,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Txd-dh-4hY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="1BR-d8-KwV" id="spJ-Mt-SZq"/>
+                        <outlet property="errorLabel" destination="G3P-Qs-WYz" id="aeg-AA-zRS"/>
+                        <outlet property="jobTextField" destination="UzA-YU-3LI" id="PMb-Ni-hvp"/>
+                        <outlet property="nextButton" destination="Cs8-PD-uyZ" id="ZQf-Ew-zU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcz-li-KAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,11 +219,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="Jvx-Po-SX6" kind="presentation" id="c2r-0t-yGz"/>
+                                    <segue destination="Jvx-Po-SX6" kind="presentation" identifier="done" id="c2r-0t-yGz"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vb4-Oh-Hw3" firstAttribute="leading" secondItem="sb8-5P-trb" secondAttribute="leading" constant="16" id="03b-MW-dEs"/>
                             <constraint firstItem="Vb4-Oh-Hw3" firstAttribute="top" secondItem="sb8-5P-trb" secondAttribute="top" constant="18" id="WG9-VI-GDi"/>
