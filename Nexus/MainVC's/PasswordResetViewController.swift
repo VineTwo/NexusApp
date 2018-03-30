@@ -97,7 +97,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
                 validEmail = false
             }
             
-        } catch let error as NSError {
+        } catch _ as NSError {
             validEmail = false
         }
         

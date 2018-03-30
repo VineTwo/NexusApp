@@ -447,6 +447,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
         } catch let error as NSError {
             validEmail = false
+            print(error)
         }
         
         return  validEmail
