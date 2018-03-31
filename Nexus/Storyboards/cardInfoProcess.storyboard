@@ -258,6 +258,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="nextButton_TouchUpInside:" destination="0WO-Nb-5Bq" eventType="touchUpInside" id="Rkt-tJ-eAt"/>
                                                     <segue destination="80N-bD-bZ6" kind="show" identifier="toColorSegue" id="ZL7-gF-uyu"/>
                                                 </connections>
                                             </button>

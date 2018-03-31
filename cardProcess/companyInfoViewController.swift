@@ -19,6 +19,23 @@ class companyInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stateZipTextField: UITextField!
    
     @IBOutlet weak var nextButton: UIButton!
+    
+    
+    @IBAction func nextButton_TouchUpInside(_ sender: Any) {
+        UserDefaults.standard.set(companyNameTextField.text, forKey: "companyName")
+        
+        // Do this in order to concat with ","
+        let street = companyAddyTextField.text!
+        let streetString = street as String
+        let city = cityTextField.text!
+        let cityString = city as String
+        let stateZip = stateZipTextField.text!
+        let stateZipString = stateZip as String
+        
+        let fullAddress = streetString + "," + cityString + "," + stateZipString
+        UserDefaults.standard.set(fullAddress, forKey: "address")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Setting items off the screen
@@ -38,6 +55,16 @@ class companyInfoViewController: UIViewController, UITextFieldDelegate {
         nextButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         animateElements()
+        
+        self.companyNameTextField.delegate = self
+        self.companyAddyTextField.delegate = self
+        self.cityTextField.delegate =        self
+        self.stateZipTextField.delegate =    self
+        
+        companyNameTextField.tag = 0
+        companyAddyTextField.tag = 1
+        cityTextField.tag        = 2
+        stateZipTextField.tag    = 3
         
         // Do any additional setup after loading the view.
     }
@@ -74,6 +101,21 @@ class companyInfoViewController: UIViewController, UITextFieldDelegate {
         }), completion: nil)
         
         
+    }
+    
+    //If not last textField it will go to next textField when enter is pressed
+    //If last textField, keyboard will dismiss when enter key is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
 
