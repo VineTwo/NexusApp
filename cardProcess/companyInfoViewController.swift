@@ -8,7 +8,7 @@
 
 import UIKit
 
-class companyInfoViewController: UIViewController {
+class companyInfoViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var companyNameTextField: UITextField!
     
@@ -52,6 +52,24 @@ class companyInfoViewController: UIViewController {
         UIView.animate(withDuration: 1.5, delay: 1.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
             
             self.companyAddyTextField.center.x = self.view.frame.width / 2.4
+            
+        }), completion: nil)
+        
+        UIView.animate(withDuration: 1.5, delay: 1.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.cityTextField.center.x = self.view.frame.width / 2.4
+            
+        }), completion: nil)
+        
+        UIView.animate(withDuration: 1.5, delay: 1.7, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.stateZipTextField.center.x = self.view.frame.width / 2.4
+            
+        }), completion: nil)
+        
+        UIView.animate(withDuration: 1.5, delay: 2.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: ({
+            
+            self.nextButton.center.x = self.view.frame.width / 2.4
             
         }), completion: nil)
         
