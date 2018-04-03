@@ -1,7 +1,7 @@
 //
 //  businessCardViewController.swift
 //  Nexus
-//
+//  Change the size of the business card to properly fit landscape
 //  Created by Nick potts on 3/29/18.
 //  Copyright © 2018 Matthew Foote. All rights reserved.
 //
