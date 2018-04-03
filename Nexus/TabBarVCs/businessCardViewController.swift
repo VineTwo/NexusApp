@@ -32,6 +32,20 @@ class businessCardViewController: UIViewController {
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
         
+        let company = UserDefaults.standard.object(forKey: "companyName") as? String
+        companyLabel.text = company
+        let name = UserDefaults.standard.object(forKey: "name") as? String
+        nameTextField.text = name
+        let job = UserDefaults.standard.object(forKey: "jobTitle") as? String
+        jobTextField.text = job
+        let phone = UserDefaults.standard.object(forKey: "phone") as? String
+        phoneNumTextField.text = phone
+        let email = UserDefaults.standard.object(forKey: "email") as? String
+        emailTextField.text = email
+      //  let website = UserDefaults.standard.object(forKey: "website") as? String need to add this to card process
+        let address = UserDefaults.standard.object(forKey: "address") as? String
+        addressTextField.text = address
+        
         // Do any additional setup after loading the view.
 
    }
