@@ -44,6 +44,7 @@ class ProfileViewController: UIViewController {
     var databaseHandle: DatabaseHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.clipsToBounds = false
         //For the activity indicator
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
@@ -51,7 +52,11 @@ class ProfileViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
      //This calls the remaining urls
-        retrieveInstaQrUrl()
+        if UIDevice.current.orientation.isLandscape {
+            
+        } else {
+        //retrieveInstaQrUrl()
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImageView))
        
         instaCodeImageView.addGestureRecognizer(tapGesture)
@@ -68,12 +73,28 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            
+        } else {
+            retrieveInstaQrUrl()
+            print("Portrait")
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        
+        if UIDevice.current.orientation.isLandscape {
+            retrieveInstaQrUrl()
+        } else {
         getImageFromCache(keyName: "instagramURL", imageName: instaCodeImageView)
         getImageFromCache(keyName: "twitterURL", imageName: twitterCodeImageView)
         getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
         // Need to cache the contact url
         getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
+        retrieveInstaQrUrl()
+        }
     }
     var startingFrame: CGRect?
     var blackBackground: UIView?
