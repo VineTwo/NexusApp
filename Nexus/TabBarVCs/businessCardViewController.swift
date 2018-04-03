@@ -10,6 +10,7 @@ import UIKit
 
 class businessCardViewController: UIViewController {
 
+    @IBOutlet weak var orientationErrorLabel: UILabel!
     @IBOutlet weak var bottomLayer: UIView!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var topLayer: UIView!
@@ -26,7 +27,7 @@ class businessCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            orientationErrorLabel.isHidden = true
        
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
@@ -45,6 +46,8 @@ class businessCardViewController: UIViewController {
             emailTextField.isHidden = false
             websiteTextField.isHidden = false
             addressTextField.isHidden = false
+            print("Landscape")
+            orientationErrorLabel.isHidden = true
         } else {
             bottomLayer.isHidden = true
             companyLabel.isHidden = true
@@ -55,6 +58,8 @@ class businessCardViewController: UIViewController {
             emailTextField.isHidden = true
             websiteTextField.isHidden = true
             addressTextField.isHidden = true
+            print("Portrait")
+            orientationErrorLabel.isHidden = false
         }
     }
     

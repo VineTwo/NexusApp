@@ -108,10 +108,22 @@
                                     <constraint firstAttribute="width" constant="300" id="dW3-Af-zc7"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uh oh! Looks like you switched to portrait mode. Rotate your phone to landscape in order to see your business card." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-wH-Pfw">
+                                <rect key="frame" x="37" y="343.66666666666669" width="300" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1hy-5M-vVB"/>
+                                    <constraint firstAttribute="height" constant="125" id="PLt-rV-JBp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KEq-wH-Pfw" firstAttribute="centerY" secondItem="dVp-oL-Dxt" secondAttribute="centerY" id="3eP-6b-QA4"/>
                             <constraint firstItem="cJr-0f-VsG" firstAttribute="top" secondItem="6QY-BR-2BD" secondAttribute="top" constant="115" id="AX6-xK-Du1"/>
+                            <constraint firstItem="KEq-wH-Pfw" firstAttribute="centerX" secondItem="dVp-oL-Dxt" secondAttribute="centerX" id="CKa-D8-zq3"/>
                             <constraint firstItem="cJr-0f-VsG" firstAttribute="centerX" secondItem="dVp-oL-Dxt" secondAttribute="centerX" id="Xwm-Du-CaA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6QY-BR-2BD"/>
@@ -124,6 +136,7 @@
                         <outlet property="emailTextField" destination="SPg-cF-ym6" id="0QI-Fw-B76"/>
                         <outlet property="jobTextField" destination="lFz-mZ-VX7" id="nHn-Ak-YKP"/>
                         <outlet property="nameTextField" destination="eVw-3h-zVS" id="9KK-vM-UWZ"/>
+                        <outlet property="orientationErrorLabel" destination="KEq-wH-Pfw" id="wPA-r2-cgY"/>
                         <outlet property="phoneNumTextField" destination="aUV-NV-UpQ" id="FHd-lI-B4H"/>
                         <outlet property="topLayer" destination="se4-zO-nak" id="O3a-ju-Mp1"/>
                         <outlet property="websiteTextField" destination="urg-tl-6NM" id="Meh-ce-R1f"/>
