@@ -65,9 +65,11 @@ class businessCardViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        print("Inside disappear")
+        //If we remove this if statement it works. HOWEVER, the other views get fucked up even worse than if we keep it
         if (self.isMovingFromParentViewController) {
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+            print("Inside if")
         }
         
     }
