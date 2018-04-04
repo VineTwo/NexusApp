@@ -318,10 +318,10 @@
             </objects>
             <point key="canvasLocation" x="1599" y="-105"/>
         </scene>
-        <!--View Controller-->
+        <!--Colors Picker View Controller-->
         <scene sceneID="ODn-Yv-wit">
             <objects>
-                <viewController id="80N-bD-bZ6" sceneMemberID="viewController">
+                <viewController id="80N-bD-bZ6" customClass="colorsPickerViewController" customModule="Nexus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1kC-tI-SGF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,6 +343,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndx-h6-Wdv">
+                                <rect key="frame" x="37" y="262" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.33285233380000001" green="0.79865586759999996" blue="0.93291705849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -355,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3a-aE-krJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.8000000000002" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="2324" y="-105.69715142428787"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="Pqa-1A-LbD">
