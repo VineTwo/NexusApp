@@ -10,8 +10,16 @@ import UIKit
 
 class colorsPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var firstColorTextField: UITextField!
+    
+    @IBOutlet weak var secondColorTextField: UITextField!
+    
+    let colorPicker = UIPickerView()
+    let myPickerData = [String](arrayLiteral: "Blue", "Brown", "Black", "Red", "Green", "Yellow", "Gray",  "Orange", "Purple", "Magenta", "White")
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstColorTextField.inputView = colorPicker
+        colorPicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -21,13 +29,13 @@ class colorsPickerViewController: UIViewController, UIPickerViewDelegate, UIPick
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 5}
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1}
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return 5}
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return myPickerData.count}
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { return "Test"}
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { return myPickerData[row]}
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {}
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) { firstColorTextField.text = myPickerData[row]}
 
     
 

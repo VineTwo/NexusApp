@@ -374,6 +374,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="prq-T7-r2S"/>
                     </view>
+                    <connections>
+                        <outlet property="firstColorTextField" destination="ndx-h6-Wdv" id="c6G-1P-5No"/>
+                        <outlet property="secondColorTextField" destination="adY-zP-L52" id="1eB-Mh-aIQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3a-aE-krJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
