@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-0f-VsG">
-                                <rect key="frame" x="37" y="203" width="300" height="165"/>
+                                <rect key="frame" x="37.666666666666657" y="203" width="300" height="165"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nexus Communications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaI-dL-mXj">
                                         <rect key="frame" x="150" y="8" width="150" height="20"/>
@@ -109,7 +109,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uh oh! Looks like you switched to portrait mode. Rotate your phone to landscape in order to see your business card." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-wH-Pfw">
-                                <rect key="frame" x="37" y="343.66666666666669" width="300" height="125"/>
+                                <rect key="frame" x="37.666666666666657" y="343.66666666666669" width="300" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="1hy-5M-vVB"/>
                                     <constraint firstAttribute="height" constant="125" id="PLt-rV-JBp"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-pJ-pwl">
-                                <rect key="frame" x="87" y="347.33333333333331" width="200" height="118"/>
+                                <rect key="frame" x="87.666666666666686" y="347" width="200" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-3j-Wby">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
@@ -207,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="e20-ZE-Kk3">
-                                <rect key="frame" x="37" y="321" width="300" height="170"/>
+                                <rect key="frame" x="37.666666666666657" y="321" width="300" height="170"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Instagram Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-Hz-yaH">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -242,7 +242,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! You just made your Social Media QR Codes. Check them out at the Profile page" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vH-ojS">
-                                <rect key="frame" x="16" y="369" width="343" height="75"/>
+                                <rect key="frame" x="16" y="368.66666666666669" width="343" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="SjR-RV-3hm"/>
                                     <constraint firstAttribute="height" constant="75" id="jMy-23-LlH"/>
@@ -743,11 +743,11 @@
             </objects>
             <point key="canvasLocation" x="881" y="-576"/>
         </scene>
-        <!--Item-->
+        <!--Card-->
         <scene sceneID="DM7-G8-UaQ">
             <objects>
                 <navigationController id="8zY-JV-0PZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="bCard" selectedImage="bCardFilled" id="zUk-Gk-gqb">
+                    <tabBarItem key="tabBarItem" title="Card" image="bCard" selectedImage="bCardFilled" id="zUk-Gk-gqb">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -763,11 +763,11 @@
             </objects>
             <point key="canvasLocation" x="881" y="327"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Create-->
         <scene sceneID="cd6-hA-361">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc1-PC-cPX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="qr" selectedImage="qrFilled" id="Y4P-9x-eCn">
+                    <tabBarItem key="tabBarItem" title="Create" image="qr" selectedImage="qrFilled" id="Y4P-9x-eCn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
@@ -793,11 +793,11 @@
             </objects>
             <point key="canvasLocation" x="2486" y="327"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="HNr-hq-VNx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcA-Gy-PoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="ZCl-Tw-NYF">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
