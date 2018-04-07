@@ -362,6 +362,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
+                                    <action selector="finishButton_TouchUpInside:" destination="80N-bD-bZ6" eventType="touchUpInside" id="PjP-1p-pY2"/>
                                     <segue destination="Jvx-Po-SX6" kind="show" id="5S4-zG-unJ"/>
                                 </connections>
                             </button>
