@@ -362,8 +362,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
-                                    <action selector="finishButton_TouchUpInside:" destination="80N-bD-bZ6" eventType="touchUpInside" id="PjP-1p-pY2"/>
-                                    <segue destination="Jvx-Po-SX6" kind="show" id="5S4-zG-unJ"/>
+                                    <action selector="finishButton_TouchUpInside:" destination="80N-bD-bZ6" eventType="touchUpInside" id="d10-cN-Ip0"/>
+                                    <segue destination="2HY-aG-W1F" kind="presentation" id="36o-FL-Aqa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -385,12 +385,12 @@
             <point key="canvasLocation" x="2324" y="-105.69715142428787"/>
         </scene>
         <!--TabBar-->
-        <scene sceneID="Pqa-1A-LbD">
+        <scene sceneID="1G5-yr-agS">
             <objects>
-                <viewControllerPlaceholder storyboardName="TabBar" id="Jvx-Po-SX6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bc-fT-QSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TabBar" id="2HY-aG-W1F" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjB-zJ-gCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2927" y="-106"/>
+            <point key="canvasLocation" x="3036" y="-105"/>
         </scene>
     </scenes>
 </document>

@@ -28,6 +28,7 @@ class businessCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             orientationErrorLabel.isHidden = true
+        
        
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
@@ -45,6 +46,12 @@ class businessCardViewController: UIViewController {
       //  let website = UserDefaults.standard.object(forKey: "website") as? String need to add this to card process
         let address = UserDefaults.standard.object(forKey: "address") as? String
         addressTextField.text = address
+        let firstColor = UserDefaults.standard.object(forKey: "firstColor") as? String
+        let bottomColor = UIColor(named: firstColor!)
+        bottomLayer.backgroundColor = bottomColor
+        let secondColor = UserDefaults.standard.object(forKey: "secondColor") as? String
+        let topColor = UIColor(named: secondColor!)
+        topLayer.backgroundColor = topColor
         
         // Do any additional setup after loading the view.
 
