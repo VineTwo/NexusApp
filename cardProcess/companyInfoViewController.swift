@@ -32,7 +32,7 @@ class companyInfoViewController: UIViewController, UITextFieldDelegate {
         let stateZip = stateZipTextField.text!
         let stateZipString = stateZip as String
         
-        let fullAddress = streetString + "," + cityString + "," + stateZipString
+        let fullAddress = streetString + ", " + cityString + ", " + stateZipString
         UserDefaults.standard.set(fullAddress, forKey: "address")
     }
     

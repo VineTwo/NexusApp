@@ -51,6 +51,15 @@ class businessCardViewController: UIViewController {
         let secondColor = UserDefaults.standard.object(forKey: "secondColor") as? String
         topLayer.backgroundColor = changeColor(color: secondColor!)
         // Do any additional setup after loading the view.
+        bottomLayer.layer.shadowColor = UIColor.gray.cgColor
+        bottomLayer.layer.shadowRadius = 2.5
+        bottomLayer.layer.shadowOpacity = 0.4
+        bottomLayer.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        topLayer.layer.shadowColor = UIColor.gray.cgColor
+        topLayer.layer.shadowRadius = 2.0
+        topLayer.layer.shadowOpacity = 0.4
+        topLayer.layer.shadowOffset = CGSize(width: 0, height: 0)
    }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
@@ -136,4 +145,3 @@ class businessCardViewController: UIViewController {
     }
 }
 
-// "Blue", "Brown", "Black", "Red", "Green", "Yellow", "Gray",  "Orange", "Purple", "Magenta", "White")
