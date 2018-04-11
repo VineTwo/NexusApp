@@ -70,6 +70,7 @@ class colorsPickerViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func finishButton_TouchUpInside(_ sender: Any) {
         UserDefaults.standard.set(firstColorTextField.text, forKey: "firstColor")
         UserDefaults.standard.set(secondColorTextField.text, forKey: "secondColor")
+        print("Stored the colors")
       //  let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
       //  let signInVC = storyboard.instantiateViewController(withIdentifier: "Profile")
        // self.present(signInVC, animated: true, completion: nil)

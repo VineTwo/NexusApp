@@ -27,7 +27,7 @@ class businessCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            orientationErrorLabel.isHidden = true
+            //orientationErrorLabel.isHidden = true
         
        
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
@@ -47,14 +47,10 @@ class businessCardViewController: UIViewController {
         let address = UserDefaults.standard.object(forKey: "address") as? String
         addressTextField.text = address
         let firstColor = UserDefaults.standard.object(forKey: "firstColor") as? String
-        let bottomColor = UIColor(named: firstColor!)
-        bottomLayer.backgroundColor = bottomColor
+        bottomLayer.backgroundColor = changeColor(color: firstColor!)
         let secondColor = UserDefaults.standard.object(forKey: "secondColor") as? String
-        let topColor = UIColor(named: secondColor!)
-        topLayer.backgroundColor = topColor
-        
+        topLayer.backgroundColor = changeColor(color: secondColor!)
         // Do any additional setup after loading the view.
-
    }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
@@ -68,7 +64,7 @@ class businessCardViewController: UIViewController {
             websiteTextField.isHidden = false
             addressTextField.isHidden = false
             print("Landscape")
-            orientationErrorLabel.isHidden = true
+          //  orientationErrorLabel.isHidden = true
         } else {
             bottomLayer.isHidden = true
             companyLabel.isHidden = true
@@ -80,7 +76,7 @@ class businessCardViewController: UIViewController {
             websiteTextField.isHidden = true
             addressTextField.isHidden = true
             print("Portrait")
-            orientationErrorLabel.isHidden = false
+          //  orientationErrorLabel.isHidden = false
         }
     }
     
@@ -98,6 +94,46 @@ class businessCardViewController: UIViewController {
     @objc func canRotate() -> Void {}
    
     
-    
+    func changeColor(color: String) -> UIColor {
+        var pickedColor: UIColor
+        switch color {
+        case "Red":
+            pickedColor = UIColor.red
+            break
+        case "Blue":
+            pickedColor = UIColor.blue
+            break
+        case "Brown":
+            pickedColor = UIColor.brown
+            break
+        case "Black":
+            pickedColor = UIColor.black
+        case "Green":
+            pickedColor = UIColor.green
+            break
+        case "Yellow":
+            pickedColor = UIColor.yellow
+            break
+        case "Gray":
+            pickedColor = UIColor.gray
+            break
+        case "Orange":
+            pickedColor = UIColor.orange
+            break
+        case "Purple":
+            pickedColor = UIColor.purple
+            break
+        case "Magenta":
+            pickedColor = UIColor.magenta
+            break
+        case "White":
+            pickedColor = UIColor.white
+            break
+        default:
+            pickedColor = UIColor.white
+        }
+        return pickedColor
+    }
 }
 
+// "Blue", "Brown", "Black", "Red", "Green", "Yellow", "Gray",  "Orange", "Purple", "Magenta", "White")

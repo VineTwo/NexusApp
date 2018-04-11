@@ -38,6 +38,7 @@ class companyInfoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         //Setting items off the screen
         companyNameTextField.center.x = self.view.frame.width + 300
         companyAddyTextField.center.x = self.view.frame.width + 300
