@@ -102,6 +102,14 @@
                                     <constraint firstAttribute="width" constant="525" id="weH-7r-oUp"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-8M-7rz">
+                                <rect key="frame" x="64" y="73" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share Card"/>
+                                <connections>
+                                    <action selector="shareButton_TouchUpInside:" destination="IZ9-3I-dxx" eventType="touchUpInside" id="cTW-9q-4CE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82734892189999998" green="0.92123495580000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

@@ -100,6 +100,14 @@ class businessCardViewController: UIViewController {
         
     }
     
+    @IBAction func shareButton_TouchUpInside(_ sender: Any) {
+        let activiytVC = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
+        activiytVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activiytVC, animated: true, completion: nil)
+    }
+    
+    
     @objc func canRotate() -> Void {}
    
     
