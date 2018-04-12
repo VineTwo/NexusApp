@@ -110,11 +110,21 @@ class businessCardViewController: UIViewController {
     }
     
     func takeScreenshot(scene: UIViewController) {
+        // Full screenshot
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         var sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage!, nil, nil, nil)
+        
+        //Partial screenshot
+        let x = bottomLayer.frame.minX
+        let y = bottomLayer.frame.minY
+        UIGraphicsBeginImageContext(bottomLayer.frame.size)
+        sourceImage?.draw(at: CGPoint(x: -x, y: -y))
+        var croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(croppedImage!, nil, nil, nil)
     }
     
     
