@@ -101,10 +101,20 @@ class businessCardViewController: UIViewController {
     }
     
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
+        takeScreenshot(scene: businessCardViewController())
+        
         let activiytVC = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
         activiytVC.popoverPresentationController?.sourceView = self.view
         
         self.present(activiytVC, animated: true, completion: nil)
+    }
+    
+    func takeScreenshot(scene: UIViewController) {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        var sourceImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(sourceImage!, nil, nil, nil)
     }
     
     
