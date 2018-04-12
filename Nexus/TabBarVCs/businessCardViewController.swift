@@ -108,7 +108,6 @@ class businessCardViewController: UIViewController {
         
         self.present(activiytVC, animated: true, completion: nil)
     }
-    
     func takeScreenshot(scene: UIViewController) {
         // Full screenshot
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -124,7 +123,12 @@ class businessCardViewController: UIViewController {
         sourceImage?.draw(at: CGPoint(x: -x, y: -y))
         var croppedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        UIImageWriteToSavedPhotosAlbum(croppedImage!, nil, nil, nil)
+     //   UIImageWriteToSavedPhotosAlbum(croppedImage!, nil, nil, nil)
+        
+        let activiytVC = UIActivityViewController(activityItems: [croppedImage], applicationActivities: nil)
+        activiytVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activiytVC, animated: true, completion: nil)
     }
     
     
