@@ -17,6 +17,8 @@ class businessCardViewController: UIViewController {
     @IBOutlet weak var nameTextField: UILabel!
     @IBOutlet weak var jobTextField: UILabel!
     
+    @IBOutlet weak var shareButton: UIButton!
+    
     @IBOutlet weak var phoneNumTextField: UILabel!
     
     @IBOutlet weak var emailTextField: UILabel!
@@ -25,10 +27,19 @@ class businessCardViewController: UIViewController {
     
     @IBOutlet weak var addressTextField: UILabel!
     
+    @IBAction func shareBarButton(_ sender: Any) {
+        
+    }
+    
+    @IBOutlet weak var shareBarButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             //orientationErrorLabel.isHidden = true
+        shareButton.imageEdgeInsets = UIEdgeInsetsMake(33, 33, 33, 33)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "share"), style: .plain, target: self, action: #selector(shareTapped))
        
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
@@ -64,6 +75,7 @@ class businessCardViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
             bottomLayer.isHidden = false
+            shareButton.isHidden = false
             companyLabel.isHidden = false
             topLayer.isHidden = false
             nameTextField.isHidden = false
@@ -76,6 +88,7 @@ class businessCardViewController: UIViewController {
           //  orientationErrorLabel.isHidden = true
         } else {
             bottomLayer.isHidden = true
+            shareButton.isHidden = true
             companyLabel.isHidden = true
             topLayer.isHidden = true
             nameTextField.isHidden = true
@@ -112,7 +125,7 @@ class businessCardViewController: UIViewController {
         // Full screenshot
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        var sourceImage = UIGraphicsGetImageFromCurrentImageContext()
+        let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage!, nil, nil, nil)
         
@@ -121,11 +134,11 @@ class businessCardViewController: UIViewController {
         let y = bottomLayer.frame.minY
         UIGraphicsBeginImageContext(bottomLayer.frame.size)
         sourceImage?.draw(at: CGPoint(x: -x, y: -y))
-        var croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
      //   UIImageWriteToSavedPhotosAlbum(croppedImage!, nil, nil, nil)
         
-        let activiytVC = UIActivityViewController(activityItems: [croppedImage], applicationActivities: nil)
+        let activiytVC = UIActivityViewController(activityItems: [croppedImage!], applicationActivities: nil)
         activiytVC.popoverPresentationController?.sourceView = self.view
         
         self.present(activiytVC, animated: true, completion: nil)
@@ -174,6 +187,10 @@ class businessCardViewController: UIViewController {
             pickedColor = UIColor.white
         }
         return pickedColor
+    }
+    
+    @objc func shareTapped() {
+        
     }
 }
 
