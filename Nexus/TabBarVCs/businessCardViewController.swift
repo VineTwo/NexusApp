@@ -40,9 +40,10 @@ class businessCardViewController: UIViewController {
         shareButton.imageEdgeInsets = UIEdgeInsetsMake(33, 33, 33, 33)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "share"), style: .plain, target: self, action: #selector(shareTapped))
+        
        
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         let company = UserDefaults.standard.object(forKey: "companyName") as? String
         companyLabel.text = company
@@ -112,7 +113,7 @@ class businessCardViewController: UIViewController {
         }
         
     }
-    
+    /*
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
         takeScreenshot(scene: businessCardViewController())
         
@@ -121,8 +122,9 @@ class businessCardViewController: UIViewController {
         
         self.present(activiytVC, animated: true, completion: nil)
     }
+ */
     func takeScreenshot(scene: UIViewController) {
-        // Full screenshot
+       /* // Full screenshot
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -137,8 +139,10 @@ class businessCardViewController: UIViewController {
         let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
      //   UIImageWriteToSavedPhotosAlbum(croppedImage!, nil, nil, nil)
+        */
+        let cardImage = bottomLayer.asImage()
         
-        let activiytVC = UIActivityViewController(activityItems: [croppedImage!], applicationActivities: nil)
+        let activiytVC = UIActivityViewController(activityItems: [cardImage], applicationActivities: nil)
         activiytVC.popoverPresentationController?.sourceView = self.view
         
         self.present(activiytVC, animated: true, completion: nil)
@@ -190,7 +194,24 @@ class businessCardViewController: UIViewController {
     }
     
     @objc func shareTapped() {
+        takeScreenshot(scene: businessCardViewController())
         
+      //  let activiytVC = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
+     //   activiytVC.popoverPresentationController?.sourceView = self.view
+        
+     //   self.present(activiytVC, animated: true, completion: nil)
+    }
+    
+    
+}
+
+extension UIView {
+    
+    func asImage() ->UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image(actions: { (rendererContext) in
+            layer.render(in: rendererContext.cgContext)
+        })
     }
 }
 
