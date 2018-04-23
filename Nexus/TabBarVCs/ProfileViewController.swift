@@ -24,8 +24,41 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var snapCodeImageView: UIImageView!
     
+    @IBOutlet weak var shareButton: UIButton!
     
-    @IBOutlet weak var contactCodeImageView: UIImageView!
+    @IBAction func shareButton_TouchUpInside(_ sender: Any) {
+        // get and store the social media handles
+        var twitter   = UserDefaults.standard.object(forKey: "myTwitter")  as! String
+        var instagram = UserDefaults.standard.object(forKey: "myInsta")    as! String
+        var snap      = UserDefaults.standard.object(forKey: "mySnap")     as! String
+        var shareText = ""
+        //constants
+        let twitterURL = "https://www.twitter.com/"
+        let instaURL   = "http://www.instagram.com/"
+        let snapURL    = "http://www.snapchat.com/"
+        print("Social medias in order listed above: ", twitter + " " + instagram + " " + snap)
+        //checking if they have stored an account name to eliminate sharing blank links
+        if(twitter != "" ) {
+            twitter = twitterURL + twitter
+            shareText = "Twitter:   \(twitter)"
+        } else { twitter = ""}
+        if(instagram != "") {
+           instagram = instaURL + instagram
+            shareText = shareText + "\nInstagram:   \(instagram)"
+        } else {instagram = ""}
+        if (snap != "") {
+            snap = snapURL + snap
+            shareText = shareText + "\nSnapchat:   \(snap)"
+        } else {snap = ""}
+        
+        //allows the share VC to show up with the shareText
+        let activiytVC = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+        activiytVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activiytVC, animated: true, completion: nil)
+    }
+    
+    //@IBOutlet weak var contactCodeImageView: UIImageView!
     
     @IBAction func didTapInstaCodeImage(_ sender: Any) {
         self.performZoomInOnStartingImageView(startingImageView: instaCodeImageView)
@@ -34,11 +67,11 @@ class ProfileViewController: UIViewController {
     @IBAction func didTapTwitterCodeImage(_ sender: Any) {
         self.performZoomInOnStartingImageView(startingImageView: twitterCodeImageView)
     }
-    
+    /*
     @IBAction func didTapContactImage(_ sender: Any) {
         self.performZoomInOnStartingImageView(startingImageView: contactCodeImageView)
     }
-    
+    */
     
     
     var databaseHandle: DatabaseHandle?
@@ -65,8 +98,8 @@ class ProfileViewController: UIViewController {
         twitterCodeImageView.addGestureRecognizer(tapGesture)
         twitterCodeImageView.isUserInteractionEnabled = true;
         
-        contactCodeImageView.addGestureRecognizer(tapGesture)
-        contactCodeImageView.isUserInteractionEnabled = true
+        //contactCodeImageView.addGestureRecognizer(tapGesture)
+      //  contactCodeImageView.isUserInteractionEnabled = true
         
         snapCodeImageView.addGestureRecognizer(tapGesture)
         
@@ -92,7 +125,7 @@ class ProfileViewController: UIViewController {
         getImageFromCache(keyName: "twitterURL", imageName: twitterCodeImageView)
         getImageFromCache(keyName: "snapchatURL", imageName: snapCodeImageView)
         // Need to cache the contact url
-        getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
+       // getImageFromCache(keyName: "contactURL", imageName: contactCodeImageView)
         retrieveInstaQrUrl()
         }
     }
@@ -246,7 +279,7 @@ class ProfileViewController: UIViewController {
             let snapCode = snapshot.value as? String
             if let actualCode  = snapCode {
                 let imageURL = URL(string: actualCode)
-                self.retrieveContactQrUrl(uid: uid, ref: ref)
+             //   self.retrieveContactQrUrl(uid: uid, ref: ref)
                 var image: UIImage?
                 self.activityIndicator.stopAnimating()
                 if let url = imageURL {
@@ -268,7 +301,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
+    /*
     func retrieveContactQrUrl(uid: String, ref: DatabaseReference) {
         print("Inside contact")
         databaseHandle = ref.child("users").child(uid).child("ContactQrUrl").observe(.childAdded) { (snapshot) in
@@ -299,7 +332,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
+    */
     @IBAction func menu_TouchUpInside(_ sender: Any) {
         handleMenu()
         
